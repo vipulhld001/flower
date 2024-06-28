@@ -1,0 +1,2 @@
+- num_rounds=10
+- strategy=fedadam

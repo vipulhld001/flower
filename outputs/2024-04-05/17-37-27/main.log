@@ -1,0 +1,823 @@
+[2024-04-05 17:37:27,755][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=10, round_timeout=None)
+[2024-04-05 17:37:31,405][flwr][INFO] - Flower VCE: Ray initialized with resources: {'node:127.0.0.1': 1.0, 'CPU': 32.0, 'GPU': 1.0, 'object_store_memory': 37058557132.0, 'memory': 76469966644.0}
+[2024-04-05 17:37:31,409][flwr][INFO] - Initializing global parameters
+[2024-04-05 17:37:31,410][flwr][INFO] - Requesting initial parameters from one random client
+[2024-04-05 17:37:33,912][flwr][INFO] - Received initial parameters from one random client
+[2024-04-05 17:37:33,913][flwr][INFO] - Evaluating initial parameters
+[2024-04-05 17:37:44,175][flwr][INFO] - initial parameters (loss, other metrics): 182.15983366966248, {'accuracy': 0.1187}
+[2024-04-05 17:37:44,177][flwr][INFO] - FL starting
+[2024-04-05 17:37:44,180][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 100)
+[2024-04-05 17:38:31,453][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2024-04-05 17:38:31,484][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2024-04-05 17:38:34,117][flwr][INFO] - fit progress: (1, 179.85694408416748, {'accuracy': 0.2369}, 49.938480899999995)
+[2024-04-05 17:38:34,119][flwr][DEBUG] - evaluate_round 1: strategy sampled 25 clients (out of 100)
+[2024-04-05 17:38:40,477][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=23136, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=23136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 26460, 6156) exited unexpectedly
+[2024-04-05 17:38:40,493][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=25204, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=25204, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 5524, 23712) exited unexpectedly
+[2024-04-05 17:38:40,645][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=21116, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=21116, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 6888, 9752) exited unexpectedly
+[2024-04-05 17:38:40,770][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=14652, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=14652, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 27176, 24904) exited unexpectedly
+[2024-04-05 17:38:44,453][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=3080, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=3080, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 22756) exited unexpectedly
+[2024-04-05 17:38:44,576][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=20296, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=20296, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 14656) exited unexpectedly
+[2024-04-05 17:38:44,645][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=28588, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=28588, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 27300) exited unexpectedly
+[2024-04-05 17:38:44,697][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=15520, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=15520, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 17420) exited unexpectedly
+[2024-04-05 17:38:44,823][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=11560, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=11560, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 26276) exited unexpectedly
+[2024-04-05 17:38:50,081][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=28588, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=28588, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 5440, 21912) exited unexpectedly
+[2024-04-05 17:38:50,128][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=15520, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=15520, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 4652, 28284) exited unexpectedly
+[2024-04-05 17:38:50,142][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=2784, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=2784, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 18112, 23172) exited unexpectedly
+[2024-04-05 17:38:50,993][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=23300, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=23300, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 27064, 27884) exited unexpectedly
+[2024-04-05 17:38:50,993][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=14652, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=14652, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 4204) exited unexpectedly
+[2024-04-05 17:38:50,998][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=23136, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=23136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 10408) exited unexpectedly
+[2024-04-05 17:38:51,030][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=21116, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=21116, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 5212) exited unexpectedly
+[2024-04-05 17:38:52,372][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=3080, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=3080, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 20892) exited unexpectedly
+[2024-04-05 17:38:52,384][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=20296, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=20296, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 26560) exited unexpectedly
+[2024-04-05 17:38:52,813][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=6608, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_evaluate()[39m (pid=6608, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 65, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 49, in test
+    for data in testloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 10496) exited unexpectedly
+[2024-04-05 17:39:07,040][flwr][DEBUG] - evaluate_round 1 received 5 results and 20 failures
+[2024-04-05 17:39:07,041][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2024-04-05 17:39:07,042][flwr][DEBUG] - fit_round 2: strategy sampled 10 clients (out of 100)
+[2024-04-05 17:39:13,126][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=3080, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=3080, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 58, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 34, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 9060, 23000) exited unexpectedly
+[2024-04-05 17:39:13,143][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=20296, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=20296, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 58, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 34, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 22692, 11036) exited unexpectedly
+[2024-04-05 17:39:13,348][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=14652, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=14652, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 58, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 34, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 23260, 21808) exited unexpectedly
+[2024-04-05 17:39:13,363][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=23136, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=23136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 58, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 34, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 15212, 23380) exited unexpectedly
+[2024-04-05 17:39:17,499][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=25204, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=25204, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 58, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 34, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 4496) exited unexpectedly
+[2024-04-05 17:39:17,554][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=6608, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=6608, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 58, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 34, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 15372) exited unexpectedly
+[2024-04-05 17:39:17,554][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=21116, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=21116, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\client.py", line 58, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\Part-II\model.py", line 34, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 12792) exited unexpectedly
+[2024-04-05 17:39:18,375][flwr][DEBUG] - fit_round 2 received 3 results and 7 failures

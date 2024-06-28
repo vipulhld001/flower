@@ -1,0 +1,500 @@
+INFO flwr 2024-04-26 10:40:12,888 | app.py:146 | Starting Flower simulation, config: ServerConfig(num_rounds=10, round_timeout=None)
+INFO flwr 2024-04-26 10:40:27,605 | app.py:180 | Flower VCE: Ray initialized with resources: {'GPU': 1.0, 'node:127.0.0.1': 1.0, 'object_store_memory': 34110701568.0, 'memory': 69591636992.0, 'CPU': 32.0}
+INFO flwr 2024-04-26 10:40:27,607 | server.py:86 | Initializing global parameters
+INFO flwr 2024-04-26 10:40:27,619 | server.py:269 | Using initial parameters provided by strategy
+INFO flwr 2024-04-26 10:40:27,620 | server.py:88 | Evaluating initial parameters
+INFO flwr 2024-04-26 10:40:27,622 | server.py:101 | FL starting
+DEBUG flwr 2024-04-26 10:40:27,624 | server.py:218 | fit_round 1: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.06484240293502808, accuracy 0.23622222222222222
+ pid=8992)[0m Epoch 2: train loss 0.0570756234228611, accuracy 0.33644444444444443
+ pid=8992)[0m Epoch 3: train loss 0.051969073712825775, accuracy 0.3948888888888889
+ pid=8992)[0m Epoch 4: train loss 0.048612650483846664, accuracy 0.43977777777777777
+ pid=8992)[0m Epoch 5: train loss 0.04648016765713692, accuracy 0.4597777777777778
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.06496812403202057, accuracy 0.22333333333333333
+ pid=8992)[0m Epoch 2: train loss 0.05662725493311882, accuracy 0.3377777777777778
+ pid=8992)[0m Epoch 3: train loss 0.05184600502252579, accuracy 0.39444444444444443
+ pid=8992)[0m Epoch 4: train loss 0.04871721565723419, accuracy 0.43777777777777777
+ pid=8992)[0m Epoch 5: train loss 0.04622182250022888, accuracy 0.46755555555555556
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.06465176492929459, accuracy 0.24044444444444443
+ pid=8992)[0m Epoch 2: train loss 0.05686758831143379, accuracy 0.34155555555555556
+ pid=8992)[0m Epoch 3: train loss 0.05229472368955612, accuracy 0.36977777777777776
+ pid=8992)[0m Epoch 4: train loss 0.04965408146381378, accuracy 0.418
+ pid=8992)[0m Epoch 5: train loss 0.04721652716398239, accuracy 0.44666666666666666
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.06457775086164474, accuracy 0.22822222222222222
+ pid=8992)[0m Epoch 2: train loss 0.05693470686674118, accuracy 0.3371111111111111
+ pid=8992)[0m Epoch 3: train loss 0.05251288414001465, accuracy 0.38955555555555554
+ pid=8992)[0m Epoch 4: train loss 0.049563996493816376, accuracy 0.42
+ pid=8992)[0m Epoch 5: train loss 0.047246724367141724, accuracy 0.44733333333333336
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.06432171165943146, accuracy 0.24355555555555555
+ pid=8992)[0m Epoch 2: train loss 0.05660383775830269, accuracy 0.3382222222222222
+ pid=8992)[0m Epoch 3: train loss 0.05167499557137489, accuracy 0.3933333333333333
+ pid=8992)[0m Epoch 4: train loss 0.04871360957622528, accuracy 0.4335555555555556
+DEBUG flwr 2024-04-26 10:41:52,592 | server.py:232 | fit_round 1 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:41:52,610 | server.py:168 | evaluate_round 1: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.04640515521168709, accuracy 0.45644444444444443
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.05577287483215332
+ pid=8992)[0m Client 2 accuracy 0.388
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.0561391761302948
+ pid=8992)[0m Client 3 accuracy 0.348
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.055274890661239626
+ pid=8992)[0m Client 1 accuracy 0.394
+ pid=8992)[0m [Client 4] evaluate, config: {}
+ pid=8992)[0m Client 4 loss 0.05580915641784668
+ pid=8992)[0m Client 4 accuracy 0.358
+ pid=8992)[0m [Client 0] evaluate, config: {}
+DEBUG flwr 2024-04-26 10:42:00,271 | server.py:182 | evaluate_round 1 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:42:00,273 | server.py:218 | fit_round 2: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Client 0 loss 0.05637509870529175
+ pid=8992)[0m Client 0 accuracy 0.382
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.050399523228406906, accuracy 0.4126666666666667
+ pid=8992)[0m Epoch 2: train loss 0.04720275104045868, accuracy 0.4508888888888889
+ pid=8992)[0m Epoch 3: train loss 0.04469267278909683, accuracy 0.48377777777777775
+ pid=8992)[0m Epoch 4: train loss 0.04241504520177841, accuracy 0.5102222222222222
+ pid=8992)[0m Epoch 5: train loss 0.04040352627635002, accuracy 0.5353333333333333
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.05033550783991814, accuracy 0.41488888888888886
+ pid=8992)[0m Epoch 2: train loss 0.046933531761169434, accuracy 0.4528888888888889
+ pid=8992)[0m Epoch 3: train loss 0.04445720836520195, accuracy 0.478
+ pid=8992)[0m Epoch 4: train loss 0.04214145615696907, accuracy 0.5113333333333333
+ pid=8992)[0m Epoch 5: train loss 0.04069490358233452, accuracy 0.5226666666666666
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.04999775439500809, accuracy 0.424
+ pid=8992)[0m Epoch 2: train loss 0.04619838669896126, accuracy 0.4697777777777778
+ pid=8992)[0m Epoch 3: train loss 0.044309768825769424, accuracy 0.4891111111111111
+ pid=8992)[0m Epoch 4: train loss 0.041850317269563675, accuracy 0.5124444444444445
+ pid=8992)[0m Epoch 5: train loss 0.03958911448717117, accuracy 0.5448888888888889
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.04958441108465195, accuracy 0.4268888888888889
+ pid=8992)[0m Epoch 2: train loss 0.04669930413365364, accuracy 0.458
+ pid=8992)[0m Epoch 3: train loss 0.04394075274467468, accuracy 0.49377777777777776
+ pid=8992)[0m Epoch 4: train loss 0.04152228310704231, accuracy 0.5206666666666667
+ pid=8992)[0m Epoch 5: train loss 0.03999403119087219, accuracy 0.5362222222222223
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.04960364103317261, accuracy 0.41355555555555557
+ pid=8992)[0m Epoch 2: train loss 0.04623944312334061, accuracy 0.46044444444444443
+ pid=8992)[0m Epoch 3: train loss 0.04371558502316475, accuracy 0.49177777777777776
+ pid=8992)[0m Epoch 4: train loss 0.041303277015686035, accuracy 0.5231111111111111
+DEBUG flwr 2024-04-26 10:43:11,782 | server.py:232 | fit_round 2 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:43:11,801 | server.py:168 | evaluate_round 2: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.0390159972012043, accuracy 0.5462222222222223
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.04437415409088135
+ pid=8992)[0m Client 3 accuracy 0.47
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.045810317754745485
+ pid=8992)[0m Client 2 accuracy 0.488
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.045242416620254515
+ pid=8992)[0m Client 0 accuracy 0.484
+ pid=8992)[0m [Client 4] evaluate, config: {}
+DEBUG flwr 2024-04-26 10:43:20,000 | server.py:182 | evaluate_round 2 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:43:20,003 | server.py:218 | fit_round 3: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Client 4 loss 0.04552571177482605
+ pid=8992)[0m Client 4 accuracy 0.454
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.04389886856079102
+ pid=8992)[0m Client 1 accuracy 0.508
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.042568888515233994, accuracy 0.5004444444444445
+ pid=8992)[0m Epoch 2: train loss 0.03983766958117485, accuracy 0.5397777777777778
+ pid=8992)[0m Epoch 3: train loss 0.03738372400403023, accuracy 0.5648888888888889
+ pid=8992)[0m Epoch 4: train loss 0.03478125110268593, accuracy 0.6011111111111112
+ pid=8992)[0m Epoch 5: train loss 0.032376475632190704, accuracy 0.6224444444444445
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.04304156452417374, accuracy 0.504
+ pid=8992)[0m Epoch 2: train loss 0.03998683765530586, accuracy 0.5424444444444444
+ pid=8992)[0m Epoch 3: train loss 0.037565309554338455, accuracy 0.5726666666666667
+ pid=8992)[0m Epoch 4: train loss 0.03527993708848953, accuracy 0.5995555555555555
+ pid=8992)[0m Epoch 5: train loss 0.03295568749308586, accuracy 0.6282222222222222
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.043588098138570786, accuracy 0.4922222222222222
+ pid=8992)[0m Epoch 2: train loss 0.040581755340099335, accuracy 0.5291111111111111
+ pid=8992)[0m Epoch 3: train loss 0.03791655972599983, accuracy 0.5633333333333334
+ pid=8992)[0m Epoch 4: train loss 0.03585096448659897, accuracy 0.5882222222222222
+ pid=8992)[0m Epoch 5: train loss 0.03323286771774292, accuracy 0.6137777777777778
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.043501537293195724, accuracy 0.5055555555555555
+ pid=8992)[0m Epoch 2: train loss 0.040669701993465424, accuracy 0.5295555555555556
+ pid=8992)[0m Epoch 3: train loss 0.03756062686443329, accuracy 0.5671111111111111
+ pid=8992)[0m Epoch 4: train loss 0.03537248447537422, accuracy 0.5933333333333334
+ pid=8992)[0m Epoch 5: train loss 0.03267191722989082, accuracy 0.6244444444444445
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.04239416494965553, accuracy 0.5102222222222222
+ pid=8992)[0m Epoch 2: train loss 0.03937416151165962, accuracy 0.5464444444444444
+ pid=8992)[0m Epoch 3: train loss 0.03673967719078064, accuracy 0.5793333333333334
+ pid=8992)[0m Epoch 4: train loss 0.034415606409311295, accuracy 0.6008888888888889
+DEBUG flwr 2024-04-26 10:44:35,399 | server.py:232 | fit_round 3 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:44:35,418 | server.py:168 | evaluate_round 3: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.03139502927660942, accuracy 0.6413333333333333
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.04171753239631653
+ pid=8992)[0m Client 3 accuracy 0.506
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.04389255201816559
+ pid=8992)[0m Client 2 accuracy 0.52
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.04096434760093689
+ pid=8992)[0m Client 1 accuracy 0.54
+ pid=8992)[0m [Client 0] evaluate, config: {}
+DEBUG flwr 2024-04-26 10:44:43,074 | server.py:182 | evaluate_round 3 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:44:43,077 | server.py:218 | fit_round 4: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Client 0 loss 0.042865226745605466
+ pid=8992)[0m Client 0 accuracy 0.534
+ pid=8992)[0m [Client 4] evaluate, config: {}
+ pid=8992)[0m Client 4 loss 0.043212137460708615
+ pid=8992)[0m Client 4 accuracy 0.5
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03992847725749016, accuracy 0.542
+ pid=8992)[0m Epoch 2: train loss 0.035731006413698196, accuracy 0.5873333333333334
+ pid=8992)[0m Epoch 3: train loss 0.032944563776254654, accuracy 0.6191111111111111
+ pid=8992)[0m Epoch 4: train loss 0.02959153614938259, accuracy 0.6635555555555556
+ pid=8992)[0m Epoch 5: train loss 0.0275702103972435, accuracy 0.6844444444444444
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03820018097758293, accuracy 0.5548888888888889
+ pid=8992)[0m Epoch 2: train loss 0.03477194532752037, accuracy 0.5997777777777777
+ pid=8992)[0m Epoch 3: train loss 0.03172515332698822, accuracy 0.6324444444444445
+ pid=8992)[0m Epoch 4: train loss 0.028166944161057472, accuracy 0.6708888888888889
+ pid=8992)[0m Epoch 5: train loss 0.025855476036667824, accuracy 0.7051111111111111
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03905070200562477, accuracy 0.5582222222222222
+ pid=8992)[0m Epoch 2: train loss 0.03527681902050972, accuracy 0.5953333333333334
+ pid=8992)[0m Epoch 3: train loss 0.03238209709525108, accuracy 0.6337777777777778
+ pid=8992)[0m Epoch 4: train loss 0.030177954584360123, accuracy 0.6673333333333333
+ pid=8992)[0m Epoch 5: train loss 0.026804864406585693, accuracy 0.7033333333333334
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.038809411227703094, accuracy 0.5608888888888889
+ pid=8992)[0m Epoch 2: train loss 0.03493886440992355, accuracy 0.5944444444444444
+ pid=8992)[0m Epoch 3: train loss 0.03161861002445221, accuracy 0.6422222222222222
+ pid=8992)[0m Epoch 4: train loss 0.028867073357105255, accuracy 0.6746666666666666
+ pid=8992)[0m Epoch 5: train loss 0.026142681017518044, accuracy 0.7013333333333334
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03773169964551926, accuracy 0.5684444444444444
+ pid=8992)[0m Epoch 2: train loss 0.03403459116816521, accuracy 0.6091111111111112
+ pid=8992)[0m Epoch 3: train loss 0.03105776384472847, accuracy 0.6431111111111111
+ pid=8992)[0m Epoch 4: train loss 0.02863840013742447, accuracy 0.6755555555555556
+DEBUG flwr 2024-04-26 10:45:58,808 | server.py:232 | fit_round 4 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:45:58,825 | server.py:168 | evaluate_round 4: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.02509065344929695, accuracy 0.7155555555555555
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.041340938091278076
+ pid=8992)[0m Client 1 accuracy 0.55
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.04305437564849854
+ pid=8992)[0m Client 0 accuracy 0.564
+ pid=8992)[0m [Client 4] evaluate, config: {}
+ pid=8992)[0m Client 4 loss 0.042180018305778506
+ pid=8992)[0m Client 4 accuracy 0.52
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.04151665866374969
+ pid=8992)[0m Client 3 accuracy 0.536
+ pid=8992)[0m [Client 2] evaluate, config: {}
+DEBUG flwr 2024-04-26 10:46:06,728 | server.py:182 | evaluate_round 4 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:46:06,730 | server.py:218 | fit_round 5: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Client 2 loss 0.0450482120513916
+ pid=8992)[0m Client 2 accuracy 0.514
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03600823134183884, accuracy 0.5897777777777777
+ pid=8992)[0m Epoch 2: train loss 0.03126850351691246, accuracy 0.6391111111111111
+ pid=8992)[0m Epoch 3: train loss 0.0276819858700037, accuracy 0.6855555555555556
+ pid=8992)[0m Epoch 4: train loss 0.024429136887192726, accuracy 0.7266666666666667
+ pid=8992)[0m Epoch 5: train loss 0.020800380036234856, accuracy 0.7735555555555556
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03482804819941521, accuracy 0.5997777777777777
+ pid=8992)[0m Epoch 2: train loss 0.02985871396958828, accuracy 0.6524444444444445
+ pid=8992)[0m Epoch 3: train loss 0.02622237056493759, accuracy 0.696
+ pid=8992)[0m Epoch 4: train loss 0.022715585306286812, accuracy 0.7402222222222222
+ pid=8992)[0m Epoch 5: train loss 0.019548630341887474, accuracy 0.7773333333333333
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03616071119904518, accuracy 0.598
+ pid=8992)[0m Epoch 2: train loss 0.03079291060566902, accuracy 0.6577777777777778
+ pid=8992)[0m Epoch 3: train loss 0.02757946215569973, accuracy 0.6924444444444444
+ pid=8992)[0m Epoch 4: train loss 0.024721097201108932, accuracy 0.7242222222222222
+ pid=8992)[0m Epoch 5: train loss 0.02108938992023468, accuracy 0.7684444444444445
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03437139093875885, accuracy 0.602
+ pid=8992)[0m Epoch 2: train loss 0.0298312958329916, accuracy 0.6626666666666666
+ pid=8992)[0m Epoch 3: train loss 0.02627844363451004, accuracy 0.7
+ pid=8992)[0m Epoch 4: train loss 0.02264343574643135, accuracy 0.7442222222222222
+ pid=8992)[0m Epoch 5: train loss 0.019501522183418274, accuracy 0.7848888888888889
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03521574288606644, accuracy 0.5917777777777777
+ pid=8992)[0m Epoch 2: train loss 0.02990436926484108, accuracy 0.6568888888888889
+ pid=8992)[0m Epoch 3: train loss 0.027071218937635422, accuracy 0.6864444444444444
+ pid=8992)[0m Epoch 4: train loss 0.02335897833108902, accuracy 0.7337777777777778
+DEBUG flwr 2024-04-26 10:47:20,466 | server.py:232 | fit_round 5 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:47:20,484 | server.py:168 | evaluate_round 5: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.020199164748191833, accuracy 0.7762222222222223
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.04346696627140045
+ pid=8992)[0m Client 3 accuracy 0.568
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.04203714919090271
+ pid=8992)[0m Client 1 accuracy 0.552
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.04646312868595123
+ pid=8992)[0m Client 2 accuracy 0.524
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.04480244994163513
+ pid=8992)[0m Client 0 accuracy 0.526
+ pid=8992)[0m [Client 4] evaluate, config: {}
+DEBUG flwr 2024-04-26 10:47:28,416 | server.py:182 | evaluate_round 5 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:47:28,419 | server.py:218 | fit_round 6: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Client 4 loss 0.043680279970169066
+ pid=8992)[0m Client 4 accuracy 0.522
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03338147699832916, accuracy 0.6275555555555555
+ pid=8992)[0m Epoch 2: train loss 0.027235940098762512, accuracy 0.6944444444444444
+ pid=8992)[0m Epoch 3: train loss 0.02294105477631092, accuracy 0.7444444444444445
+ pid=8992)[0m Epoch 4: train loss 0.019825201481580734, accuracy 0.7784444444444445
+ pid=8992)[0m Epoch 5: train loss 0.017125919461250305, accuracy 0.8146666666666667
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03132186457514763, accuracy 0.6453333333333333
+ pid=8992)[0m Epoch 2: train loss 0.025371016934514046, accuracy 0.712
+ pid=8992)[0m Epoch 3: train loss 0.021724821999669075, accuracy 0.7517777777777778
+ pid=8992)[0m Epoch 4: train loss 0.018230104818940163, accuracy 0.7946666666666666
+ pid=8992)[0m Epoch 5: train loss 0.015441466122865677, accuracy 0.828
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03155342489480972, accuracy 0.6453333333333333
+ pid=8992)[0m Epoch 2: train loss 0.02514318749308586, accuracy 0.712
+ pid=8992)[0m Epoch 3: train loss 0.021158410236239433, accuracy 0.762
+ pid=8992)[0m Epoch 4: train loss 0.01802799105644226, accuracy 0.7931111111111111
+ pid=8992)[0m Epoch 5: train loss 0.01482158899307251, accuracy 0.8366666666666667
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03320707753300667, accuracy 0.6202222222222222
+ pid=8992)[0m Epoch 2: train loss 0.02724665403366089, accuracy 0.688
+ pid=8992)[0m Epoch 3: train loss 0.022813141345977783, accuracy 0.7411111111111112
+ pid=8992)[0m Epoch 4: train loss 0.019616352394223213, accuracy 0.7808888888888889
+ pid=8992)[0m Epoch 5: train loss 0.016044888645410538, accuracy 0.8224444444444444
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.03227773308753967, accuracy 0.6324444444444445
+ pid=8992)[0m Epoch 2: train loss 0.026010194793343544, accuracy 0.7062222222222222
+ pid=8992)[0m Epoch 3: train loss 0.022015439346432686, accuracy 0.7537777777777778
+ pid=8992)[0m Epoch 4: train loss 0.019195109605789185, accuracy 0.7871111111111111
+DEBUG flwr 2024-04-26 10:48:43,989 | server.py:232 | fit_round 6 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:48:44,006 | server.py:168 | evaluate_round 6: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.015191608108580112, accuracy 0.8337777777777777
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.0486417019367218
+ pid=8992)[0m Client 0 accuracy 0.554
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.050220697164535526
+ pid=8992)[0m Client 2 accuracy 0.516
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.04645570659637451
+ pid=8992)[0m Client 3 accuracy 0.578
+ pid=8992)[0m [Client 4] evaluate, config: {}
+ pid=8992)[0m Client 4 loss 0.045469087839126586
+ pid=8992)[0m Client 4 accuracy 0.532
+DEBUG flwr 2024-04-26 10:48:51,812 | server.py:182 | evaluate_round 6 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:48:51,814 | server.py:218 | fit_round 7: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.044402194738388065
+ pid=8992)[0m Client 1 accuracy 0.566
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.030741434544324875, accuracy 0.648
+ pid=8992)[0m Epoch 2: train loss 0.0232301726937294, accuracy 0.7344444444444445
+ pid=8992)[0m Epoch 3: train loss 0.018750468268990517, accuracy 0.796
+ pid=8992)[0m Epoch 4: train loss 0.015182902105152607, accuracy 0.8322222222222222
+ pid=8992)[0m Epoch 5: train loss 0.012101066298782825, accuracy 0.8691111111111111
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.029326528310775757, accuracy 0.6655555555555556
+ pid=8992)[0m Epoch 2: train loss 0.021314844489097595, accuracy 0.7575555555555555
+ pid=8992)[0m Epoch 3: train loss 0.01721784844994545, accuracy 0.8071111111111111
+ pid=8992)[0m Epoch 4: train loss 0.014763468876481056, accuracy 0.8406666666666667
+ pid=8992)[0m Epoch 5: train loss 0.01122581772506237, accuracy 0.8813333333333333
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.02936929278075695, accuracy 0.6653333333333333
+ pid=8992)[0m Epoch 2: train loss 0.021511735394597054, accuracy 0.7602222222222222
+ pid=8992)[0m Epoch 3: train loss 0.017333580181002617, accuracy 0.8137777777777778
+ pid=8992)[0m Epoch 4: train loss 0.013683268800377846, accuracy 0.8588888888888889
+ pid=8992)[0m Epoch 5: train loss 0.011282778345048428, accuracy 0.8837777777777778
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.0300605408847332, accuracy 0.6655555555555556
+ pid=8992)[0m Epoch 2: train loss 0.02212861366569996, accuracy 0.7504444444444445
+ pid=8992)[0m Epoch 3: train loss 0.01819293014705181, accuracy 0.7962222222222223
+ pid=8992)[0m Epoch 4: train loss 0.014726254157721996, accuracy 0.8395555555555556
+ pid=8992)[0m Epoch 5: train loss 0.012013138271868229, accuracy 0.8737777777777778
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.030957259237766266, accuracy 0.6546666666666666
+ pid=8992)[0m Epoch 2: train loss 0.023673441261053085, accuracy 0.7302222222222222
+ pid=8992)[0m Epoch 3: train loss 0.019155263900756836, accuracy 0.7855555555555556
+ pid=8992)[0m Epoch 4: train loss 0.015711605548858643, accuracy 0.8226666666666667
+DEBUG flwr 2024-04-26 10:50:06,454 | server.py:232 | fit_round 7 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:50:06,473 | server.py:168 | evaluate_round 7: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.012387401424348354, accuracy 0.8691111111111111
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.051160231590271
+ pid=8992)[0m Client 0 accuracy 0.548
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.05428823947906494
+ pid=8992)[0m Client 2 accuracy 0.512
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.04948966407775879
+ pid=8992)[0m Client 1 accuracy 0.554
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.052026442766189576
+ pid=8992)[0m Client 3 accuracy 0.56
+ pid=8992)[0m [Client 4] evaluate, config: {}
+DEBUG flwr 2024-04-26 10:50:14,647 | server.py:182 | evaluate_round 7 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:50:14,649 | server.py:218 | fit_round 8: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Client 4 loss 0.05063028883934021
+ pid=8992)[0m Client 4 accuracy 0.532
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.026684358716011047, accuracy 0.6951111111111111
+ pid=8992)[0m Epoch 2: train loss 0.018098216503858566, accuracy 0.7993333333333333
+ pid=8992)[0m Epoch 3: train loss 0.01381713803857565, accuracy 0.8524444444444444
+ pid=8992)[0m Epoch 4: train loss 0.01057619322091341, accuracy 0.89
+ pid=8992)[0m Epoch 5: train loss 0.008691050112247467, accuracy 0.9104444444444444
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.027273613959550858, accuracy 0.6917777777777778
+ pid=8992)[0m Epoch 2: train loss 0.017996594309806824, accuracy 0.8015555555555556
+ pid=8992)[0m Epoch 3: train loss 0.013975674286484718, accuracy 0.8477777777777777
+ pid=8992)[0m Epoch 4: train loss 0.011337600648403168, accuracy 0.8777777777777778
+ pid=8992)[0m Epoch 5: train loss 0.00893230177462101, accuracy 0.9071111111111111
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.02845017798244953, accuracy 0.6766666666666666
+ pid=8992)[0m Epoch 2: train loss 0.020603064447641373, accuracy 0.7597777777777778
+ pid=8992)[0m Epoch 3: train loss 0.01511069294065237, accuracy 0.8355555555555556
+ pid=8992)[0m Epoch 4: train loss 0.01188091840595007, accuracy 0.8722222222222222
+ pid=8992)[0m Epoch 5: train loss 0.008919822983443737, accuracy 0.9113333333333333
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.028954584151506424, accuracy 0.6766666666666666
+ pid=8992)[0m Epoch 2: train loss 0.019942516461014748, accuracy 0.7706666666666667
+ pid=8992)[0m Epoch 3: train loss 0.015585953369736671, accuracy 0.8337777777777777
+ pid=8992)[0m Epoch 4: train loss 0.0126261031255126, accuracy 0.8617777777777778
+ pid=8992)[0m Epoch 5: train loss 0.009691579267382622, accuracy 0.8966666666666666
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.02786239981651306, accuracy 0.6875555555555556
+ pid=8992)[0m Epoch 2: train loss 0.019111767411231995, accuracy 0.7795555555555556
+ pid=8992)[0m Epoch 3: train loss 0.0147531284019351, accuracy 0.8417777777777777
+ pid=8992)[0m Epoch 4: train loss 0.0113349175080657, accuracy 0.8768888888888889
+DEBUG flwr 2024-04-26 10:51:30,737 | server.py:232 | fit_round 8 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:51:30,757 | server.py:168 | evaluate_round 8: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.009079672396183014, accuracy 0.9077777777777778
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.05631742906570435
+ pid=8992)[0m Client 0 accuracy 0.55
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.059650650262832644
+ pid=8992)[0m Client 2 accuracy 0.514
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.05477036046981811
+ pid=8992)[0m Client 1 accuracy 0.544
+ pid=8992)[0m [Client 4] evaluate, config: {}
+ pid=8992)[0m Client 4 loss 0.054653947830200195
+ pid=8992)[0m Client 4 accuracy 0.538
+DEBUG flwr 2024-04-26 10:51:38,424 | server.py:182 | evaluate_round 8 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:51:38,426 | server.py:218 | fit_round 9: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.05619572734832764
+ pid=8992)[0m Client 3 accuracy 0.566
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.026772577315568924, accuracy 0.7011111111111111
+ pid=8992)[0m Epoch 2: train loss 0.016915371641516685, accuracy 0.8044444444444444
+ pid=8992)[0m Epoch 3: train loss 0.012243684381246567, accuracy 0.872
+ pid=8992)[0m Epoch 4: train loss 0.009030294604599476, accuracy 0.908
+ pid=8992)[0m Epoch 5: train loss 0.007936913520097733, accuracy 0.9224444444444444
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.025130685418844223, accuracy 0.7257777777777777
+ pid=8992)[0m Epoch 2: train loss 0.015335523523390293, accuracy 0.8213333333333334
+ pid=8992)[0m Epoch 3: train loss 0.010957048274576664, accuracy 0.8831111111111111
+ pid=8992)[0m Epoch 4: train loss 0.007847617380321026, accuracy 0.9222222222222223
+ pid=8992)[0m Epoch 5: train loss 0.006385854445397854, accuracy 0.9371111111111111
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.02688482031226158, accuracy 0.7033333333333334
+ pid=8992)[0m Epoch 2: train loss 0.017356373369693756, accuracy 0.804
+ pid=8992)[0m Epoch 3: train loss 0.012800694443285465, accuracy 0.854
+ pid=8992)[0m Epoch 4: train loss 0.009277229197323322, accuracy 0.9062222222222223
+ pid=8992)[0m Epoch 5: train loss 0.007422981318086386, accuracy 0.9284444444444444
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.025551117956638336, accuracy 0.7162222222222222
+ pid=8992)[0m Epoch 2: train loss 0.015846028923988342, accuracy 0.8244444444444444
+ pid=8992)[0m Epoch 3: train loss 0.01179974339902401, accuracy 0.8717777777777778
+ pid=8992)[0m Epoch 4: train loss 0.009244830347597599, accuracy 0.8986666666666666
+ pid=8992)[0m Epoch 5: train loss 0.00677907932549715, accuracy 0.9351111111111111
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.025655893608927727, accuracy 0.7042222222222222
+ pid=8992)[0m Epoch 2: train loss 0.01561877503991127, accuracy 0.8246666666666667
+ pid=8992)[0m Epoch 3: train loss 0.011538717895746231, accuracy 0.8782222222222222
+ pid=8992)[0m Epoch 4: train loss 0.008143316954374313, accuracy 0.9184444444444444
+DEBUG flwr 2024-04-26 10:52:53,711 | server.py:232 | fit_round 9 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:52:53,729 | server.py:168 | evaluate_round 9: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.006205177400261164, accuracy 0.9424444444444444
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.06659445142745972
+ pid=8992)[0m Client 2 accuracy 0.51
+ pid=8992)[0m [Client 3] evaluate, config: {}
+ pid=8992)[0m Client 3 loss 0.06312381958961487
+ pid=8992)[0m Client 3 accuracy 0.572
+ pid=8992)[0m [Client 1] evaluate, config: {}
+ pid=8992)[0m Client 1 loss 0.060815213680267335
+ pid=8992)[0m Client 1 accuracy 0.524
+ pid=8992)[0m [Client 4] evaluate, config: {}
+ pid=8992)[0m Client 4 loss 0.058801236867904665
+ pid=8992)[0m Client 4 accuracy 0.542
+DEBUG flwr 2024-04-26 10:53:01,230 | server.py:182 | evaluate_round 9 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:53:01,232 | server.py:218 | fit_round 10: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.06194675040245056
+ pid=8992)[0m Client 0 accuracy 0.538
+ pid=8992)[0m [Client 3] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.025256427004933357, accuracy 0.72
+ pid=8992)[0m Epoch 2: train loss 0.014906018041074276, accuracy 0.832
+ pid=8992)[0m Epoch 3: train loss 0.010330409742891788, accuracy 0.8788888888888889
+ pid=8992)[0m Epoch 4: train loss 0.007232306525111198, accuracy 0.9293333333333333
+ pid=8992)[0m Epoch 5: train loss 0.0056657493114471436, accuracy 0.9464444444444444
+ pid=8992)[0m [Client 1] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.02428741566836834, accuracy 0.7284444444444444
+ pid=8992)[0m Epoch 2: train loss 0.013430356048047543, accuracy 0.8486666666666667
+ pid=8992)[0m Epoch 3: train loss 0.009309094399213791, accuracy 0.9008888888888889
+ pid=8992)[0m Epoch 4: train loss 0.006457942072302103, accuracy 0.9371111111111111
+ pid=8992)[0m Epoch 5: train loss 0.004741003271192312, accuracy 0.9575555555555556
+ pid=8992)[0m [Client 0] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.024039138108491898, accuracy 0.7277777777777777
+ pid=8992)[0m Epoch 2: train loss 0.013037965632975101, accuracy 0.8582222222222222
+ pid=8992)[0m Epoch 3: train loss 0.009218250401318073, accuracy 0.9042222222222223
+ pid=8992)[0m Epoch 4: train loss 0.006574456579983234, accuracy 0.936
+ pid=8992)[0m Epoch 5: train loss 0.005056977737694979, accuracy 0.9531111111111111
+ pid=8992)[0m [Client 2] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.024109767749905586, accuracy 0.7295555555555555
+ pid=8992)[0m Epoch 2: train loss 0.013103605248034, accuracy 0.8557777777777777
+ pid=8992)[0m Epoch 3: train loss 0.009648404084146023, accuracy 0.8968888888888888
+ pid=8992)[0m Epoch 4: train loss 0.0070192161947488785, accuracy 0.9348888888888889
+ pid=8992)[0m Epoch 5: train loss 0.005388667341321707, accuracy 0.9473333333333334
+ pid=8992)[0m [Client 4] fit, config: {'lr': 0.01}
+ pid=8992)[0m Epoch 1: train loss 0.025067416951060295, accuracy 0.7197777777777777
+ pid=8992)[0m Epoch 2: train loss 0.014482403174042702, accuracy 0.8382222222222222
+ pid=8992)[0m Epoch 3: train loss 0.010230773128569126, accuracy 0.8933333333333333
+ pid=8992)[0m Epoch 4: train loss 0.008021095767617226, accuracy 0.9166666666666666
+DEBUG flwr 2024-04-26 10:54:16,174 | server.py:232 | fit_round 10 received 5 results and 0 failures
+DEBUG flwr 2024-04-26 10:54:16,191 | server.py:168 | evaluate_round 10: strategy sampled 5 clients (out of 5)
+ pid=8992)[0m Epoch 5: train loss 0.005459274165332317, accuracy 0.9491111111111111
+ pid=8992)[0m [Client 0] evaluate, config: {}
+ pid=8992)[0m Client 0 loss 0.06394584035873413
+ pid=8992)[0m Client 0 accuracy 0.562
+ pid=8992)[0m [Client 2] evaluate, config: {}
+ pid=8992)[0m Client 2 loss 0.0696816189289093
+ pid=8992)[0m Client 2 accuracy 0.512
+ pid=8992)[0m [Client 4] evaluate, config: {}
+ pid=8992)[0m Client 4 loss 0.0615974051952362
+ pid=8992)[0m Client 4 accuracy 0.524
+ pid=8992)[0m [Client 1] evaluate, config: {}
+DEBUG flwr 2024-04-26 10:54:23,402 | server.py:182 | evaluate_round 10 received 5 results and 0 failures
+INFO flwr 2024-04-26 10:54:23,404 | server.py:147 | FL finished in 835.7796104999998
+INFO flwr 2024-04-26 10:54:23,406 | app.py:218 | app_fit: losses_distributed [(1, 0.05587423934936524), (2, 0.044970293760299686), (3, 0.04253035924434662), (4, 0.042628040552139285), (5, 0.044089994812011715), (6, 0.0470378776550293), (7, 0.05151897335052491), (8, 0.05631762299537659), (9, 0.062256294393539434), (10, 0.06569828534126282)]
+INFO flwr 2024-04-26 10:54:23,407 | app.py:219 | app_fit: metrics_distributed_fit {}
+INFO flwr 2024-04-26 10:54:23,409 | app.py:220 | app_fit: metrics_distributed {}
+INFO flwr 2024-04-26 10:54:23,410 | app.py:221 | app_fit: losses_centralized []
+INFO flwr 2024-04-26 10:54:23,412 | app.py:222 | app_fit: metrics_centralized {}
+ pid=8992)[0m Client 1 loss 0.0650769727230072
+ pid=8992)[0m Client 1 accuracy 0.524
+ pid=8992)[0m [Client 3] evaluate, config: {}

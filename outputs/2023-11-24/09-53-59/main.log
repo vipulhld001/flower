@@ -1,0 +1,21 @@
+[2023-11-24 09:54:01,598][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=100, round_timeout=None)
+[2023-11-24 09:54:05,399][flwr][INFO] - Flower VCE: Ray initialized with resources: {'memory': 77829673165.0, 'node:127.0.0.1': 1.0, 'object_store_memory': 37641288499.0, 'CPU': 32.0, 'GPU': 1.0}
+[2023-11-24 09:54:05,399][flwr][INFO] - Initializing global parameters
+[2023-11-24 09:54:05,409][flwr][INFO] - Requesting initial parameters from one random client
+[2023-11-24 09:54:09,136][flwr][INFO] - Received initial parameters from one random client
+[2023-11-24 09:54:09,136][flwr][INFO] - Evaluating initial parameters
+[2023-11-24 09:54:17,457][flwr][INFO] - initial parameters (loss, other metrics): 115.21034264564514, {'accuracy': 0.1001}
+[2023-11-24 09:54:17,457][flwr][INFO] - FL starting
+[2023-11-24 09:54:17,457][flwr][DEBUG] - fit_round 1: strategy sampled 20 clients (out of 20)
+[2023-11-24 10:00:48,721][flwr][DEBUG] - fit_round 1 received 20 results and 0 failures
+[2023-11-24 10:00:48,796][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2023-11-24 10:00:51,952][flwr][INFO] - fit progress: (1, 115.19455599784851, {'accuracy': 0.1001}, 394.489415)
+[2023-11-24 10:00:51,952][flwr][DEBUG] - evaluate_round 1: strategy sampled 20 clients (out of 20)
+[2023-11-24 10:01:40,549][flwr][DEBUG] - evaluate_round 1 received 20 results and 0 failures
+[2023-11-24 10:01:40,549][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2023-11-24 10:01:40,549][flwr][DEBUG] - fit_round 2: strategy sampled 20 clients (out of 20)
+[2023-11-24 10:07:58,935][flwr][DEBUG] - fit_round 2 received 20 results and 0 failures
+[2023-11-24 10:08:02,060][flwr][INFO] - fit progress: (2, 115.17950415611267, {'accuracy': 0.1001}, 824.597527)
+[2023-11-24 10:08:02,060][flwr][DEBUG] - evaluate_round 2: strategy sampled 20 clients (out of 20)
+[2023-11-24 10:08:52,481][flwr][DEBUG] - evaluate_round 2 received 20 results and 0 failures
+[2023-11-24 10:08:52,481][flwr][DEBUG] - fit_round 3: strategy sampled 20 clients (out of 20)

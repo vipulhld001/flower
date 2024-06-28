@@ -1,0 +1,155 @@
+[2023-11-07 08:48:05,171][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=10, round_timeout=None)
+[2023-11-07 08:48:08,902][flwr][INFO] - Flower VCE: Ray initialized with resources: {'object_store_memory': 37653560524.0, 'memory': 77858307892.0, 'GPU': 1.0, 'node:127.0.0.1': 1.0, 'CPU': 32.0}
+[2023-11-07 08:48:08,917][flwr][INFO] - Initializing global parameters
+[2023-11-07 08:48:08,917][flwr][INFO] - Requesting initial parameters from one random client
+[2023-11-07 08:48:10,976][flwr][INFO] - Received initial parameters from one random client
+[2023-11-07 08:48:10,976][flwr][INFO] - Evaluating initial parameters
+[2023-11-07 08:48:18,863][flwr][INFO] - initial parameters (loss, other metrics): 181.79962944984436, {'accuracy': 0.1091}
+[2023-11-07 08:48:18,863][flwr][INFO] - FL starting
+[2023-11-07 08:48:18,863][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 100)
+[2023-11-07 08:48:48,790][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2023-11-07 08:48:48,855][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2023-11-07 08:48:52,026][flwr][INFO] - fit progress: (1, 178.79654741287231, {'accuracy': 0.2799}, 33.163285900000005)
+[2023-11-07 08:48:52,026][flwr][DEBUG] - evaluate_round 1: strategy sampled 5 clients (out of 100)
+[2023-11-07 08:48:57,775][flwr][DEBUG] - evaluate_round 1 received 5 results and 0 failures
+[2023-11-07 08:48:57,775][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2023-11-07 08:48:57,775][flwr][DEBUG] - fit_round 2: strategy sampled 10 clients (out of 100)
+[2023-11-07 08:49:08,804][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=21628, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=21628, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\client.py", line 68, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\model.py", line 39, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 19464) exited unexpectedly
+[2023-11-07 08:49:12,497][flwr][DEBUG] - fit_round 2 received 9 results and 1 failures
+[2023-11-07 08:49:15,529][flwr][INFO] - fit progress: (2, 158.26124250888824, {'accuracy': 0.5702}, 56.662313100000006)
+[2023-11-07 08:49:15,529][flwr][DEBUG] - evaluate_round 2: strategy sampled 5 clients (out of 100)
+[2023-11-07 08:49:21,571][flwr][DEBUG] - evaluate_round 2 received 5 results and 0 failures
+[2023-11-07 08:49:21,571][flwr][DEBUG] - fit_round 3: strategy sampled 10 clients (out of 100)
+[2023-11-07 08:49:39,609][flwr][DEBUG] - fit_round 3 received 10 results and 0 failures
+[2023-11-07 08:49:42,688][flwr][INFO] - fit progress: (3, 59.91723099350929, {'accuracy': 0.7496}, 83.8289701)
+[2023-11-07 08:49:42,688][flwr][DEBUG] - evaluate_round 3: strategy sampled 5 clients (out of 100)
+[2023-11-07 08:49:48,579][flwr][DEBUG] - evaluate_round 3 received 5 results and 0 failures
+[2023-11-07 08:49:48,579][flwr][DEBUG] - fit_round 4: strategy sampled 10 clients (out of 100)
+[2023-11-07 08:50:04,965][flwr][DEBUG] - fit_round 4 received 10 results and 0 failures
+[2023-11-07 08:50:08,405][flwr][INFO] - fit progress: (4, 42.927905052900314, {'accuracy': 0.8413}, 109.54114750000001)
+[2023-11-07 08:50:08,405][flwr][DEBUG] - evaluate_round 4: strategy sampled 5 clients (out of 100)
+[2023-11-07 08:50:14,046][flwr][DEBUG] - evaluate_round 4 received 5 results and 0 failures
+[2023-11-07 08:50:14,046][flwr][DEBUG] - fit_round 5: strategy sampled 10 clients (out of 100)
+[2023-11-07 08:50:25,417][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=16376, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=16376, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\client.py", line 68, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\model.py", line 39, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 22488, 22980) exited unexpectedly
+[2023-11-07 08:50:25,437][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=21628, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=21628, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\client.py", line 68, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\model.py", line 39, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 19104, 18676) exited unexpectedly
+[2023-11-07 08:50:27,447][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=21540, ip=127.0.0.1)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\multiprocessing\queues.py", line 108, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+[36mray::launch_and_fit()[39m (pid=21540, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 633, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 674, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 148, in launch_and_fit
+    return maybe_call_fit(
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\client.py", line 184, in maybe_call_fit
+    return client.fit(fit_ins)
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\flwr\client\app.py", line 297, in _fit
+    results = self.numpy_client.fit(parameters, ins.config)  # type: ignore
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\client.py", line 68, in fit
+    train(self.model, self.trainloader, optim, epochs, self.device)
+  File "c:\Users\Admin\Desktop\Vipul\drive-download-20230927T134210Z-001\model.py", line 39, in train
+    for images, labels in trainloader:
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1316, in _next_data
+    idx, data = self._get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1282, in _get_data
+    success, data = self._try_get_data()
+  File "C:\Users\Admin\anaconda3\envs\flwrpytorch\lib\site-packages\torch\utils\data\dataloader.py", line 1133, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 1620) exited unexpectedly

@@ -1,0 +1,89 @@
+[2023-10-11 10:55:20,058][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2023-10-11 10:55:23,462][root][INFO] - Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EF1519C290>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[2023-10-11 10:55:23,462][root][INFO] - Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+[2023-10-11 10:55:26,521][flwr][INFO] - Flower VCE: Ray initialized with resources: {'node:127.0.0.1': 1.0, 'object_store_memory': 38341877760.0, 'memory': 79464381440.0, 'node:__internal_head__': 1.0, 'CPU': 32.0, 'GPU': 1.0}
+[2023-10-11 10:55:26,521][flwr][INFO] - Flower VCE: Resources for each Virtual Client: {'num_cpus': 2, 'num_gpus': 0.0}
+[2023-10-11 10:55:26,559][flwr][INFO] - Flower VCE: Creating VirtualClientEngineActorPool with 16 actors
+[2023-10-11 10:55:26,559][flwr][INFO] - Initializing global parameters
+[2023-10-11 10:55:26,559][flwr][INFO] - Requesting initial parameters from one random client
+[2023-10-11 10:55:31,619][flwr][ERROR] - Traceback (most recent call last):
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 140, in _submit_job
+    res = self.actor_pool.get_client_result(self.cid, timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\flwr\simulation\ray_transport\ray_actor.py", line 402, in get_client_result
+    return self._fetch_future_result(cid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\flwr\simulation\ray_transport\ray_actor.py", line 288, in _fetch_future_result
+    res_cid, res = ray.get(future)  # type: (str, ClientRes)
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\auto_init_hook.py", line 24, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\worker.py", line 2547, in get
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError: [36mray::DefaultActor.run()[39m (pid=23136, ip=127.0.0.1, actor_id=3778b191ab7cfca3ac9178c901000000, repr=<flwr.simulation.ray_transport.ray_actor.DefaultActor object at 0x0000019FDD5C0610>)
+  File "python\ray\_raylet.pyx", line 1562, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 1596, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 798, in ray._raylet.raise_if_dependency_failed
+ray.exceptions.RaySystemError: System error: No module named 'client'
+traceback: Traceback (most recent call last):
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 404, in deserialize_objects
+    obj = self._deserialize_object(data, metadata, object_ref)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 270, in _deserialize_object
+    return self._deserialize_msgpack_data(data, metadata_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 225, in _deserialize_msgpack_data
+    python_objects = self._deserialize_pickle5_data(pickle5_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 215, in _deserialize_pickle5_data
+    obj = pickle.loads(in_band)
+          ^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'client'
+
+[2023-10-11 10:55:31,637][flwr][ERROR] - [36mray::DefaultActor.run()[39m (pid=23136, ip=127.0.0.1, actor_id=3778b191ab7cfca3ac9178c901000000, repr=<flwr.simulation.ray_transport.ray_actor.DefaultActor object at 0x0000019FDD5C0610>)
+  File "python\ray\_raylet.pyx", line 1562, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 1596, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 798, in ray._raylet.raise_if_dependency_failed
+ray.exceptions.RaySystemError: System error: No module named 'client'
+traceback: Traceback (most recent call last):
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 404, in deserialize_objects
+    obj = self._deserialize_object(data, metadata, object_ref)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 270, in _deserialize_object
+    return self._deserialize_msgpack_data(data, metadata_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 225, in _deserialize_msgpack_data
+    python_objects = self._deserialize_pickle5_data(pickle5_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 215, in _deserialize_pickle5_data
+    obj = pickle.loads(in_band)
+          ^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'client'
+[2023-10-11 10:55:31,647][flwr][ERROR] - [36mray::DefaultActor.run()[39m (pid=23136, ip=127.0.0.1, actor_id=3778b191ab7cfca3ac9178c901000000, repr=<flwr.simulation.ray_transport.ray_actor.DefaultActor object at 0x0000019FDD5C0610>)
+  File "python\ray\_raylet.pyx", line 1562, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 1596, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 798, in ray._raylet.raise_if_dependency_failed
+ray.exceptions.RaySystemError: System error: No module named 'client'
+traceback: Traceback (most recent call last):
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 404, in deserialize_objects
+    obj = self._deserialize_object(data, metadata, object_ref)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 270, in _deserialize_object
+    return self._deserialize_msgpack_data(data, metadata_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 225, in _deserialize_msgpack_data
+    python_objects = self._deserialize_pickle5_data(pickle5_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\miniconda3\envs\pytorchflwr\Lib\site-packages\ray\_private\serialization.py", line 215, in _deserialize_pickle5_data
+    obj = pickle.loads(in_band)
+          ^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'client'
+[2023-10-11 10:55:31,656][flwr][ERROR] - Your simulation crashed :(. This could be because of several reasons.The most common are: 
+	 > Your system couldn't fit a single VirtualClient: try lowering `client_resources`.
+	 > All the actors in your pool crashed. This could be because: 
+		 - You clients hit an out-of-memory (OOM) error and actors couldn't recover from it. Try launching your simulation with more generous `client_resources` setting (i.e. it seems {'num_cpus': 2, 'num_gpus': 0.0} is not enough for your workload). Use fewer concurrent actors. 
+		 - You were running a multi-node simulation and all worker nodes disconnected. The head node might still be alive but cannot accommodate any actor with resources: {'num_cpus': 2, 'num_gpus': 0.0}.
