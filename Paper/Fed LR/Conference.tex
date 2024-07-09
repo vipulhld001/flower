@@ -1,0 +1,252 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{multirow}
+
+\usepackage{adjustbox}
+\usepackage{algorithm}
+
+\usepackage{algpseudocode}
+\renewcommand\footnoterule{\hspace{-1em}\rule[0.45em]{\columnwidth}{0.45pt}}
+\begin{document}
+
+\title{FedLR: A learning rate based approach towards Efficient communication}
+
+\author{\IEEEauthorblockN{Vipul Singh Negi}
+\IEEEauthorblockA{Department of Computer Science and\\Engineering\\National Institute of Technology\\
+Rourkela, India 769008\\
+vipulhld001@gmail.com}
+\and
+\IEEEauthorblockN{Suchismita Chinara}
+\IEEEauthorblockA{Department of Computer Science and\\Engineering\\National Institute of Technology\\
+Rourkela, India 769008\\
+suchi.nitrkl@gmail.com}
+}
+
+
+
+\makeatletter
+
+% \def\ps@IEEEtitlepagestyle{
+%   \def\@oddfoot{\mycopyrightnotice}
+%   \def\@evenfoot{}
+% }
+% \def\mycopyrightnotice{
+%   {\footnotesize 979-8-3503-0460-2/23/\$31.00~\copyright~2023 IEEE\hfill} % <--- Change here
+%   \gdef\mycopyrightnotice{}
+% }
+
+
+
+% \IEEEoverridecommandlockouts
+% \IEEEpubid{\makebox[\columnwidth]{979-8-3503-0460-2/23/23/\$31.00~\copyright2023 IEEE \hfill} \hspace{\columnsep}\makebox[\columnwidth]{ }}
+
+% \makeatletter
+
+% \def\ps@IEEEtitlepagestyle{
+%   %\def\@oddfoot{\mycopyrightnotice}
+%   \def\@evenfoot{}
+% }
+% \makeatletter
+% \def\footnoterule{\kern-3\p@
+%   \hrule \@width 2in \kern 2.6\p@} % the \hrule is .4pt high
+% \makeatother
+% \newcommand{\copyrightnotice}[1]{{%
+%   \renewcommand{\thefootnote}{}% Remove footnote number
+%   \footnotetext[0]{#1}%
+% }}
+\maketitle
+% \copyrightnotice{979-8-3503-0460-2/23/\$31.00~\copyright~2023 IEEE}
+% \IEEEpubidadjcol
+
+\begin{abstract}
+The challenges of handling decentralised data lead to the demand for research on secure gathering, efficient processing, and analysing of the data. In decentralised systems, each node (device) can make independent decisions, reducing the complexity and challenges of dealing with extensive data. Privacy has become a significant concern for our society due to the rise in the number of Edge/IoT devices, the lack of presence of a centralised system, etc. To solve this conundrum, federated learning was proposed. Federated learning works on the sharing of parameter values rather than the data. Worldwide, 10.2 Billion non-IoT and 19.8 billion IoT devices will be active in 2023. These devices lack security when it comes to using traditional machine learning. However, federated learning models solve this problem using techniques such as Secure Aggregation and Differential Privacy, which provide security for the devices and efficient communication between them. The challenges arise from heterogeneous devices, leading to the client selection problem, unbalanced data, and many more problems. The Proposed work focuses on using the MobileNets series of model architecture for federated learning using the FedAvg Strategy. MobileNets architecture has always been robust and reliable when it come to devices with resource constraints. An older generation system is used to show that federated learning is a viable technique for decentralized machine learning.
+\end{abstract}
+\begin{IEEEkeywords}
+Federated learning, IoT, Deep Learning, MobileNets
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+Federated Learning is born at the intersection of Edge computing/IoT, on-device AI, and blockchain.  A Federation refers to a group of independent entities yet united under a central organization. In federated learning, multiple client or organisations share their training data (weights or compute) to remote servers, and all the clients participating in the process train a single neural network. This process is repeated by the clients, downloading the newer weights from the servers multiple times to provide better results. The training is done on the device's private data, then it is encrypted and communicated to the server, and on the server, they are decrypted, averaged, and integrated into
+the centralized model. The main objective of federated learning is to converge the client's weights so that it could yield meaningful results. For Example. WeBank (Banking), NVIDIA Clara
+(Healthcare), and Google Keyboard.\par
+WeBank is a private Chinese bank they have created its own federated learning framework, known as WeBankAI (based on FATE) \cite{liu2021fate}. Nvidia Clara \cite{nvidia} is a platform to improve healthcare that focuses on \cite{liu2021fate} Medical Imaging and Medical Devices (Nvidia Clara Holoscan), Healthcare IoT (Nvidia Clara Guardian Collection), Biopharma (BioNeMo), and Genomics (Nividia Clara Parabricks). Google Keyboard (Gboard) \cite{yang2018applied} has been using federated learning for creating word prediction models.\par
+Google introduced the term federated learning in 2016 (coined in 2017 by McMahan et al. \cite{mcmahan2017communication}), about the same time the Cambridge Analytica scandal awakened users of the dangers of sharing personal information online. It started a revolution in the technology world about the three rules of Cryptography confidentiality, integrity, and availability. After a deeper review of our current laws, it was clear that we had none. So in 2018, Europe passed its data privacy law, General Data Protection Regulation (GDPR). Soon after that, California also created its legislature called California Consumer Privacy Act (CCPA, 2018). India is also creating its privacy law, which is still under much scrutiny. Federated Learning is one such method which can satisfy the rules of cryptography and privacy laws around the globe.\par
+
+
+
+\begin{figure}[htp]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Images/fedvenndia.png}
+        \caption{Venn diagram of Federated Learning.}
+    \end{figure}
+MolbileNets \cite{howard2017mobilenets} are designed for mobile and embedded applications and in IoT-based products have done wonders due to their small size. The proposed work uses these models in a Federated Learning environment which provided us with good results.
+Federated Learning has two models, local and global. The local model is trained on the edge device with actual user data; the global model is an aggregation of all the local models which is created using sharing the model weights. In Federated learning the data is never shared only the model weights are shared. In Fig. 2 a basic IoT Federated Learning Architecture is shown. The IoT devices will perform the local training and perform the global update by uploading the model weights to the FL Server. The FL server will train the global model by aggregating the global updates and will share the new weights using model update to the local models.
+\begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.43]{Images/IOTFED.drawio.png}
+        \caption{Basic IoT Federated Learning Architecture.}
+    \end{figure}
+
+\textbf{Workings of Federated Learning:}
+\begin{enumerate}
+\item The first phase is the initialization of the global parameter values. It can be pretrained or random.
+\item The second phase is the selection of clients for participation in the rounds.
+\item The third phase is to distribute those values to the participating clients.
+\item The fourth phase is to update and upload the values from local to global models.
+\item The fifth phase aggregates the model by averaging the data (FedAverage).
+\item The sixth phase repeats phases second to first until we get the desired performance. 
+\end{enumerate}
+\begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.28]{Images/Block Diagram.png}
+        \caption{Block Diagram of Federated Learning Architecture.}
+    \end{figure}
+
+\section{Related Works}
+McMahan et al. \cite{mcmahan2017communication} proposed the Federate Averaging algorithm and tested it using the MNIST Digit Dataset. The data was partitioned into IID and Non-IID. In Non-IID data, only two-digit data were given to the clients. They have also used CIFAR-10 in the balanced and IID settings. 
+Khan et al. \cite{khan2021federated} and Nguyen et al. \cite{nguyen2021federated} have talked about advancements in federated learning for IoT, taxonomy and the open challenges. A state-of-the-art survey on the use of Federated Learning in smart healthcare. Advances in Federated Learning design for healthcare addressing resource-aware federated learning, security and privacy federated learning. \par
+Nishio et al. \cite{nishio2019client} proposed a new strategy for client selection in federated learning. The strategy is coined as FedCS (Federated Learning with Client Selection). They have added an extra step in the original FedAvg called Resource Request which gathers the client's resource information and groups them according to their resource capacity. They have also used schedule updates and upload and compared their results in both IID and Non-IID datasets.
+\par
+Abdulrahaman et al. \cite{abdulrahman2020fedmccs} proposed a multicriteria-based client selection (The server analyzes the client's responses to select the best set able to participate in the coming learning rounds). They have also added client filtering similar to \cite{nishio2019client}. They are not choosing clients at random rather; they are using Stratified Sampling.
+\par
+Saha et al. \cite{saha2020fogfl} proposed fog-assisted federated learning for resource-constrained IoT devices. They have created a fog fl framework and formulated a greedy heuristic strategy to select the optimal global aggregator fog nodes at the end of an epoch to increase the reliability of the system. They have compared their findings with FedAvg and HFL.
+Shokri et al. \cite{shokri2015privacy} is the first paper to introduce privacy-preserving deep learning. They used distributed and selective SGD to make deep learning models privacy-preserving. \par
+The MobileNets family of architecture \cite{howard2017mobilenets}, \cite{sandler2018mobilenetv2}, and \cite{howard2019searching} are the best architectures for IoT devices because they are smaller in size and have yielded better results in IoT scenarios which makes them perfect for our use case. Mathur et al. \cite{mathur2021device} has implemented federated learning using the Flower framework. They have implemented federated learning in 5 mobile devices (three phones and two tablets). They used CIFAR-10 and Office-31 datasets in their experiments. They have evaluated their finding in terms of the local epoch, accuracy, convergence time (mins), and energy consumed by (kJ) the device. They have used the ever-popular MobileNetV2 \cite{sandler2018mobilenetv2} architecture. 
+\par Yang et al. \cite{yang2019federated} has written a book regarding the various keywords, features, and techniques of federated learning. This book is a good way to get acquainted with the concepts of federated learning. The book contains concepts for privacy-preserving, horizontal federated learning, vertical federated learning, and federated transfer learning. \par
+Li et al. \cite{li2023federated} have proposed Federated Domain Generalization, which is to add the concepts of Domain Generalization to Federated Learning. They have reviewed methods in Domain Generalization and Federated Learning and given their review on Federated Domain Generalization. Wang et al. \cite{wang2023applications} have talked about Statistical heterogeneity, communication cost, system heterogeneity, real-time etc, in the mHealth setting showing Federated Learning is also suitable for mobile health applications.
+
+
+\section{Dataset and Model Architecture}
+Fig. 4 represent the dataset and NN architecture.
+\begin{enumerate}
+    \item CIFAR10 dataset has been used, and the input size is $32\times32$ and ten classes.
+    \item MobileNet \cite{howard2017mobilenets} is used; its size is 16MB and has 4.3M parameters with 28 layers of Convolutions. 
+    \item MobileNetV2 \cite{sandler2018mobilenetv2} is used; its size is 14MB and has 3.5M parameters with 53 layers of Convolutions.
+    \item MobileNetV3Small \cite{howard2019searching} is used; its size is 9.83MB and has 3M parameters.
+    \item MobileNetV3Large \cite{howard2019searching} is used; its size is 21.11MB and has 5M parameters.
+\end{enumerate}
+
+\begin{figure}[htp]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Images/Dataset_and_architecture.png}
+        \caption{Used Dataset and NN Architecture.}
+    \end{figure}
+    
+\section{Framework Used}
+
+Flower FL \cite{beutel2020flower} is a unified approach to federated learning, analytics, and evaluation. It can Federate any workload in any ML framework. The proposed methodology uses Flower for all the experiments.
+\begin{figure}[htp]
+        \centering
+        \includegraphics[scale=.25]{Images/flower-core-framework-architecture.png}
+        \caption{Flower FL Framework.}
+    \end{figure}
+Fig. 5 represents the Flower FL framework. The key aspects are we have two kinds of code: User and Framework. User codes are the models, and user-generated strategies like hyperparameter tuning, model architectures, etc. Framework codes are the critical parts of Flower-like the gRPC Server it uses. gRPC is based on two fast and efficient protocols: protocol buffers and HTTP/2. Protocol buffers are a data serialization protocol that is language-agnostic. It produces smaller binary payloads than JSON once it is serialized. The serialized data is transported using HTTP/2 which is fully multiplexed and can send data in parallel over a single TCP connection. The flower server takes care of the strategy and the number of communication rounds and features like setting up timeout, etc. The flower client takes care of the deep learning model in which we can use all major machine learning frameworks like PyTorch, Tensorflow, Mxnet, etc.
+
+\subsection{FedAvg Algorithm}
+
+
+\begin{algorithm}
+\caption{\textbf{FederatedAveraging.} The $K$ clients are
+indexed by $k$; $B$ is the local minibatch size, $E$ is the number
+of local epochs, and $\eta$ is the learning rate}\label{alg:cap}
+\begin{algorithmic}[1]
+\State \textbf{Server Executes}
+\State initialize $w_0$
+\For{\texttt{each round $t$ = 1,2,..}}
+        \State \texttt{$m \gets max(C\cdot K,1)$}
+        \State \texttt{$S_t \gets $(random set of $m$ clients)}
+        \For{\texttt{each client $k \in S_t $ }\textbf{in parallel}}
+        \State $w_{t+1}^{k} \gets ClientUpdate(k,w_t)$
+        \EndFor
+        \State $w_{t+1} \gets \sum_{k=1}^{K} \frac{n_k}{n} w_{t+1}^{k}$
+        
+      \EndFor
+      \State
+\State \textbf{ClientUpdate($k,W$):} \Comment{Run on client $k$}
+\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
+\For{\texttt{each local epoch $i$ from 1 to $E$ }}
+    \For{\texttt{batch $b \in \mathcal{B}$ }}
+    \State $w \gets w - \eta \nabla l(w;b)$
+\EndFor
+\EndFor
+\State return $w$ to server
+
+\end{algorithmic}
+\end{algorithm}
+
+
+
+The algorithm is the primary protocol for federated learning. We initialize the global model randomly or by pre-trained data. The clients are chosen at random, and then the values are distributed. The data is updated and uploaded on the global models. These steps are iterated until we get the desired performance.
+\section{Results and Discussion}
+\subsection{Running on Real-Time}
+Table 1. Shows the configuration of the devices used in the experiment. 
+
+\begin{table}[htp]
+\centering
+\caption{Experimental Setup for Real-Time System.}
+\begin{adjustbox}{max width=9cm}
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+S No. & System Type & Processor                                & GPU         & OS         \\ \hline
+1     & Workstation & Intel Xeon Silver 4216, 32 cores         & RTX A4000   & Windows    \\ \hline
+2     & PC          & Second generation Intel i5 2400, 4 cores & Intel       & Manjaro OS \\ \hline
+3     & Laptop      & AMD Ryzen 9 6900HS, 8 cores              & 3060 Mobile & Windows    \\ \hline
+\end{tabular}
+\end{adjustbox}
+
+\end{table}
+Table 2. Shows the real-time result for the three devices in which the performance of the workstation with CPU was similar to any ordinary PC. Ex. Local epoch times were 211s and 225s, respectively. 
+\begin{table}[htp]
+\centering
+\caption{Real-time with three Devices on local network with 5 rounds and 5 epochs.}
+\begin{adjustbox}{max width=9cm}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+Device      & \begin{tabular}[c]{@{}l@{}}Local \\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local \\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local\\ Epoch\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Epoch\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total \\ Time\end{tabular} \\ \hline
+Workstation & 84.09                                                     & 0.4610                                                 & 211s                                                  & \multirow{3}{*}{78.77}                                    & \multirow{3}{*}{0.6628}                                & 14s                                                    & \multirow{3}{*}{1.57Hrs}                              \\ \cline{1-4} \cline{7-7}
+Laptop      & 85.17                                                     & 0.4283                                                 & 33s                                                   &                                                           &                                                       & 3s                                                     &                                                       \\ \cline{1-4} \cline{7-7}
+PC          & 85.15                                                     & 0.4278                                                 & 225s                                                  &                                                           &                                                       & 8s                                                      &                                                       \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+If two clients run on a single machine (laptop) GPU and CPU, the laptop GPU takes 46s for an epoch and finishes quickly, and the CPU takes 126s for an epoch. However, the CPU epoch time changed to 99s after the GPU client finished training. Observed the 40s wait time after finishing each communication round. When the GPU was switched on the workstation, the epoch time was significantly reduced to 110sec. Half of what it was getting before. The server waits for 24hrs to receive clients. If none of the clients joins the federation, then the server sends an error message and goes back to waiting.
+
+\subsection{Running on Local System}
+The PC is over a decade old, and its performance can be compared to the IoT and Edge devices of now. That is why we have chosen to run the experiments on this device. Technology has change a lot in a decade, but this PC is the closest device we could find to simulate our IoT systems. 
+
+
+\begin{table}[htp]
+\centering
+\caption{Training Results in PC with two clients (CPU). }
+\begin{adjustbox}{max width=9cm}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+Architecture     & Epoch and  Round           & \begin{tabular}[c]{@{}l@{}}Local \\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local \\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server \\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local \\ Epoch \\ Time\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server \\ Epoch \\ Time\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total \\ Time\end{tabular} \\ \hline
+MobileNet        & \multirow{6}{*}{20 and 20 (400)} & 99.65\%                                                     & 0.0114                                                 & \textbf{80.81\%}                                                     & 1.0538                                                 & 614s                                                           & 17s                                                             & 67.1hr                                                \\ \cline{1-1} \cline{3-9} 
+MobileNetV2      &                            & 99.22\%                                                    & 0.0246                                                 & \textbf{80.74\%}                                                     & 0.9376                                                  & 314s                                                           & 12s                                                             & 43.8hr                                                \\ \cline{1-1} \cline{3-9} 
+MobileNetV3Small &                            & 64.24\%                                                     & 1.0019                                                & \multirow{2}{*}{64.20\%}                                    & \multirow{2}{*}{1.0017}                                & \multirow{2}{*}{206s}                                          & \multirow{2}{*}{7s}                                             & \multirow{2}{*}{22.7hr}                               \\ \cline{1-1} \cline{3-4}
+MobileNetV3Small &                            & 66.20\%                                                    & 0.9562                                                 &                                                           &                                                        &                                                                &                                                                 &                                                       \\ \cline{1-1} \cline{3-9} 
+MobileNetV3Large &                            & 97.57\%                                                     & 0.0735                                                 & \multirow{2}{*}{77.04\%}                                    & \multirow{2}{*}{1.1494}                                & \multirow{2}{*}{436s}                                          & \multirow{2}{*}{15s}                                            & \multirow{2}{*}{49.3hr}                               \\ \cline{1-1} \cline{3-4}
+MobileNetV3Large &                            & 96.26\%                                                     & 0.1055                                                 &                                                           &                                                        &                                                                &                                                                 &                                                       \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+Table 3. Shows the training results in PC with Two Clients.  MobileNetV2 is showing the best results. If we increase the no of clients in a single machine, the local time increases to 517s with 23s for the Server. That means one client finishes in 190 seconds. V3Small took half of what V2 took but didn't achieve the expected result. While using V3, we saw around a 2\% of difference between local clients. This is the first time we have observed it. We got the best accuracy with V2 and the original MobileNet, but it took longer than V2. The codes and detailed results are available on Github \cite{github}.
+\subsection{Discussion}
+The MobileNets model architectures are small, low-latency, low-powered models for resource-constrained devices. Federated Learning is famous for having big data overheads, and the smaller size of Mobilenet models reduces that burden and creates a robust system. The smaller size of these models comes at the cost of accuracy, but we have observed that with each new iteration, the model run time has reduced, but so is the accuracy. One of the reasons for low accuracy could be that the newer architecture doesn't suit our CIFAR-10 Dataset. The major application for these models is to solve computer vision problems in IoT and Mobile Devices.  
+\section{Conclusion}
+Baseline benchmarks for the MobileNets family of models have been established for real-time and local systems. The performance of models is excellent for local models, but it is far behind in global accuracy. The V2 and the original MobileNets are the most optimised models for federated learning. The newer V3s are suitable for other applications, but they are not good with Federated Learning. This work shows the performance benchmarks of MobileNets in federated learning, which are ideal for computer vision applications. 
+
+\bibliographystyle{unsrt}
+\bibliography{Sample}
+
+
+\end{document}
+
+
