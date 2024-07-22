@@ -6,6 +6,10 @@
 \usepackage{algorithm}
 
 \usepackage{algpseudocode}
+\usepackage{multirow}
+
+\def\theequation{\arabic{equation}}
+
 \renewcommand\footnoterule{\hspace{-1em}\rule[0.45em]{\columnwidth}{0.45pt}}
 \begin{document}
 
@@ -77,35 +81,6 @@ WeBank is a private Chinese bank they have created its own federated learning fr
 Google introduced the term federated learning in 2016 (coined in 2017 by McMahan et al. \cite{mcmahan2017communication}), about the same time the Cambridge Analytica scandal awakened users of the dangers of sharing personal information online. It started a revolution in the technology world about the three rules of Cryptography confidentiality, integrity, and availability. After a deeper review of our current laws, it was clear that we had none. So in 2018, Europe passed its data privacy law, General Data Protection Regulation (GDPR). Soon after that, California also created its legislature called California Consumer Privacy Act (CCPA, 2018). India is also creating its privacy law, which is still under much scrutiny. Federated Learning is one such method which can satisfy the rules of cryptography and privacy laws around the globe.\par
 
 
-
-\begin{figure}[htp]
-        \centering
-        \includegraphics[width=0.5\textwidth]{Images/fedvenndia.png}
-        \caption{Venn diagram of Federated Learning.}
-    \end{figure}
-MolbileNets \cite{howard2017mobilenets} are designed for mobile and embedded applications and in IoT-based products have done wonders due to their small size. The proposed work uses these models in a Federated Learning environment which provided us with good results.
-Federated Learning has two models, local and global. The local model is trained on the edge device with actual user data; the global model is an aggregation of all the local models which is created using sharing the model weights. In Federated learning the data is never shared only the model weights are shared. In Fig. 2 a basic IoT Federated Learning Architecture is shown. The IoT devices will perform the local training and perform the global update by uploading the model weights to the FL Server. The FL server will train the global model by aggregating the global updates and will share the new weights using model update to the local models.
-\begin{figure}[htp]
-        \centering
-        \includegraphics[scale=.43]{Images/IOTFED.drawio.png}
-        \caption{Basic IoT Federated Learning Architecture.}
-    \end{figure}
-
-\textbf{Workings of Federated Learning:}
-\begin{enumerate}
-\item The first phase is the initialization of the global parameter values. It can be pretrained or random.
-\item The second phase is the selection of clients for participation in the rounds.
-\item The third phase is to distribute those values to the participating clients.
-\item The fourth phase is to update and upload the values from local to global models.
-\item The fifth phase aggregates the model by averaging the data (FedAverage).
-\item The sixth phase repeats phases second to first until we get the desired performance. 
-\end{enumerate}
-\begin{figure}[htp]
-        \centering
-        \includegraphics[scale=.28]{Images/Block Diagram.png}
-        \caption{Block Diagram of Federated Learning Architecture.}
-    \end{figure}
-
 \section{Related Works}
 McMahan et al. \cite{mcmahan2017communication} proposed the Federate Averaging algorithm and tested it using the MNIST Digit Dataset. The data was partitioned into IID and Non-IID. In Non-IID data, only two-digit data were given to the clients. They have also used CIFAR-10 in the balanced and IID settings. 
 Khan et al. \cite{khan2021federated} and Nguyen et al. \cite{nguyen2021federated} have talked about advancements in federated learning for IoT, taxonomy and the open challenges. A state-of-the-art survey on the use of Federated Learning in smart healthcare. Advances in Federated Learning design for healthcare addressing resource-aware federated learning, security and privacy federated learning. \par
@@ -119,8 +94,168 @@ The MobileNets family of architecture \cite{howard2017mobilenets}, \cite{sandler
 \par Yang et al. \cite{yang2019federated} has written a book regarding the various keywords, features, and techniques of federated learning. This book is a good way to get acquainted with the concepts of federated learning. The book contains concepts for privacy-preserving, horizontal federated learning, vertical federated learning, and federated transfer learning. \par
 Li et al. \cite{li2023federated} have proposed Federated Domain Generalization, which is to add the concepts of Domain Generalization to Federated Learning. They have reviewed methods in Domain Generalization and Federated Learning and given their review on Federated Domain Generalization. Wang et al. \cite{wang2023applications} have talked about Statistical heterogeneity, communication cost, system heterogeneity, real-time etc, in the mHealth setting showing Federated Learning is also suitable for mobile health applications.
 
+\section{Proposed Methodology}
+The FedAvg proposed by \cite{mcmahan2017communication} open the doors for communication-efficient deep learning networks as they proposed the Federated Averaging methods to train models collaboratively without sharing the underlying training data to preserve the privacy and ever since then it have become the state of the art method for Privacy preserving Deep Learning Models. 
+\subsection{Problem Setup} 
+The vanilla FedAvg algorithm (Algorithm 1) has some problems when it comes to client selection, heterogeneous computational resources, and fairness. As it focuses primarily on the privacy preserving aspect of the learning. The algorithm begins with initializing the global model at random or for pre-trained data. The beings the client selection process which selects clients at random. The global weights are distributed to the clients and the training begins and only stops when we get our desired outcome.
 
-\section{Dataset and Model Architecture}
+\begin{algorithm}
+	\caption{\textbf{FederatedAveraging.} The $K$ clients are
+		indexed by $k$; $B$ is the local minibatch size, $E$ is the number
+		of local epochs, and $\eta$ is the learning rate}\label{alg:cap}
+	\begin{algorithmic}[1]
+		\State \textbf{Server Executes}
+		\State initialize $w_0$
+		\For{\texttt{each round $t$ = 1,2,..}}
+		\State \texttt{$m \gets max(C\cdot K,1)$}
+		\State \texttt{$S_t \gets $(random set of $m$ clients)}
+		\For{\texttt{each client $k \in S_t $ }\textbf{in parallel}}
+		\State $w_{t+1}^{k} \gets ClientUpdate(k,w_t)$
+		\EndFor
+		\State $w_{t+1} \gets \sum_{k=1}^{K} \frac{n_k}{n} w_{t+1}^{k}$
+		
+		\EndFor
+		\State
+		\State \textbf{ClientUpdate($k,W$):} \Comment{Run on client $k$}
+		\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
+		\For{\texttt{each local epoch $i$ from 1 to $E$ }}
+		\For{\texttt{batch $b \in \mathcal{B}$ }}
+		\State $w \gets w - \eta \nabla l(w;b)$
+		\EndFor
+		\EndFor
+		\State return $w$ to server
+		
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Client Selection}
+
+In the vanilla FedAvg the clients are selected at random using 
+\begin{equation}
+ m \gets max(C\cdot K,1)
+ \end{equation}
+ where C is the fraction of selected clients and K being the actual clients which gives us the total number of m clients for the federated learning. This method of selection client is good but it can easily be improved upon by proposing a new strategy for client selection. The proposed strategy should improve over the existing one by making the process more robust and highly communication efficient. A new parameter is required which can perform better client selection the current eq 1 used by the vanilla FedAvg.   
+
+\subsection{Heterogeneous Computational Resources}
+The devices participating in the federated learning are not always homogeneous the chances of it being heterogeneous are more. A survey done by Markets and Markets \cite{market} states that 35 key players exist in the edge devices manufacturing phase with some providing devices while other provides the processors. This many key players means that major amount of devices are heterogeneous which makes client selection much more complicated because as the diversity increases the number of slacker devices also increases. Slacker devices are the devices which are slowest performer in the system. The motto of federated learning is the faster the slacker device the model will be equally efficient. So that means in order to propose a better strategy one must figure out a way to improve upon the slacker devices. 
+
+\subsection{Fairness}
+Fairness is an unique thing which removes the discrimination between clients and making sure all the devices contribution are taken into consideration. The best way to understand this problem is to imagine two hospitals H1 and H2 with H1 being a bigger hospital with various specialization and H2 being a small clinic. Communicable Diseases are the most popular ones and easy to get and if H1 is getting patient for one such communicable disease that means is the same for H2 are well. But due to the size of H1 the data gathered from H2 will be minuscule but that doesn't mean that its irrelevant. So one must also consider fairness as one of the major components for creating a new strategy. 
+ 
+\section{FedLR}
+ \subsection{Proposed Algorithm for Client Selection}
+ The key values for the Algorithm are as follows:
+ \begin{enumerate}
+ 	\item The K clients are indexed by k.
+ 	\item C is the fraction of the client selected.
+ 	\item B is the local minibatch size.
+ 	\item E is the number of local epochs.
+ 	\item $\eta$ is the learning rate.
+ \end{enumerate}
+ 
+ The server first executes the initial weights ($\omega_0$) which are taken at random and number of rounds (t) is selected.
+ Random no of clients are selected to training (C*K). Ex: C = 0.6 Fraction and K = 10 so 0.6*10= 6 clients.
+ Then the ClientUpdate (k, $\omega_t$ ) starts.
+ In ClientUpdate we select epochs (E) to iterate for the client.
+ The data (Pk) is split by Batch Size (B) for training.
+ Then executes Stochastic Gradient Descent (SGD).
+ The data is sent back to the server for aggregation. 
+ 
+ \begin{algorithm}[H]
+ 	\scriptsize
+ 	\caption{ \textbf{FedLR.} The $K$ clients are
+ 		indexed by $k$; $B$ is the local minibatch size, $E$ is the number
+ 		of local epochs, and $\eta$ is the learning rate}\label{alg:cap}
+ 	\begin{algorithmic}[1]
+ 		
+ 		\State \textbf{Server Executes}
+ 		\State initialize $w_0$
+ 		\For{\texttt{each round $t$ = 1,2,..}}
+ 		\State \texttt{$m \gets max(C\cdot K,1)$}
+ 		\State \texttt{$S_t \gets $(random set of $m$ clients)}
+ 		\For{\texttt{each client $k \in S_t $ }\textbf{in parallel}}
+ 		\State $w_{t+1}^{k} \gets ClientUpdate(k,w_t)$
+ 		\EndFor
+ 		\State $w_{t+1} \gets \sum_{k=1}^{K} \frac{n_k}{n} w_{t+1}^{k}$
+ 		
+ 		\EndFor
+ 		\State \textbf{ClientUpdate($k,W$):} \Comment{Run on client $k$}
+ 		\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
+ 		\For{\texttt{each local epoch $i$ from 1 to $E$ }}
+ 		\State Fit $\eta$ as [0.01, 0.001, 0.0001] from the Server according to the runtime.
+ 		\For{\texttt{batch $b \in \mathcal{B}$ }}
+ 		\State $w \gets w - \eta \nabla l(w;b)$
+ 		\EndFor
+ 		\EndFor
+ 		\State return $w$ to server
+ 		
+ 	\end{algorithmic}
+ \end{algorithm}
+ 
+ \subsubsection{Case 1: FedLr (lr =0.01) with 10 Rounds and 5 Epochs}
+ 
+ The best accuracy we achieved in this scenario is 56.6\%. This works similarly to the FedAvg Strategy and claims almost similar runtime the gap is 2s. The losses also perform similarly to the base FedAvg Strategy. 
+ \begin{table}[ht]
+ 	\centering
+ 	\caption{FedLr (lr =0.01) with 10 Rounds and 5 Epochs}
+ 	%\resizebox{\columnwidth}{!}{%
+ 		\begin{tabular}{|lllllc|}
+ 			\hline
+ 			\multicolumn{6}{|c|}{FedLR (lr = 0.01) with 10 Round and 5 Epochs}                                                                                                                                     \\ \hline
+ 			\multicolumn{1}{|l|}{Clients} & \multicolumn{1}{l|}{Accuracy}        & \multicolumn{1}{l|}{Loss}  & \multicolumn{1}{l|}{Local Acc} & \multicolumn{1}{l|}{Local Loss} & \multicolumn{1}{l|}{Total Time} \\ \hline
+ 			\multicolumn{1}{|l|}{1}       & \multicolumn{1}{l|}{56.2\%}          & \multicolumn{1}{l|}{0.063} & \multicolumn{1}{l|}{95.3\%}    & \multicolumn{1}{l|}{0.0050}     & \multirow{5}{*}{835.6s}         \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{2}       & \multicolumn{1}{l|}{52.4\%}          & \multicolumn{1}{l|}{0.065} & \multicolumn{1}{l|}{95.7\%}    & \multicolumn{1}{l|}{0.0047}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{3}       & \multicolumn{1}{l|}{51.2\%}          & \multicolumn{1}{l|}{0.069} & \multicolumn{1}{l|}{94.7\%}    & \multicolumn{1}{l|}{0.0053}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{4}       & \multicolumn{1}{l|}{\textbf{56.6\%}} & \multicolumn{1}{l|}{0.068} & \multicolumn{1}{l|}{94.6\%}    & \multicolumn{1}{l|}{0.0056}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{5}       & \multicolumn{1}{l|}{52.4\%}          & \multicolumn{1}{l|}{0.061} & \multicolumn{1}{l|}{94.9\%}    & \multicolumn{1}{l|}{0.0054}     &                                 \\ \hline
+ 		\end{tabular}%
+ 		%}
+ \end{table}   
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsubsection{Case 2: FedLr (lr =0.001) with 10 Rounds and 5 Epochs}
+ % Please add the following required packages to your document preamble:
+ % \usepackage{multirow}
+ % \usepackage{graphicx}
+ The best accuracy is 56.2\%. The runtime is reduced by 6 seconds, which makes it half a second per round. However, the losses are greater compared to Case 1. In Case 1, the lowest loss was 0.0047; in Case 2, it was 0.0066.  
+ \begin{table}[ht]
+ 	\centering
+ 	\caption{FedLr (lr =0.001) with 10 Rounds and 5 Epochs}
+ 	%\resizebox{\columnwidth}{!}{%
+ 		\begin{tabular}{|lllllc|}
+ 			\hline
+ 			\multicolumn{6}{|c|}{FedLR (lr = 0.001) with 10 Round and 5 Epochs}                                                                                                                             \\ \hline
+ 			\multicolumn{1}{|l|}{Clients} & \multicolumn{1}{l|}{Accuracy} & \multicolumn{1}{l|}{Loss}  & \multicolumn{1}{l|}{Local Acc} & \multicolumn{1}{l|}{Local Loss} & \multicolumn{1}{l|}{Total Time} \\ \hline
+ 			\multicolumn{1}{|l|}{1}       & \multicolumn{1}{l|}{55.8\%}   & \multicolumn{1}{l|}{0.065} & \multicolumn{1}{l|}{93.4\%}    & \multicolumn{1}{l|}{0.0066}     & \multirow{5}{*}{830.9s}         \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{2}       & \multicolumn{1}{l|}{56\%}     & \multicolumn{1}{l|}{0.059} & \multicolumn{1}{l|}{93.7\%}    & \multicolumn{1}{l|}{0.0064}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{3}       & \multicolumn{1}{l|}{52.4\%}   & \multicolumn{1}{l|}{0.069} & \multicolumn{1}{l|}{93.5\%}    & \multicolumn{1}{l|}{0.0067}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{4}       & \multicolumn{1}{l|}{52.4\%}   & \multicolumn{1}{l|}{0.069} & \multicolumn{1}{l|}{93.7\%}    & \multicolumn{1}{l|}{0.0065}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{5}       & \multicolumn{1}{l|}{\textbf{56.2\%}}   & \multicolumn{1}{l|}{0.059} & \multicolumn{1}{l|}{93.4\%}    & \multicolumn{1}{l|}{0.0066}     &                                 \\ \hline
+ 		\end{tabular}%
+ 		%}
+ \end{table}
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsubsection{Case 3: FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}
+The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar losses as Case 1 and 2.
+ \begin{table}[ht]
+ 	\centering
+ 	\caption{Case 3 : FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}
+ 	%\resizebox{\columnwidth}{!}{%
+ 		\begin{tabular}{|lllllc|}
+ 			\hline
+ 			\multicolumn{6}{|c|}{FedLR (lr = 0.0001) with 10 Round and 5 Epochs}                                                                                                                            \\ \hline
+ 			\multicolumn{1}{|l|}{Clients} & \multicolumn{1}{l|}{Accuracy} & \multicolumn{1}{l|}{Loss}  & \multicolumn{1}{l|}{Local Acc} & \multicolumn{1}{l|}{Local Loss} & \multicolumn{1}{l|}{Total Time} \\ \hline
+ 			\multicolumn{1}{|l|}{1}       & \multicolumn{1}{l|}{54.8\%}   & \multicolumn{1}{l|}{0.063} & \multicolumn{1}{l|}{93\%}      & \multicolumn{1}{l|}{0.0060}     & \multirow{5}{*}{826.0s}         \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{2}       & \multicolumn{1}{l|}{\textbf{57.6\%}}   & \multicolumn{1}{l|}{0.062} & \multicolumn{1}{l|}{95\%}      & \multicolumn{1}{l|}{0.0053}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{3}       & \multicolumn{1}{l|}{56.8\%}   & \multicolumn{1}{l|}{0.063} & \multicolumn{1}{l|}{95.2\%}    & \multicolumn{1}{l|}{0.0050}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{4}       & \multicolumn{1}{l|}{54.4\%}   & \multicolumn{1}{l|}{0.065} & \multicolumn{1}{l|}{95.1\%}    & \multicolumn{1}{l|}{0.0052}     &                                 \\ \cline{1-5}
+ 			\multicolumn{1}{|l|}{5}       & \multicolumn{1}{l|}{53.4\%}   & \multicolumn{1}{l|}{0.062} & \multicolumn{1}{l|}{94.6\%}    & \multicolumn{1}{l|}{0.0056}     &                                 \\ \hline
+ 		\end{tabular}%
+ 		%}
+ \end{table}
+ 
+\section{Datasets and Model Architecture}
 Fig. 4 represent the dataset and NN architecture.
 \begin{enumerate}
     \item CIFAR10 dataset has been used, and the input size is $32\times32$ and ten classes.
@@ -146,41 +281,7 @@ Flower FL \cite{beutel2020flower} is a unified approach to federated learning, a
     \end{figure}
 Fig. 5 represents the Flower FL framework. The key aspects are we have two kinds of code: User and Framework. User codes are the models, and user-generated strategies like hyperparameter tuning, model architectures, etc. Framework codes are the critical parts of Flower-like the gRPC Server it uses. gRPC is based on two fast and efficient protocols: protocol buffers and HTTP/2. Protocol buffers are a data serialization protocol that is language-agnostic. It produces smaller binary payloads than JSON once it is serialized. The serialized data is transported using HTTP/2 which is fully multiplexed and can send data in parallel over a single TCP connection. The flower server takes care of the strategy and the number of communication rounds and features like setting up timeout, etc. The flower client takes care of the deep learning model in which we can use all major machine learning frameworks like PyTorch, Tensorflow, Mxnet, etc.
 
-\subsection{FedAvg Algorithm}
 
-
-\begin{algorithm}
-\caption{\textbf{FederatedAveraging.} The $K$ clients are
-indexed by $k$; $B$ is the local minibatch size, $E$ is the number
-of local epochs, and $\eta$ is the learning rate}\label{alg:cap}
-\begin{algorithmic}[1]
-\State \textbf{Server Executes}
-\State initialize $w_0$
-\For{\texttt{each round $t$ = 1,2,..}}
-        \State \texttt{$m \gets max(C\cdot K,1)$}
-        \State \texttt{$S_t \gets $(random set of $m$ clients)}
-        \For{\texttt{each client $k \in S_t $ }\textbf{in parallel}}
-        \State $w_{t+1}^{k} \gets ClientUpdate(k,w_t)$
-        \EndFor
-        \State $w_{t+1} \gets \sum_{k=1}^{K} \frac{n_k}{n} w_{t+1}^{k}$
-        
-      \EndFor
-      \State
-\State \textbf{ClientUpdate($k,W$):} \Comment{Run on client $k$}
-\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
-\For{\texttt{each local epoch $i$ from 1 to $E$ }}
-    \For{\texttt{batch $b \in \mathcal{B}$ }}
-    \State $w \gets w - \eta \nabla l(w;b)$
-\EndFor
-\EndFor
-\State return $w$ to server
-
-\end{algorithmic}
-\end{algorithm}
-
-
-
-The algorithm is the primary protocol for federated learning. We initialize the global model randomly or by pre-trained data. The clients are chosen at random, and then the values are distributed. The data is updated and uploaded on the global models. These steps are iterated until we get the desired performance.
 \section{Results and Discussion}
 \subsection{Running on Real-Time}
 Table 1. Shows the configuration of the devices used in the experiment. 
