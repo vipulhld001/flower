@@ -26,13 +26,6 @@ Brendan McMahan, Eider Moore, Daniel Ramage, Seth Hampson, and Blaise~Aguera
 \newblock In {\em Artificial intelligence and statistics}, pages 1273--1282.
   PMLR, 2017.
 
-\bibitem{howard2017mobilenets}
-Andrew~G Howard, Menglong Zhu, Bo~Chen, Dmitry Kalenichenko, Weijun Wang,
-  Tobias Weyand, Marco Andreetto, and Hartwig Adam.
-\newblock Mobilenets: Efficient convolutional neural networks for mobile vision
-  applications.
-\newblock {\em arXiv preprint arXiv:1704.04861}, 2017.
-
 \bibitem{khan2021federated}
 Latif~U Khan, Walid Saad, Zhu Han, Ekram Hossain, and Choong~Seon Hong.
 \newblock Federated learning for internet of things: Recent advances, taxonomy,
@@ -71,6 +64,13 @@ Reza Shokri and Vitaly Shmatikov.
 \newblock In {\em Proceedings of the 22nd ACM SIGSAC conference on computer and
   communications security}, pages 1310--1321, 2015.
 
+\bibitem{howard2017mobilenets}
+Andrew~G Howard, Menglong Zhu, Bo~Chen, Dmitry Kalenichenko, Weijun Wang,
+  Tobias Weyand, Marco Andreetto, and Hartwig Adam.
+\newblock Mobilenets: Efficient convolutional neural networks for mobile vision
+  applications.
+\newblock {\em arXiv preprint arXiv:1704.04861}, 2017.
+
 \bibitem{sandler2018mobilenetv2}
 Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
   Chen.
@@ -108,6 +108,13 @@ Ying Li, Xingwei Wang, Rongfei Zeng, Praveen~Kumar Donta, Ilir Murturi, Min
 Tongnian Wang, Yan Du, Yanmin Gong, Kim-Kwang~Raymond Choo, and Yuanxiong Guo.
 \newblock Applications of federated learning in mobile health: Scoping review.
 \newblock {\em Journal of Medical Internet Research}, 25:e43006, 2023.
+
+\bibitem{market}
+Markets and Markets.
+\newblock {Edge AI Hardware Market}, 2023.
+\newblock
+  https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardware-market-158498281.html
+  [Accessed 22-Jul-2024].
 
 \bibitem{beutel2020flower}
 Daniel~J Beutel, Taner Topal, Akhil Mathur, Xinchi Qiu, Titouan Parcollet,

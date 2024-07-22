@@ -4,13 +4,13 @@
 \citation{liu2021fate}
 \citation{yang2018applied}
 \citation{mcmahan2017communication}
-\citation{howard2017mobilenets}
-\providecommand \oddpage@label [2]{}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
 \citation{mcmahan2017communication}
 \citation{khan2021federated}
 \citation{nguyen2021federated}
 \citation{nishio2019client}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Works}{1}{}\protected@file@percent }
 \citation{abdulrahman2020fedmccs}
 \citation{nishio2019client}
 \citation{saha2020fogfl}
@@ -23,51 +23,64 @@
 \citation{yang2019federated}
 \citation{li2023federated}
 \citation{wang2023applications}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Venn diagram of Federated Learning.}}{2}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Basic IoT Federated Learning Architecture.}}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {II}Related Works}{2}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Block Diagram of Federated Learning Architecture.}}{2}{}\protected@file@percent }
+\citation{mcmahan2017communication}
+\citation{market}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Proposed Methodology}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Problem Setup}{2}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textbf  {FederatedAveraging.} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{2}{}\protected@file@percent }
+\newlabel{alg:cap}{{1}{2}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Client Selection}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Heterogeneous Computational Resources}{2}{}\protected@file@percent }
 \citation{howard2017mobilenets}
 \citation{sandler2018mobilenetv2}
 \citation{howard2019searching}
 \citation{howard2019searching}
 \citation{beutel2020flower}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Dataset and Model Architecture}{3}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Used Dataset and NN Architecture.}}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Framework Used}{3}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Flower FL Framework.}}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}FedAvg Algorithm}{3}{}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textbf  {FederatedAveraging.} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{3}{}\protected@file@percent }
-\newlabel{alg:cap}{{1}{3}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Results and Discussion}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Running on Real-Time}{3}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Experimental Setup for Real-Time System.}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Fairness}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}FedLR}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Proposed Algorithm for Client Selection}{3}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces  \textbf  {FedLR.} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{3}{}\protected@file@percent }
+\newlabel{alg:cap}{{2}{3}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}1}Case 1: FedLr (lr =0.01) with 10 Rounds and 5 Epochs}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces FedLr (lr =0.01) with 10 Rounds and 5 Epochs}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}2}Case 2: FedLr (lr =0.001) with 10 Rounds and 5 Epochs}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces FedLr (lr =0.001) with 10 Rounds and 5 Epochs}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}3}Case 3: FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Case 3 : FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {V}Datasets and Model Architecture}{3}{}\protected@file@percent }
 \citation{github}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Used Dataset and NN Architecture.}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Framework Used}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Flower FL Framework.}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Results and Discussion}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Running on Real-Time}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Experimental Setup for Real-Time System.}}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Real-time with three Devices on local network with 5 rounds and 5 epochs.}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Running on Local System}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Training Results in PC with two clients (CPU). }}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Discussion}{4}{}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{Sample}
 \bibcite{liu2021fate}{1}
 \bibcite{nvidia}{2}
 \bibcite{yang2018applied}{3}
 \bibcite{mcmahan2017communication}{4}
-\bibcite{howard2017mobilenets}{5}
-\bibcite{khan2021federated}{6}
-\bibcite{nguyen2021federated}{7}
-\bibcite{nishio2019client}{8}
-\bibcite{abdulrahman2020fedmccs}{9}
-\bibcite{saha2020fogfl}{10}
-\bibcite{shokri2015privacy}{11}
+\bibcite{khan2021federated}{5}
+\bibcite{nguyen2021federated}{6}
+\bibcite{nishio2019client}{7}
+\bibcite{abdulrahman2020fedmccs}{8}
+\bibcite{saha2020fogfl}{9}
+\bibcite{shokri2015privacy}{10}
+\bibcite{howard2017mobilenets}{11}
 \bibcite{sandler2018mobilenetv2}{12}
 \bibcite{howard2019searching}{13}
 \bibcite{mathur2021device}{14}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Real-time with three Devices on local network with 5 rounds and 5 epochs.}}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Running on Local System}{4}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Training Results in PC with two clients (CPU). }}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Discussion}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{4}{}\protected@file@percent }
 \bibcite{yang2019federated}{15}
 \bibcite{li2023federated}{16}
 \bibcite{wang2023applications}{17}
-\bibcite{beutel2020flower}{18}
-\bibcite{github}{19}
+\bibcite{market}{18}
+\bibcite{beutel2020flower}{19}
+\bibcite{github}{20}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusion}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{5}{}\protected@file@percent }
 \gdef \@abspage@last{5}

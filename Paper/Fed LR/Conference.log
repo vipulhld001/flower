@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  9 JUL 2024 10:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  22 JUL 2024 11:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -242,23 +242,27 @@ tex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count281
 \l__pdf_internal_box=\box57
-) (Conference.aux)
+) (Conference.aux
+
+LaTeX Warning: Label `alg:cap' multiply defined.
+
+)
 \openout1 = `Conference.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 -- Lines per column: 56 (exact).
 
@@ -286,92 +290,80 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
-<Images/fedvenndia.png, id=1, 384.43625pt x 322.70563pt>
-File: Images/fedvenndia.png Graphic file (type png)
-<use Images/fedvenndia.png>
-Package pdftex.def Info: Images/fedvenndia.png  used on input line 83.
-(pdftex.def)             Requested size: 258.0pt x 216.58588pt.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 83--84
- [][] 
- []
-
-<Images/IOTFED.drawio.png, id=2, 565.11125pt x 555.07375pt>
-File: Images/IOTFED.drawio.png Graphic file (type png)
-<use Images/IOTFED.drawio.png>
-Package pdftex.def Info: Images/IOTFED.drawio.png  used on input line 90.
-(pdftex.def)             Requested size: 242.99309pt x 238.67705pt.
-[1{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Ad
-min/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+)) [1{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users
+/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-<Images/Block Diagram.png, id=11, 925.4575pt x 89.33376pt>
-File: Images/Block Diagram.png Graphic file (type png)
-<use Images/Block Diagram.png>
-Package pdftex.def Info: Images/Block Diagram.png  used on input line 105.
-(pdftex.def)             Requested size: 259.12633pt x 25.01328pt.
-
-Overfull \hbox (7.12633pt too wide) in paragraph at lines 105--106
- [][] 
+Underfull \hbox (badness 4634) in paragraph at lines 98--99
+[]\OT1/ptm/m/n/10 The Fe-dAvg pro-posed by [[]] open the doors for
  []
 
-[2 <./Images/fedvenndia.png> <./Images/IOTFED.drawio.png> <./Images/Block Diagr
-am.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 126.
+(Font)              <7> on input line 105.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 126.
-<Images/Dataset_and_architecture.png, id=17, 965.6075pt x 413.545pt>
+(Font)              <5> on input line 105.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+09.
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+[2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 202.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 202.
+<Images/Dataset_and_architecture.png, id=20, 965.6075pt x 413.545pt>
 File: Images/Dataset_and_architecture.png Graphic file (type png)
 <use Images/Dataset_and_architecture.png>
 Package pdftex.def Info: Images/Dataset_and_architecture.png  used on input lin
-e 135.
+e 270.
 (pdftex.def)             Requested size: 258.0pt x 110.49126pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 135--136
+Overfull \hbox (6.0pt too wide) in paragraph at lines 270--271
  [][] 
  []
 
-<Images/flower-core-framework-architecture.png, id=18, 864.22874pt x 428.60126p
+<Images/flower-core-framework-architecture.png, id=22, 864.22874pt x 428.60126p
 t>
 File: Images/flower-core-framework-architecture.png Graphic file (type png)
 <use Images/flower-core-framework-architecture.png>
 Package pdftex.def Info: Images/flower-core-framework-architecture.png  used on
- input line 144.
+ input line 279.
 (pdftex.def)             Requested size: 216.05666pt x 107.15004pt.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-59.
-(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 193.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 193.
-
-Overfull \hbox (4.08388pt too wide) in paragraph at lines 191--201
+[3]
+Overfull \hbox (4.08388pt too wide) in paragraph at lines 292--302
  [] 
  []
 
 
-Overfull \hbox (4.07513pt too wide) in paragraph at lines 207--216
+Overfull \hbox (4.07513pt too wide) in paragraph at lines 308--317
  [] 
  []
 
-[3 <./Images/Dataset_and_architecture.png> <./Images/flower-core-framework-arch
-itecture.png>]
-Overfull \hbox (4.08255pt too wide) in paragraph at lines 226--238
+
+Overfull \hbox (4.08255pt too wide) in paragraph at lines 327--339
  [] 
  []
 
-(Conference.bbl
+[4 <./Images/Dataset_and_architecture.png> <./Images/flower-core-framework-arch
+itecture.png>] (Conference.bbl
 Underfull \hbox (badness 2269) in paragraph at lines 82--87
 []\OT1/ptm/m/n/8 Andrew Howard, Mark San-dler, Grace Chu, Liang-Chieh Chen,
  []
 
-[4])
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--118
+[]\OT1/ptm/m/n/8 Markets and Mar-kets.  Edge AI Hard-ware Mar-ket, 2023.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--118
+\OT1/ptm/m/n/8 https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardwar
+e-
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -383,20 +375,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
-
-] (Conference.aux)
+[5] (Conference.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 4104 strings out of 474486
- 73933 string characters out of 5743756
- 1965542 words of memory out of 5000000
- 26350 multiletter control sequences out of 15000+600000
- 594848 words of font info for 97 fonts, out of 8000000 for 9000
+ 4090 strings out of 474486
+ 73405 string characters out of 5743756
+ 1969542 words of memory out of 5000000
+ 26333 multiletter control sequences out of 15000+600000
+ 597548 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,16n,65p,1480b,381s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
@@ -405,16 +399,19 @@ fonts/cm/cmmi10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmmi5.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Admin/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Admin/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Admin/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Admin/App
-Data/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Admin/A
-ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Admin/A
-ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Admin/
-AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Admin/
-AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Conference.pdf (5 pages, 267310 bytes).
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Admin/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Admin/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ad
+min/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/
+Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
+:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C
+:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><
+C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><
+C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+
+Output written on Conference.pdf (5 pages, 254776 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
