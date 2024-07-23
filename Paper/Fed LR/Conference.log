@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  23 JUL 2024 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  23 JUL 2024 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -313,14 +313,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 179.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 179.
-<Images/flower-core-framework-architecture.png, id=20, 864.22874pt x 428.60126p
+ [3]
+<Images/flower-core-framework-architecture.png, id=24, 864.22874pt x 428.60126p
 t>
 File: Images/flower-core-framework-architecture.png Graphic file (type png)
 <use Images/flower-core-framework-architecture.png>
 Package pdftex.def Info: Images/flower-core-framework-architecture.png  used on
  input line 254.
 (pdftex.def)             Requested size: 216.05666pt x 107.15004pt.
- [3]
+
 Overfull \hbox (4.08388pt too wide) in paragraph at lines 268--278
  [] 
  []
@@ -376,7 +377,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4090 strings out of 474486
  73255 string characters out of 5743756
- 1966542 words of memory out of 5000000
+ 1963542 words of memory out of 5000000
  26333 multiletter control sequences out of 15000+600000
  597548 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -395,7 +396,7 @@ dmin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users
 /Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/User
 s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/User
 s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Conference.pdf (5 pages, 229127 bytes).
+Output written on Conference.pdf (5 pages, 229291 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
