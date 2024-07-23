@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.14)  23 JUL 2024 21:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.14)  23 JUL 2024 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -295,46 +295,48 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 
 ]
-Underfull \hbox (badness 4634) in paragraph at lines 100--101
+Underfull \hbox (badness 4634) in paragraph at lines 102--103
 []\OT1/ptm/m/n/10 The Fe-dAvg pro-posed by [[]] open the doors for
  []
 
+
+Underfull \vbox (badness 1097) has occurred while \output is active []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 107.
+(Font)              <7> on input line 109.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 107.
+(Font)              <5> on input line 109.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-11.
+13.
+
 (C:\Users\vipul\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 [2]
-Underfull \vbox (badness 1803) has occurred while \output is active []
-
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 181.
+(Font)              <8> on input line 183.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 181.
+(Font)              <6> on input line 183.
  [3]
 <Images/flower-core-framework-architecture.png, id=24, 864.22874pt x 428.60126p
 t>
 File: Images/flower-core-framework-architecture.png Graphic file (type png)
 <use Images/flower-core-framework-architecture.png>
 Package pdftex.def Info: Images/flower-core-framework-architecture.png  used on
- input line 256.
+ input line 258.
 (pdftex.def)             Requested size: 216.05666pt x 107.15004pt.
 
-Overfull \hbox (4.08388pt too wide) in paragraph at lines 270--280
+Overfull \hbox (4.08388pt too wide) in paragraph at lines 272--282
  [] 
  []
 
 
-Overfull \hbox (4.07513pt too wide) in paragraph at lines 286--295
+Overfull \hbox (4.07513pt too wide) in paragraph at lines 288--297
  [] 
  []
 
 
-Overfull \hbox (4.08255pt too wide) in paragraph at lines 305--317
+Overfull \hbox (4.08255pt too wide) in paragraph at lines 307--319
  [] 
  []
 
@@ -398,7 +400,7 @@ ipul/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users
 /vipul/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/User
 s/vipul/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/User
 s/vipul/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Conference.pdf (5 pages, 229487 bytes).
+Output written on Conference.pdf (5 pages, 229676 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
