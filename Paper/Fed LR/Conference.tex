@@ -94,7 +94,7 @@ The MobileNets family of architecture \cite{howard2017mobilenets}, \cite{sandler
 \par Yang et al. \cite{yang2019federated} has written a book regarding the various keywords, features, and techniques of federated learning. This book is a good way to get acquainted with the concepts of federated learning. The book contains concepts for privacy-preserving, horizontal federated learning, vertical federated learning, and federated transfer learning. \par
 Li et al. \cite{li2023federated} have proposed Federated Domain Generalization, which is to add the concepts of Domain Generalization to Federated Learning. They have reviewed methods in Domain Generalization and Federated Learning and given their review on Federated Domain Generalization. Wang et al. \cite{wang2023applications} have talked about Statistical heterogeneity, communication cost, system heterogeneity, real-time etc, in the mHealth setting showing Federated Learning is also suitable for mobile health applications.
 
-\section{Proposed Methodology}
+\section{Problem Statement}
 The FedAvg proposed by \cite{mcmahan2017communication} open the doors for communication-efficient deep learning networks as they proposed the Federated Averaging methods to train models collaboratively without sharing the underlying training data to preserve the privacy and ever since then it have become the state of the art method for Privacy preserving Deep Learning Models. 
 \subsection{Problem Setup} 
 The vanilla FedAvg algorithm (Algorithm 1) has some problems when it comes to client selection, heterogeneous computational resources, and fairness. As it focuses primarily on the privacy preserving aspect of the learning. The algorithm begins with initializing the global model at random or for pre-trained data. The beings the client selection process which selects clients at random. The global weights are distributed to the clients and the training begins and only stops when we get our desired outcome.
@@ -140,49 +140,26 @@ In the vanilla FedAvg the clients are selected at random using
 The devices participating in the federated learning are not always homogeneous the chances of it being heterogeneous are more. A survey done by Markets and Markets \cite{market} states that 35 key players exist in the edge devices manufacturing phase with some providing devices while other provides the processors. This many key players means that major amount of devices are heterogeneous which makes client selection much more complicated because as the diversity increases the number of slacker devices also increases. Slacker devices are the devices which are slowest performer in the system. The motto of federated learning is the faster the slacker device the model will be equally efficient. So that means in order to propose a better strategy one must figure out a way to improve upon the slacker devices. 
 
 \subsection{Fairness}
-Fairness is an unique thing which removes the discrimination between clients and making sure all the devices contribution are taken into consideration. The best way to understand this problem is to imagine two hospitals H1 and H2 with H1 being a bigger hospital with various specialization and H2 being a small clinic. Communicable Diseases are the most popular ones and easy to get and if H1 is getting patient for one such communicable disease that means is the same for H2 are well. But due to the size of H1 the data gathered from H2 will be minuscule but that doesn't mean that its irrelevant. So one must also consider fairness as one of the major components for creating a new strategy. 
+Fairness is an unique thing which removes the discrimination between clients and making sure all the devices contribution are taken into consideration. The best way to understand this problem is to imagine two hospitals H1 and H2 with H1 being a bigger hospital with various specialization and H2 being a small clinic. Communicable Diseases are the most popular ones and easy to get and if H1 is getting patient for one such communicable disease that means is the same for H2 are well. But due to the size of H1 the data gathered from H2 will be minuscule but that doesn't mean that its irrelevant. So one must also consider fairness as one of the major components for creating a new strategy. Ezzeldin et al. \cite{ezzeldin2023fairfed} has proposed a Fairfed strategy to solve this problem using debiasing method across clients.
  
 \section{FedLR}
- \subsection{Proposed Algorithm for Client Selection}
- The key values for the Algorithm are as follows:
- \begin{enumerate}
- 	\item The K clients are indexed by k.
- 	\item C is the fraction of the client selected.
- 	\item B is the local minibatch size.
- 	\item E is the number of local epochs.
- 	\item $\eta$ is the learning rate.
- \end{enumerate}
- 
- The server first executes the initial weights ($\omega_0$) which are taken at random and number of rounds (t) is selected.
- Random no of clients are selected to training (C*K). Ex: C = 0.6 Fraction and K = 10 so 0.6*10= 6 clients.
- Then the ClientUpdate (k, $\omega_t$ ) starts.
- In ClientUpdate we select epochs (E) to iterate for the client.
- The data (Pk) is split by Batch Size (B) for training.
- Then executes Stochastic Gradient Descent (SGD).
- The data is sent back to the server for aggregation. 
+The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch Selection for individual clients, and Client Selection based on the Client Runtime. The objective it to reduce the communication cost for efficient communication all the while preserving the accuracy of the model.
+ \subsection{Learning Rate Selection}
+The algorithm 2 below explains the learning rate (lr) selection by the clients. The learning rates are taken with an increment of ten. After running different lr it was observed that the accuracy were similar but the total communication times were being reduced with smaller lr values. All three lr cases were tested and they showed a good amount of change in communication cost. The dataset used for these experiments was the CIFAR10 dataset.
+
  
  \begin{algorithm}[H]
  	\scriptsize
- 	\caption{ \textbf{FedLR.} The $K$ clients are
+ 	\caption{ \textbf{Learning Rate Selection} The $K$ clients are
  		indexed by $k$; $B$ is the local minibatch size, $E$ is the number
  		of local epochs, and $\eta$ is the learning rate}\label{alg:cap}
  	\begin{algorithmic}[1]
  		
- 		\State \textbf{Server Executes}
- 		\State initialize $w_0$
- 		\For{\texttt{each round $t$ = 1,2,..}}
- 		\State \texttt{$m \gets max(C\cdot K,1)$}
- 		\State \texttt{$S_t \gets $(random set of $m$ clients)}
- 		\For{\texttt{each client $k \in S_t $ }\textbf{in parallel}}
- 		\State $w_{t+1}^{k} \gets ClientUpdate(k,w_t)$
- 		\EndFor
- 		\State $w_{t+1} \gets \sum_{k=1}^{K} \frac{n_k}{n} w_{t+1}^{k}$
  		
- 		\EndFor
  		\State \textbf{ClientUpdate($k,W$):} \Comment{Run on client $k$}
  		\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
  		\For{\texttt{each local epoch $i$ from 1 to $E$ }}
- 		\State Fit $\eta$ as [0.01, 0.001, 0.0001] from the Server according to the runtime.
+ 		\State Fit $\eta$ as [0.01, 0.001, 0.0001] from the Server.
  		\For{\texttt{batch $b \in \mathcal{B}$ }}
  		\State $w \gets w - \eta \nabla l(w;b)$
  		\EndFor
@@ -254,23 +231,21 @@ The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar 
  		\end{tabular}%
  		%}
  \end{table}
- 
+
+\subsection{Epoch Selection for Individual Clients}
+The first step was to figure out suitable lr values which provides us with significant changes but just changing the lr values in not sufficient for us to make the strategy robust. The next step is to provide individual values for each client based on a balanced parameter. Chen et al. \cite{chen2023boosting} used CPU and RAM metric of clients in order to boost their strategy. This methodology is effective but is not fully privacy preserving. Device fingerprinting is a big risk to the Federated Learning scenario. 
+
+\subsection{Client Selection based on Client Runtime}
+
 \section{Datasets and Model Architecture}
-Fig. 4 represent the dataset and NN architecture.
+The model architecture used in the experiments is a 2 layered Convolution Neural Network. The list of datasets used for the experiments are as follows:
 \begin{enumerate}
-    \item CIFAR10 dataset has been used, and the input size is $32\times32$ and ten classes.
-    \item MobileNet \cite{howard2017mobilenets} is used; its size is 16MB and has 4.3M parameters with 28 layers of Convolutions. 
-    \item MobileNetV2 \cite{sandler2018mobilenetv2} is used; its size is 14MB and has 3.5M parameters with 53 layers of Convolutions.
-    \item MobileNetV3Small \cite{howard2019searching} is used; its size is 9.83MB and has 3M parameters.
-    \item MobileNetV3Large \cite{howard2019searching} is used; its size is 21.11MB and has 5M parameters.
+    \item CIFAR10 \cite{cifar10} dataset containing ten classes.
+    \item MNIST \cite{lecun1998mnist} dataset of Handwritten digits containing ten classes. 
+    \item FMNIST \cite{xiao2017fashionmnistnovelimagedataset} dataset of fashion items containing ten classes.
+    \item CIFAR100 \cite{Krizhevsky09learningmultiple} dataset containing hundred classes. 
 \end{enumerate}
 
-\begin{figure}[htp]
-        \centering
-        \includegraphics[width=0.5\textwidth]{Images/Dataset_and_architecture.png}
-        \caption{Used Dataset and NN Architecture.}
-    \end{figure}
-    
 \section{Framework Used}
 
 Flower FL \cite{beutel2020flower} is a unified approach to federated learning, analytics, and evaluation. It can Federate any workload in any ML framework. The proposed methodology uses Flower for all the experiments.
@@ -278,8 +253,9 @@ Flower FL \cite{beutel2020flower} is a unified approach to federated learning, a
         \centering
         \includegraphics[scale=.25]{Images/flower-core-framework-architecture.png}
         \caption{Flower FL Framework.}
+        \label{fig:arch}
     \end{figure}
-Fig. 5 represents the Flower FL framework. The key aspects are we have two kinds of code: User and Framework. User codes are the models, and user-generated strategies like hyperparameter tuning, model architectures, etc. Framework codes are the critical parts of Flower-like the gRPC Server it uses. gRPC is based on two fast and efficient protocols: protocol buffers and HTTP/2. Protocol buffers are a data serialization protocol that is language-agnostic. It produces smaller binary payloads than JSON once it is serialized. The serialized data is transported using HTTP/2 which is fully multiplexed and can send data in parallel over a single TCP connection. The flower server takes care of the strategy and the number of communication rounds and features like setting up timeout, etc. The flower client takes care of the deep learning model in which we can use all major machine learning frameworks like PyTorch, Tensorflow, Mxnet, etc.
+Fig. \pageref{fig:arch}. represents the Flower FL framework. The key aspects are we have two kinds of code: User and Framework. User codes are the models, and user-generated strategies like hyperparameter tuning, model architectures, etc. Framework codes are the critical parts of Flower-like the gRPC Server it uses. gRPC is based on two fast and efficient protocols: protocol buffers and HTTP/2. Protocol buffers are a data serialization protocol that is language-agnostic. It produces smaller binary payloads than JSON once it is serialized. The serialized data is transported using HTTP/2 which is fully multiplexed and can send data in parallel over a single TCP connection. The flower server takes care of the strategy and the number of communication rounds and features like setting up timeout, etc. The flower client takes care of the deep learning model in which we can use all major machine learning frameworks like PyTorch, Tensorflow, Mxnet, etc.
 
 
 \section{Results and Discussion}

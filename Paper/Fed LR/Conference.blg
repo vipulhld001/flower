@@ -5,44 +5,49 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 7 items.
 Database file #1: Sample.bib
-You've used 20 entries,
+Warning--can't use both volume and number fields in ezzeldin2023fairfed
+Warning--empty journal in cifar10
+Warning--empty year in cifar10
+Warning--empty institution in Krizhevsky09learningmultiple
+You've used 26 entries,
             1791 wiz_defined-function locations,
-            553 strings with 7879 characters,
-and the built_in function-call counts, 5441 in all, are:
-= -- 442
-> -- 344
-< -- 5
-+ -- 122
-- -- 102
-* -- 379
-:= -- 872
-add.period$ -- 62
-call.type$ -- 20
-change.case$ -- 20
+            579 strings with 8889 characters,
+and the built_in function-call counts, 6659 in all, are:
+= -- 536
+> -- 414
+< -- 7
++ -- 148
+- -- 122
+* -- 451
+:= -- 1068
+add.period$ -- 78
+call.type$ -- 26
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 226
-empty$ -- 477
-format.name$ -- 102
-if$ -- 1202
+cite$ -- 30
+duplicate$ -- 284
+empty$ -- 590
+format.name$ -- 122
+if$ -- 1470
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 17
-newline$ -- 103
-num.names$ -- 20
-pop$ -- 75
+int.to.str$ -- 26
+missing$ -- 21
+newline$ -- 131
+num.names$ -- 26
+pop$ -- 101
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 129
+skip$ -- 163
 stack$ -- 0
-substring$ -- 319
-swap$ -- 74
-text.length$ -- 5
+substring$ -- 359
+swap$ -- 92
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 46
-width$ -- 22
-write$ -- 215
+warning$ -- 4
+while$ -- 55
+width$ -- 28
+write$ -- 272
+(There were 4 warnings)

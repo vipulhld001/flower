@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  22 JUL 2024 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  23 JUL 2024 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -310,44 +310,32 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 202.
+(Font)              <8> on input line 179.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 202.
-<Images/Dataset_and_architecture.png, id=20, 965.6075pt x 413.545pt>
-File: Images/Dataset_and_architecture.png Graphic file (type png)
-<use Images/Dataset_and_architecture.png>
-Package pdftex.def Info: Images/Dataset_and_architecture.png  used on input lin
-e 270.
-(pdftex.def)             Requested size: 258.0pt x 110.49126pt.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 270--271
- [][] 
- []
-
-<Images/flower-core-framework-architecture.png, id=22, 864.22874pt x 428.60126p
+(Font)              <6> on input line 179.
+<Images/flower-core-framework-architecture.png, id=20, 864.22874pt x 428.60126p
 t>
 File: Images/flower-core-framework-architecture.png Graphic file (type png)
 <use Images/flower-core-framework-architecture.png>
 Package pdftex.def Info: Images/flower-core-framework-architecture.png  used on
- input line 279.
+ input line 254.
 (pdftex.def)             Requested size: 216.05666pt x 107.15004pt.
-[3]
-Overfull \hbox (4.08388pt too wide) in paragraph at lines 292--302
+ [3]
+Overfull \hbox (4.08388pt too wide) in paragraph at lines 268--278
  [] 
  []
 
 
-Overfull \hbox (4.07513pt too wide) in paragraph at lines 308--317
+Overfull \hbox (4.07513pt too wide) in paragraph at lines 284--293
  [] 
  []
 
 
-Overfull \hbox (4.08255pt too wide) in paragraph at lines 327--339
+Overfull \hbox (4.08255pt too wide) in paragraph at lines 303--315
  [] 
  []
 
-[4 <./Images/Dataset_and_architecture.png> <./Images/flower-core-framework-arch
-itecture.png>] (Conference.bbl
+[4 <./Images/flower-core-framework-architecture.png>] (Conference.bbl
 Underfull \hbox (badness 2269) in paragraph at lines 82--87
 []\OT1/ptm/m/n/8 Andrew Howard, Mark San-dler, Grace Chu, Liang-Chieh Chen,
  []
@@ -387,8 +375,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  4090 strings out of 474486
- 73405 string characters out of 5743756
- 1969542 words of memory out of 5000000
+ 73255 string characters out of 5743756
+ 1966542 words of memory out of 5000000
  26333 multiletter control sequences out of 15000+600000
  597548 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -399,19 +387,17 @@ fonts/cm/cmmi10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmmi5.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Admin/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Admin/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Admin/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Admin/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ad
-min/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/
-Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
-:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C
-:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><
-C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><
-C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-
-Output written on Conference.pdf (5 pages, 254776 bytes).
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Admin/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Admin/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/A
+dmin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users
+/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users
+/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/User
+s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/User
+s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Conference.pdf (5 pages, 229127 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
+ 87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
