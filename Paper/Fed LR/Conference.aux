@@ -25,21 +25,21 @@
 \citation{wang2023applications}
 \citation{mcmahan2017communication}
 \citation{market}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Proposed Methodology}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Problem Statement}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Problem Setup}{2}{}\protected@file@percent }
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textbf  {FederatedAveraging.} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{2}{}\protected@file@percent }
 \newlabel{alg:cap}{{1}{2}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Client Selection}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Heterogeneous Computational Resources}{2}{}\protected@file@percent }
-\citation{howard2017mobilenets}
-\citation{sandler2018mobilenetv2}
-\citation{howard2019searching}
-\citation{howard2019searching}
-\citation{beutel2020flower}
+\citation{ezzeldin2023fairfed}
+\citation{chen2023boosting}
+\citation{cifar10}
+\citation{lecun1998mnist}
+\citation{xiao2017fashionmnistnovelimagedataset}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Fairness}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {IV}FedLR}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Proposed Algorithm for Client Selection}{3}{}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces  \textbf  {FedLR.} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Learning Rate Selection}{3}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces  \textbf  {Learning Rate Selection} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{3}{}\protected@file@percent }
 \newlabel{alg:cap}{{2}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}1}Case 1: FedLr (lr =0.01) with 10 Rounds and 5 Epochs}{3}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces FedLr (lr =0.01) with 10 Rounds and 5 Epochs}}{3}{}\protected@file@percent }
@@ -47,11 +47,15 @@
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces FedLr (lr =0.001) with 10 Rounds and 5 Epochs}}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}3}Case 3: FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}{3}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Case 3 : FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Epoch Selection for Individual Clients}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Client Selection based on Client Runtime}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {V}Datasets and Model Architecture}{3}{}\protected@file@percent }
+\citation{Krizhevsky09learningmultiple}
+\citation{beutel2020flower}
 \citation{github}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Used Dataset and NN Architecture.}}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Framework Used}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Flower FL Framework.}}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Flower FL Framework.}}{4}{}\protected@file@percent }
+\newlabel{fig:arch}{{1}{4}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Results and Discussion}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Running on Real-Time}{4}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Experimental Setup for Real-Time System.}}{4}{}\protected@file@percent }
@@ -79,8 +83,14 @@
 \bibcite{li2023federated}{16}
 \bibcite{wang2023applications}{17}
 \bibcite{market}{18}
-\bibcite{beutel2020flower}{19}
-\bibcite{github}{20}
+\bibcite{ezzeldin2023fairfed}{19}
+\bibcite{chen2023boosting}{20}
+\bibcite{cifar10}{21}
+\bibcite{lecun1998mnist}{22}
+\bibcite{xiao2017fashionmnistnovelimagedataset}{23}
+\bibcite{Krizhevsky09learningmultiple}{24}
+\bibcite{beutel2020flower}{25}
+\bibcite{github}{26}
 \@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusion}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{References}{5}{}\protected@file@percent }
 \gdef \@abspage@last{5}

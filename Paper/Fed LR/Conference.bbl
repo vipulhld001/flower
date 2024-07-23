@@ -116,6 +116,39 @@ Markets and Markets.
   https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardware-market-158498281.html
   [Accessed 22-Jul-2024].
 
+\bibitem{ezzeldin2023fairfed}
+Yahya~H Ezzeldin, Shen Yan, Chaoyang He, Emilio Ferrara, and A~Salman
+  Avestimehr.
+\newblock Fairfed: Enabling group fairness in federated learning.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~37, pages 7494--7502, 2023.
+
+\bibitem{chen2023boosting}
+Shuaijun Chen, Omid Tavallaie, Michael~Henri Hambali, Seid~Miad Zandavi, Hamed
+  Haddadi, Song Guo, and Albert~Y Zomaya.
+\newblock Boosting client selection of federated learning under device and data
+  heterogeneity.
+\newblock {\em arXiv preprint arXiv:2310.08147}, 2023.
+
+\bibitem{cifar10}
+Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton.
+\newblock Cifar-10 (canadian institute for advanced research).
+
+\bibitem{lecun1998mnist}
+Yann LeCun.
+\newblock The mnist database of handwritten digits.
+\newblock {\em http://yann. lecun. com/exdb/mnist/}, 1998.
+
+\bibitem{xiao2017fashionmnistnovelimagedataset}
+Han Xiao, Kashif Rasul, and Roland Vollgraf.
+\newblock Fashion-mnist: a novel image dataset for benchmarking machine
+  learning algorithms, 2017.
+
+\bibitem{Krizhevsky09learningmultiple}
+Alex Krizhevsky.
+\newblock Learning multiple layers of features from tiny images.
+\newblock Technical report, 2009.
+
 \bibitem{beutel2020flower}
 Daniel~J Beutel, Taner Topal, Akhil Mathur, Xinchi Qiu, Titouan Parcollet,
   Pedro~PB de~Gusm{\~a}o, and Nicholas~D Lane.
