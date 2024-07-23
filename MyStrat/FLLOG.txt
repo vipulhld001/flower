@@ -9665,3 +9665,89 @@ The above exception was the direct cause of the following exception:
 flwr.client.client_app.ClientAppException: 
 Exception ClientAppException occurred. Message: Error(s) in loading state_dict for Net:
 	Missing key(s) in state_dict: "conv1.weight", "conv1.bias", "conv2.weight", "conv2.bias", "fc1.weight", "fc1.bias", "fc2.weight", "fc2.bias", "fc3.weight", "fc3.bias".
+myflExp | DEBUG flwr 2024-07-19 09:45:02,189 | logger.py:222 | Logger propagate set to False
+myflExp | INFO flwr 2024-07-19 09:45:02,190 | app.py:193 | Starting Flower simulation, config: num_rounds=10, no round_timeout
+myflExp | INFO flwr 2024-07-19 09:45:12,644 | app.py:228 | Flower VCE: Ray initialized with resources: {'node:__internal_head__': 1.0, 'CPU': 32.0, 'memory': 66163153920.0, 'accelerator_type:RTX': 1.0, 'object_store_memory': 32641351680.0, 'GPU': 1.0, 'node:127.0.0.1': 1.0}
+myflExp | INFO flwr 2024-07-19 09:45:12,646 | app.py:234 | Optimize your simulation with Flower VCE: https://flower.ai/docs/framework/how-to-run-simulations.html
+myflExp | INFO flwr 2024-07-19 09:45:12,648 | app.py:257 | Flower VCE: Resources for each Virtual Client: {'num_gpus': 0.125, 'num_cpus': 1}
+myflExp | INFO flwr 2024-07-19 09:45:12,676 | app.py:303 | Flower VCE: Creating VirtualClientEngineActorPool with 8 actors
+myflExp | INFO flwr 2024-07-19 09:45:12,677 | server.py:92 | [INIT]
+myflExp | INFO flwr 2024-07-19 09:45:12,678 | server.py:279 | Requesting initial parameters from one random client
+myflExp | INFO flwr 2024-07-19 09:45:20,322 | server.py:286 | Received initial parameters from one random client
+myflExp | INFO flwr 2024-07-19 09:45:20,324 | server.py:94 | Evaluating initial global parameters
+myflExp | INFO flwr 2024-07-19 09:45:20,325 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:45:20,326 | server.py:111 | [ROUND 1]
+myflExp | INFO flwr 2024-07-19 09:45:20,328 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:46:15,822 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:46:15,846 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:46:28,274 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | WARNING flwr 2024-07-19 09:46:28,277 | fedavg.py:283 | No evaluate_metrics_aggregation_fn provided
+myflExp | INFO flwr 2024-07-19 09:46:28,280 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:46:28,281 | server.py:111 | [ROUND 2]
+myflExp | INFO flwr 2024-07-19 09:46:28,283 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:47:18,576 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:47:18,594 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:47:31,200 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:47:31,204 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:47:31,207 | server.py:111 | [ROUND 3]
+myflExp | INFO flwr 2024-07-19 09:47:31,210 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:48:21,825 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:48:21,847 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:48:34,410 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:48:34,412 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:48:34,414 | server.py:111 | [ROUND 4]
+myflExp | INFO flwr 2024-07-19 09:48:34,416 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:49:24,820 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:49:24,839 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:49:37,746 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:49:37,748 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:49:37,749 | server.py:111 | [ROUND 5]
+myflExp | INFO flwr 2024-07-19 09:49:37,750 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:50:27,984 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:50:27,997 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:50:40,791 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:50:40,794 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:50:40,796 | server.py:111 | [ROUND 6]
+myflExp | INFO flwr 2024-07-19 09:50:40,798 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:51:31,298 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:51:31,312 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:51:43,890 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:51:43,892 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:51:43,894 | server.py:111 | [ROUND 7]
+myflExp | INFO flwr 2024-07-19 09:51:43,896 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:52:33,718 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:52:33,732 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:52:46,294 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:52:46,297 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:52:46,299 | server.py:111 | [ROUND 8]
+myflExp | INFO flwr 2024-07-19 09:52:46,302 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:53:37,094 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:53:37,123 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:53:49,780 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:53:49,781 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:53:49,783 | server.py:111 | [ROUND 9]
+myflExp | INFO flwr 2024-07-19 09:53:49,784 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:54:40,082 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:54:40,098 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:54:52,701 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:54:52,703 | server.py:110 | 
+myflExp | INFO flwr 2024-07-19 09:54:52,705 | server.py:111 | [ROUND 10]
+myflExp | INFO flwr 2024-07-19 09:54:52,707 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:55:42,996 | server.py:238 | aggregate_fit: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:55:43,012 | server.py:176 | configure_evaluate: strategy sampled 10 clients (out of 10)
+myflExp | INFO flwr 2024-07-19 09:55:55,445 | server.py:190 | aggregate_evaluate: received 10 results and 0 failures
+myflExp | INFO flwr 2024-07-19 09:55:55,446 | server.py:494 | 
+myflExp | INFO flwr 2024-07-19 09:55:55,447 | server.py:495 | [SUMMARY]
+myflExp | INFO flwr 2024-07-19 09:55:55,448 | server.py:496 | Run finished 10 round(s) in 635.12s
+myflExp | INFO flwr 2024-07-19 09:55:55,449 | server.py:498 | 	History (loss, distributed):
+myflExp | INFO flwr 2024-07-19 09:55:55,450 | server.py:498 | 		round 1: 0.05997783553600311
+myflExp | INFO flwr 2024-07-19 09:55:55,451 | server.py:498 | 		round 2: 0.04165357391834259
+myflExp | INFO flwr 2024-07-19 09:55:55,452 | server.py:498 | 		round 3: 0.04590739011764526
+myflExp | INFO flwr 2024-07-19 09:55:55,452 | server.py:498 | 		round 4: 0.05555620521306992
+myflExp | INFO flwr 2024-07-19 09:55:55,453 | server.py:498 | 		round 5: 0.06190264507532119
+myflExp | INFO flwr 2024-07-19 09:55:55,454 | server.py:498 | 		round 6: 0.06468602471351623
+myflExp | INFO flwr 2024-07-19 09:55:55,455 | server.py:498 | 		round 7: 0.06736724581718445
+myflExp | INFO flwr 2024-07-19 09:55:55,456 | server.py:498 | 		round 8: 0.07001143119335175
+myflExp | INFO flwr 2024-07-19 09:55:55,456 | server.py:498 | 		round 9: 0.07389954068660735
+myflExp | INFO flwr 2024-07-19 09:55:55,457 | server.py:498 | 		round 10: 0.08213229237794875
+myflExp | INFO flwr 2024-07-19 09:55:55,458 | server.py:499 | 
