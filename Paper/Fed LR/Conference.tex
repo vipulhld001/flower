@@ -9,7 +9,7 @@
 \usepackage{multirow}
 
 \def\theequation{\arabic{equation}}
-
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 \renewcommand\footnoterule{\hspace{-1em}\rule[0.45em]{\columnwidth}{0.45pt}}
 \begin{document}
 
@@ -81,8 +81,15 @@ WeBank is a private Chinese bank they have created its own federated learning fr
 Google introduced the term federated learning in 2016 (coined in 2017 by McMahan et al. \cite{mcmahan2017communication}), about the same time the Cambridge Analytica scandal awakened users of the dangers of sharing personal information online. It started a revolution in the technology world about the three rules of Cryptography confidentiality, integrity, and availability. After a deeper review of our current laws, it was clear that we had none. So laws like GDPR and CCPA came into regulation. Federated Learning is one such method which can satisfy the rules of cryptography and privacy laws around the globe.\par 
  In this paper we present a new strategy which significantly addresses the problem with the old one keeping the effectiveness of federated learning alive. The main problem with the vanilla FedAvg is the client selection methodology which is taken at random and the devices participation have no threshold value to meet in order to participate in the federated learning process. Another problem with FedAvg is to deal with device heterogeneity as each devices usually tend to have different CPU, RAM, and GPU which are the essential blocks of any neural network. The last major problem with the existing strategy is fairness. Fairness means all clients should be treated as fair and their contributions to the global model should carry equal weight. The strategy has been names as FedLR which is a dynamic learning rate and epoch based client strategy.
  
- The proposed work focuses ontrrgfhgfgffbfbfbfbf
+ The proposed work focuses on reducing the total communication time taken by federated learning. Chen et al. \cite{chen2023boosting} used RAM and CPU utilization data from clients in order to boost client selection. But getting such data from clients could lead to device fingerprinting \cite{radhakrishnan2014gtid} \cite{patwari2022dnn} which puts federated learning at risk.  In this paper, by considering heterogeneous clients, we are employing FedLR, a learning rate based towards efficient communication. In the proposed methodology a time variable has been calculated and according to that time variable qualitative decisions towards learning rate selection has been made.
+FedLR guarantee faster communication time with fair selection of clients as it always consider slacker devices which makes this methodology Fair. The main contribution of the proposed work are summarized as follows:
+\begin{enumerate}
+	\item By conducting extensive sets of experiments we came to a quantitative conclusion about the effects of learning rate (lr) in federated learning which is highly effective parameter in federated learning.
+	\item The next contribution is regarding individual clients epochs. The time variable which represents each clients runtime is used to find out the slacker devices and adjust the epoch values for reducing the number of slacker devices.
+	\item Pairing the time variable with lr and epoch values of client to perform better client selection which focused on fairness and heterogeneity. A client selection strategy FedLR has been proposed.
+\end{enumerate}
 
+The remainder of the paper is organized as follows: Section \RNum{2} discusses Related Works. Section \RNum{3} explains the problem statement of the literature. Section \RNum{4} introduces FedLR and explains its key features and how does it perform them. Section \RNum{5} talks about the implementation of FedLR and the datasets and model architectures used for the implementation. Section \RNum{6} does result and analysis of the work with Section \RNum{7} finally concluding this paper.
 
 
 \section{Related Works}
@@ -241,7 +248,7 @@ The first step was to figure out suitable lr values which provides us with signi
 
 \subsection{Client Selection based on Client Runtime}
 
-\section{Datasets and Model Architecture}
+\section{Implementation of FedLR}
 The model architecture used in the experiments is a 2 layered Convolution Neural Network. The list of datasets used for the experiments are as follows:
 \begin{enumerate}
     \item CIFAR10 \cite{cifar10} dataset containing ten classes.
@@ -250,77 +257,9 @@ The model architecture used in the experiments is a 2 layered Convolution Neural
     \item CIFAR100 \cite{Krizhevsky09learningmultiple} dataset containing hundred classes. 
 \end{enumerate}
 
-\section{Framework Used}
-
-Flower FL \cite{beutel2020flower} is a unified approach to federated learning, analytics, and evaluation. It can Federate any workload in any ML framework. The proposed methodology uses Flower for all the experiments.
-\begin{figure}[htp]
-        \centering
-        \includegraphics[scale=.25]{Images/flower-core-framework-architecture.png}
-        \caption{Flower FL Framework.}
-        \label{fig:arch}
-    \end{figure}
-Fig. \pageref{fig:arch}. represents the Flower FL framework. The key aspects are we have two kinds of code: User and Framework. User codes are the models, and user-generated strategies like hyperparameter tuning, model architectures, etc. Framework codes are the critical parts of Flower-like the gRPC Server it uses. gRPC is based on two fast and efficient protocols: protocol buffers and HTTP/2. Protocol buffers are a data serialization protocol that is language-agnostic. It produces smaller binary payloads than JSON once it is serialized. The serialized data is transported using HTTP/2 which is fully multiplexed and can send data in parallel over a single TCP connection. The flower server takes care of the strategy and the number of communication rounds and features like setting up timeout, etc. The flower client takes care of the deep learning model in which we can use all major machine learning frameworks like PyTorch, Tensorflow, Mxnet, etc.
+\section{Result and Analysis}
 
 
-\section{Results and Discussion}
-\subsection{Running on Real-Time}
-Table 1. Shows the configuration of the devices used in the experiment. 
-
-\begin{table}[htp]
-\centering
-\caption{Experimental Setup for Real-Time System.}
-\begin{adjustbox}{max width=9cm}
-
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-S No. & System Type & Processor                                & GPU         & OS         \\ \hline
-1     & Workstation & Intel Xeon Silver 4216, 32 cores         & RTX A4000   & Windows    \\ \hline
-2     & PC          & Second generation Intel i5 2400, 4 cores & Intel       & Manjaro OS \\ \hline
-3     & Laptop      & AMD Ryzen 9 6900HS, 8 cores              & 3060 Mobile & Windows    \\ \hline
-\end{tabular}
-\end{adjustbox}
-
-\end{table}
-Table 2. Shows the real-time result for the three devices in which the performance of the workstation with CPU was similar to any ordinary PC. Ex. Local epoch times were 211s and 225s, respectively. 
-\begin{table}[htp]
-\centering
-\caption{Real-time with three Devices on local network with 5 rounds and 5 epochs.}
-\begin{adjustbox}{max width=9cm}
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline
-Device      & \begin{tabular}[c]{@{}l@{}}Local \\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local \\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local\\ Epoch\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Epoch\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total \\ Time\end{tabular} \\ \hline
-Workstation & 84.09                                                     & 0.4610                                                 & 211s                                                  & \multirow{3}{*}{78.77}                                    & \multirow{3}{*}{0.6628}                                & 14s                                                    & \multirow{3}{*}{1.57Hrs}                              \\ \cline{1-4} \cline{7-7}
-Laptop      & 85.17                                                     & 0.4283                                                 & 33s                                                   &                                                           &                                                       & 3s                                                     &                                                       \\ \cline{1-4} \cline{7-7}
-PC          & 85.15                                                     & 0.4278                                                 & 225s                                                  &                                                           &                                                       & 8s                                                      &                                                       \\ \hline
-\end{tabular}
-\end{adjustbox}
-\end{table}
-If two clients run on a single machine (laptop) GPU and CPU, the laptop GPU takes 46s for an epoch and finishes quickly, and the CPU takes 126s for an epoch. However, the CPU epoch time changed to 99s after the GPU client finished training. Observed the 40s wait time after finishing each communication round. When the GPU was switched on the workstation, the epoch time was significantly reduced to 110sec. Half of what it was getting before. The server waits for 24hrs to receive clients. If none of the clients joins the federation, then the server sends an error message and goes back to waiting.
-
-\subsection{Running on Local System}
-The PC is over a decade old, and its performance can be compared to the IoT and Edge devices of now. That is why we have chosen to run the experiments on this device. Technology has change a lot in a decade, but this PC is the closest device we could find to simulate our IoT systems. 
-
-
-\begin{table}[htp]
-\centering
-\caption{Training Results in PC with two clients (CPU). }
-\begin{adjustbox}{max width=9cm}
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline
-Architecture     & Epoch and  Round           & \begin{tabular}[c]{@{}l@{}}Local \\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local \\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server\\ Accuracy\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server \\ Loss\end{tabular} & \begin{tabular}[c]{@{}l@{}}Local \\ Epoch \\ Time\end{tabular} & \begin{tabular}[c]{@{}l@{}}Server \\ Epoch \\ Time\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total \\ Time\end{tabular} \\ \hline
-MobileNet        & \multirow{6}{*}{20 and 20 (400)} & 99.65\%                                                     & 0.0114                                                 & \textbf{80.81\%}                                                     & 1.0538                                                 & 614s                                                           & 17s                                                             & 67.1hr                                                \\ \cline{1-1} \cline{3-9} 
-MobileNetV2      &                            & 99.22\%                                                    & 0.0246                                                 & \textbf{80.74\%}                                                     & 0.9376                                                  & 314s                                                           & 12s                                                             & 43.8hr                                                \\ \cline{1-1} \cline{3-9} 
-MobileNetV3Small &                            & 64.24\%                                                     & 1.0019                                                & \multirow{2}{*}{64.20\%}                                    & \multirow{2}{*}{1.0017}                                & \multirow{2}{*}{206s}                                          & \multirow{2}{*}{7s}                                             & \multirow{2}{*}{22.7hr}                               \\ \cline{1-1} \cline{3-4}
-MobileNetV3Small &                            & 66.20\%                                                    & 0.9562                                                 &                                                           &                                                        &                                                                &                                                                 &                                                       \\ \cline{1-1} \cline{3-9} 
-MobileNetV3Large &                            & 97.57\%                                                     & 0.0735                                                 & \multirow{2}{*}{77.04\%}                                    & \multirow{2}{*}{1.1494}                                & \multirow{2}{*}{436s}                                          & \multirow{2}{*}{15s}                                            & \multirow{2}{*}{49.3hr}                               \\ \cline{1-1} \cline{3-4}
-MobileNetV3Large &                            & 96.26\%                                                     & 0.1055                                                 &                                                           &                                                        &                                                                &                                                                 &                                                       \\ \hline
-\end{tabular}
-\end{adjustbox}
-\end{table}
-
-Table 3. Shows the training results in PC with Two Clients.  MobileNetV2 is showing the best results. If we increase the no of clients in a single machine, the local time increases to 517s with 23s for the Server. That means one client finishes in 190 seconds. V3Small took half of what V2 took but didn't achieve the expected result. While using V3, we saw around a 2\% of difference between local clients. This is the first time we have observed it. We got the best accuracy with V2 and the original MobileNet, but it took longer than V2. The codes and detailed results are available on Github \cite{github}.
-\subsection{Discussion}
-The MobileNets model architectures are small, low-latency, low-powered models for resource-constrained devices. Federated Learning is famous for having big data overheads, and the smaller size of Mobilenet models reduces that burden and creates a robust system. The smaller size of these models comes at the cost of accuracy, but we have observed that with each new iteration, the model run time has reduced, but so is the accuracy. One of the reasons for low accuracy could be that the newer architecture doesn't suit our CIFAR-10 Dataset. The major application for these models is to solve computer vision problems in IoT and Mobile Devices.  
 \section{Conclusion}
 Baseline benchmarks for the MobileNets family of models have been established for real-time and local systems. The performance of models is excellent for local models, but it is far behind in global accuracy. The V2 and the original MobileNets are the most optimised models for federated learning. The newer V3s are suitable for other applications, but they are not good with Federated Learning. This work shows the performance benchmarks of MobileNets in federated learning, which are ideal for computer vision applications. 
 

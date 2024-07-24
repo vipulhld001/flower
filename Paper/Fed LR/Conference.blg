@@ -9,45 +9,45 @@ Warning--can't use both volume and number fields in ezzeldin2023fairfed
 Warning--empty journal in cifar10
 Warning--empty year in cifar10
 Warning--empty institution in Krizhevsky09learningmultiple
-You've used 26 entries,
+You've used 28 entries,
             1791 wiz_defined-function locations,
-            579 strings with 8889 characters,
-and the built_in function-call counts, 6659 in all, are:
-= -- 536
-> -- 414
-< -- 7
-+ -- 148
-- -- 122
-* -- 451
-:= -- 1068
-add.period$ -- 78
-call.type$ -- 26
-change.case$ -- 27
+            593 strings with 9387 characters,
+and the built_in function-call counts, 7336 in all, are:
+= -- 601
+> -- 445
+< -- 8
++ -- 159
+- -- 131
+* -- 500
+:= -- 1166
+add.period$ -- 85
+call.type$ -- 28
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 284
-empty$ -- 590
-format.name$ -- 122
-if$ -- 1470
+cite$ -- 32
+duplicate$ -- 314
+empty$ -- 652
+format.name$ -- 131
+if$ -- 1627
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 21
-newline$ -- 131
-num.names$ -- 26
-pop$ -- 101
+int.to.str$ -- 28
+missing$ -- 23
+newline$ -- 141
+num.names$ -- 28
+pop$ -- 108
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 163
+skip$ -- 180
 stack$ -- 0
-substring$ -- 359
-swap$ -- 92
-text.length$ -- 7
+substring$ -- 416
+swap$ -- 104
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 55
-width$ -- 28
-write$ -- 272
+while$ -- 62
+width$ -- 30
+write$ -- 295
 (There were 4 warnings)
