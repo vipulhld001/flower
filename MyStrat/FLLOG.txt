@@ -9751,3 +9751,16 @@ myflExp | INFO flwr 2024-07-19 09:55:55,456 | server.py:498 | 		round 8: 0.07001
 myflExp | INFO flwr 2024-07-19 09:55:55,456 | server.py:498 | 		round 9: 0.07389954068660735
 myflExp | INFO flwr 2024-07-19 09:55:55,457 | server.py:498 | 		round 10: 0.08213229237794875
 myflExp | INFO flwr 2024-07-19 09:55:55,458 | server.py:499 | 
+myflExp | DEBUG flwr 2024-07-25 11:06:34,981 | logger.py:222 | Logger propagate set to False
+myflExp | INFO flwr 2024-07-25 11:06:34,981 | app.py:193 | Starting Flower simulation, config: num_rounds=10, no round_timeout
+myflExp | INFO flwr 2024-07-25 11:06:44,441 | app.py:228 | Flower VCE: Ray initialized with resources: {'node:__internal_head__': 1.0, 'CPU': 32.0, 'object_store_memory': 37075666944.0, 'node:127.0.0.1': 1.0, 'memory': 76509889536.0, 'GPU': 1.0, 'accelerator_type:RTX': 1.0}
+myflExp | INFO flwr 2024-07-25 11:06:44,443 | app.py:234 | Optimize your simulation with Flower VCE: https://flower.ai/docs/framework/how-to-run-simulations.html
+myflExp | INFO flwr 2024-07-25 11:06:44,446 | app.py:257 | Flower VCE: Resources for each Virtual Client: {'num_gpus': 0.125, 'num_cpus': 1}
+myflExp | INFO flwr 2024-07-25 11:06:44,473 | app.py:303 | Flower VCE: Creating VirtualClientEngineActorPool with 8 actors
+myflExp | INFO flwr 2024-07-25 11:06:44,475 | server.py:92 | [INIT]
+myflExp | INFO flwr 2024-07-25 11:06:44,476 | server.py:279 | Requesting initial parameters from one random client
+myflExp | INFO flwr 2024-07-25 11:06:51,755 | server.py:286 | Received initial parameters from one random client
+myflExp | INFO flwr 2024-07-25 11:06:51,758 | server.py:94 | Evaluating initial global parameters
+myflExp | INFO flwr 2024-07-25 11:06:51,760 | server.py:110 | 
+myflExp | INFO flwr 2024-07-25 11:06:51,765 | server.py:111 | [ROUND 1]
+myflExp | INFO flwr 2024-07-25 11:06:51,767 | server.py:224 | configure_fit: strategy sampled 10 clients (out of 10)
