@@ -159,7 +159,7 @@ The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch
 The algorithm 2 below explains the learning rate (lr) selection by the clients. The learning rates are taken with an increment of ten. After running different lr it was observed that the accuracy were similar but the total communication times were being reduced with smaller lr values. All three lr cases were tested and they showed a good amount of change in communication cost. The dataset used for these experiments was the CIFAR10 dataset.
 
  
- \begin{algorithm}[H]
+ \begin{algorithm}
  	\scriptsize
  	\caption{ \textbf{Learning Rate Selection} The $K$ clients are
  		indexed by $k$; $B$ is the local minibatch size, $E$ is the number
@@ -182,11 +182,11 @@ The algorithm 2 below explains the learning rate (lr) selection by the clients. 
  
  \subsubsection{Case 1: FedLr (lr =0.01) with 10 Rounds and 5 Epochs}
  
- The best accuracy we achieved in this scenario is 56.6\%. This works similarly to the FedAvg Strategy and claims almost similar runtime the gap is 2s. The losses also perform similarly to the base FedAvg Strategy. 
+ The best accuracy we achieved in this scenario is 56.6\%. This works similarly to the FedAvg Strategy and claims almost similar runtime the gap is 2s. The losses also perform similarly to the base FedAvg Strategy. Table \RNum{1} shows the result of the experiment.
  \begin{table}[ht]
  	\centering
  	\caption{FedLr (lr =0.01) with 10 Rounds and 5 Epochs}
- 	%\resizebox{\columnwidth}{!}{%
+ 	\resizebox{\columnwidth}{!}{%
  		\begin{tabular}{|lllllc|}
  			\hline
  			\multicolumn{6}{|c|}{FedLR (lr = 0.01) with 10 Round and 5 Epochs}                                                                                                                                     \\ \hline
@@ -197,7 +197,7 @@ The algorithm 2 below explains the learning rate (lr) selection by the clients. 
  			\multicolumn{1}{|l|}{4}       & \multicolumn{1}{l|}{\textbf{56.6\%}} & \multicolumn{1}{l|}{0.068} & \multicolumn{1}{l|}{94.6\%}    & \multicolumn{1}{l|}{0.0056}     &                                 \\ \cline{1-5}
  			\multicolumn{1}{|l|}{5}       & \multicolumn{1}{l|}{52.4\%}          & \multicolumn{1}{l|}{0.061} & \multicolumn{1}{l|}{94.9\%}    & \multicolumn{1}{l|}{0.0054}     &                                 \\ \hline
  		\end{tabular}%
- 		%}
+ 		}
  \end{table}   
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -205,7 +205,7 @@ The algorithm 2 below explains the learning rate (lr) selection by the clients. 
  % Please add the following required packages to your document preamble:
  % \usepackage{multirow}
  % \usepackage{graphicx}
- The best accuracy is 56.2\%. The runtime is reduced by 6 seconds, which makes it half a second per round. However, the losses are greater compared to Case 1. In Case 1, the lowest loss was 0.0047; in Case 2, it was 0.0066.  
+ The best accuracy is 56.2\%. The runtime is reduced by 6 seconds, which makes it half a second per round. However, the losses are greater compared to Case 1. In Case 1, the lowest loss was 0.0047; in Case 2, it was 0.0066. Table \RNum{2} shows the result of this experiment.
  \begin{table}[ht]
  	\centering
  	\caption{FedLr (lr =0.001) with 10 Rounds and 5 Epochs}
@@ -225,7 +225,7 @@ The algorithm 2 below explains the learning rate (lr) selection by the clients. 
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsubsection{Case 3: FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}
-The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar losses as Case 1 and 2.
+The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar losses as Case 1 and 2. The full results are in table \RNum{3} below.
  \begin{table}[ht]
  	\centering
  	\caption{Case 3 : FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}
