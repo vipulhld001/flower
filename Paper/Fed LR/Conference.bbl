@@ -26,6 +26,26 @@ Brendan McMahan, Eider Moore, Daniel Ramage, Seth Hampson, and Blaise~Aguera
 \newblock In {\em Artificial intelligence and statistics}, pages 1273--1282.
   PMLR, 2017.
 
+\bibitem{chen2023boosting}
+Shuaijun Chen, Omid Tavallaie, Michael~Henri Hambali, Seid~Miad Zandavi, Hamed
+  Haddadi, Song Guo, and Albert~Y Zomaya.
+\newblock Boosting client selection of federated learning under device and data
+  heterogeneity.
+\newblock {\em arXiv preprint arXiv:2310.08147}, 2023.
+
+\bibitem{radhakrishnan2014gtid}
+Sakthi~Vignesh Radhakrishnan, A~Selcuk Uluagac, and Raheem Beyah.
+\newblock Gtid: A technique for physical device and device type fingerprinting.
+\newblock {\em IEEE Transactions on Dependable and Secure Computing},
+  12(5):519--532, 2014.
+
+\bibitem{patwari2022dnn}
+Kartik Patwari, Syed~Mahbub Hafiz, Han Wang, Houman Homayoun, Zubair Shafiq,
+  and Chen-Nee Chuah.
+\newblock Dnn model architecture fingerprinting attack on cpu-gpu edge devices.
+\newblock In {\em 2022 IEEE 7th European Symposium on Security and Privacy
+  (EuroS\&P)}, pages 337--355. IEEE, 2022.
+
 \bibitem{khan2021federated}
 Latif~U Khan, Walid Saad, Zhu Han, Ekram Hossain, and Choong~Seon Hong.
 \newblock Federated learning for internet of things: Recent advances, taxonomy,
@@ -115,6 +135,32 @@ Markets and Markets.
 \newblock
   https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardware-market-158498281.html
   [Accessed 22-Jul-2024].
+
+\bibitem{ezzeldin2023fairfed}
+Yahya~H Ezzeldin, Shen Yan, Chaoyang He, Emilio Ferrara, and A~Salman
+  Avestimehr.
+\newblock Fairfed: Enabling group fairness in federated learning.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~37, pages 7494--7502, 2023.
+
+\bibitem{cifar10}
+Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton.
+\newblock Cifar-10 (canadian institute for advanced research).
+
+\bibitem{lecun1998mnist}
+Yann LeCun.
+\newblock The mnist database of handwritten digits.
+\newblock {\em http://yann. lecun. com/exdb/mnist/}, 1998.
+
+\bibitem{xiao2017fashionmnistnovelimagedataset}
+Han Xiao, Kashif Rasul, and Roland Vollgraf.
+\newblock Fashion-mnist: a novel image dataset for benchmarking machine
+  learning algorithms, 2017.
+
+\bibitem{Krizhevsky09learningmultiple}
+Alex Krizhevsky.
+\newblock Learning multiple layers of features from tiny images.
+\newblock Technical report, 2009.
 
 \bibitem{beutel2020flower}
 Daniel~J Beutel, Taner Topal, Akhil Mathur, Xinchi Qiu, Titouan Parcollet,
