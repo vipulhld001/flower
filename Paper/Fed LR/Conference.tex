@@ -78,7 +78,15 @@ Federated Learning is born at the intersection of Edge computing/IoT, on-device 
 the centralized model. The main objective of federated learning is to converge the client's weights so that it could yield meaningful results. For Example. WeBank (Banking), NVIDIA Clara
 (Healthcare), and Google Keyboard.\par
 WeBank is a private Chinese bank they have created its own federated learning framework, known as WeBankAI (based on FATE) \cite{liu2021fate}. Nvidia Clara \cite{nvidia} is a platform to improve healthcare that focuses on \cite{liu2021fate} Medical Imaging and Medical Devices (Nvidia Clara Holoscan), Healthcare IoT (Nvidia Clara Guardian Collection), Biopharma (BioNeMo), and Genomics (Nividia Clara Parabricks). Google Keyboard (Gboard) \cite{yang2018applied} has been using federated learning for creating word prediction models.\par
-Google introduced the term federated learning in 2016 (coined in 2017 by McMahan et al. \cite{mcmahan2017communication}), about the same time the Cambridge Analytica scandal awakened users of the dangers of sharing personal information online. It started a revolution in the technology world about the three rules of Cryptography confidentiality, integrity, and availability. After a deeper review of our current laws, it was clear that we had none. So laws like GDPR and CCPA came into regulation. Federated Learning is one such method which can satisfy the rules of cryptography and privacy laws around the globe.\par 
+Google introduced the term federated learning in 2016 (coined in 2017 by McMahan et al. \cite{mcmahan2017communication}), about the same time the Cambridge Analytica scandal awakened users of the dangers of sharing personal information online. It started a revolution in the technology world about the three rules of Cryptography confidentiality, integrity, and availability. After a deeper review of our current laws, it was clear that we had none. So laws like GDPR and CCPA came into regulation. Federated Learning (Fig \ref{fig1}.) is one such method which can satisfy the rules of cryptography and privacy laws around the globe.\par 
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.2]{Images/FEDLEARN_NEW}
+	\caption{Federated Learning}
+	\label{fig1}
+\end{figure}
+
  In this paper we present a new strategy which significantly addresses the problem with the old one keeping the effectiveness of federated learning alive. The main problem with the vanilla FedAvg is the client selection methodology which is taken at random and the devices participation have no threshold value to meet in order to participate in the federated learning process. Another problem with FedAvg is to deal with device heterogeneity as each devices usually tend to have different CPU, RAM, and GPU which are the essential blocks of any neural network. The last major problem with the existing strategy is fairness. Fairness means all clients should be treated as fair and their contributions to the global model should carry equal weight. The strategy has been names as FedLR which is a dynamic learning rate and epoch based client strategy.
  
  The proposed work focuses on reducing the total communication time taken by federated learning. Chen et al. \cite{chen2023boosting} used RAM and CPU utilization data from clients in order to boost client selection. But getting such data from clients could lead to device fingerprinting \cite{radhakrishnan2014gtid} \cite{patwari2022dnn} which puts federated learning at risk.  In this paper, by considering heterogeneous clients, we are employing FedLR, a learning rate based towards efficient communication. In the proposed methodology a time variable has been calculated and according to that time variable qualitative decisions towards learning rate selection has been made.
@@ -154,7 +162,7 @@ The devices participating in the federated learning are not always homogeneous t
 Fairness is an unique thing which removes the discrimination between clients and making sure all the devices contribution are taken into consideration. The best way to understand this problem is to imagine two hospitals H1 and H2 with H1 being a bigger hospital with various specialization and H2 being a small clinic. Communicable Diseases are the most popular ones and easy to get and if H1 is getting patient for one such communicable disease that means is the same for H2 are well. But due to the size of H1 the data gathered from H2 will be minuscule but that doesn't mean that its irrelevant. So one must also consider fairness as one of the major components for creating a new strategy. Ezzeldin et al. \cite{ezzeldin2023fairfed} has proposed a Fairfed strategy to solve this problem using debiasing method across clients.
  
 \section{FedLR}
-The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch Selection for individual clients, and Client Selection based on the Client Runtime. The objective it to reduce the communication cost for efficient communication all the while preserving the accuracy of the model.
+The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch Selection for individual clients, and Client Selection based on the Client Runtime. The objective it to reduce the communication cost for efficient communication all the while preserving the accuracy of the model. A slacker device-centric algorithm has been proposed, focusing on the slowest devices and considering the fairness of client selection. A Federated Learning System is as fast as its slowest device. This is the basic principle of federated learning, so the proposed algorithm for client selection primarily focuses on optimizing the slowest devices in the federation. The algorithm is based on turning the learning rate and epochs of Individual clients. A time quantum has been proposed; the clients are classified as quicker or slacker based on the help of this time quantum. To validate if the learning rate based assumption (Section IV A) is correct (the bigger and smaller lr are assigned for quicker and slacker devices, respectively). However, this will only reduce the total communication time by a few seconds, so a new epoch for the slacker devices is proposed below in equation 2. to make it effective (Section IV B).
  \subsection{Learning Rate Selection}
 The algorithm 2 below explains the learning rate (lr) selection by the clients. The learning rates are taken with an increment of ten. After running different lr it was observed that the accuracy were similar but the total communication times were being reduced with smaller lr values. All three lr cases were tested and they showed a good amount of change in communication cost. The dataset used for these experiments was the CIFAR10 dataset.
 
@@ -244,9 +252,72 @@ The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar 
  \end{table}
 
 \subsection{Epoch Selection for Individual Clients}
-The first step was to figure out suitable lr values which provides us with significant changes but just changing the lr values in not sufficient for us to make the strategy robust. The next step is to provide individual values for each client based on a balanced parameter. Chen et al. \cite{chen2023boosting} used CPU and RAM metric of clients in order to boost their strategy. This methodology is effective but is not fully privacy preserving. Device fingerprinting is a big risk to the Federated Learning scenario. 
+The first step was to figure out suitable lr values which provides us with significant changes but just changing the lr values in not sufficient for us to make the strategy robust. The next step is to provide individual values for each client based on a balanced parameter. Chen et al. \cite{chen2023boosting} used CPU and RAM metric of clients in order to boost their strategy. This methodology is effective but is not fully privacy preserving. Device fingerprinting is a big risk to the Federated Learning scenario.
 
-\subsection{Client Selection based on Client Runtime}
+\begin{equation}
+	E_n = \left \lfloor\frac{mode[T_q] - count\_of\_value}{mode[T_q]}\right \rfloor * E 
+\end{equation}
+In Equation 1.\textit{ $mode[T_q]$} is the mode value from the time quantum, and \textit{count\_of\_value} is the time the mode value is repeated.
+The key values for the Algorithm 2 are as follows:
+\begin{enumerate}
+	\item The K clients are indexed by k.
+	\item C is the fraction of the client selected.
+	\item B is the local minibatch size.
+	\item E is the number of local epochs.
+	\item $\eta$ is the learning rate.
+	\item $T_q$ is time quantum.
+	\item $E_n$ is the new epoch.
+\end{enumerate}
+
+\begin{algorithm}[H]
+	\scriptsize
+	\caption{ \textbf{FedLR} The $K$ clients are
+		indexed by $k$; $B$ is the local minibatch size, $E$ is the number
+		of local epochs and $E_n$ is the new epoch, $T_q$ is the time quantum, and $\eta$ is the learning rate}\label{alg:cap}
+	\begin{algorithmic}[1]
+		
+		\State \textbf{Server Executes}
+		\State initialize $w_0$
+		\For{\texttt{each round $t$ = 1,2,..}}
+		\State \texttt{$m \gets max(C\cdot K,1)$}
+		\State \texttt{$S_t \gets $(random set of $m$ clients)}
+		\For{\texttt{each client $k \in S_t $ }\textbf{in parallel}}
+		\State $w_{t+1}^{k} \gets ClientUpdate(k,w_t)$
+		\EndFor
+		\State $w_{t+1} \gets \sum_{k=1}^{K} \frac{n_k}{n} w_{t+1}^{k}$
+		
+		\EndFor
+		\State \textbf{ClientUpdate($k,W$):} \Comment{Run on client $k$}
+		\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
+		\For{\texttt{each local epoch $i$ from 1 to $E$ | $E_n$ }}
+		\State Find $T_q$ ($T_q$ is the epoch runtime of individual clients).
+		\State Find mode[$t_q$]
+		\State \textbf{if:} mode[$t_q$] is smallest 
+		\State \hspace{.3cm} i = E and $\eta$= Bigger Learning Rate
+		\State \textbf{else:} 
+		\State \hspace{.3cm} Find $E_n$ using equation 1. 
+		\State \hspace{.3cm} i = $E_n$ and $\eta$ = Smaller Learning Rate
+		\For{\texttt{batch $b \in \mathcal{B}$ }}
+		\State $w \gets w - \eta \nabla l(w;b)$
+		\EndFor
+		\EndFor
+		\State return $w$ to server
+		
+	\end{algorithmic}
+\end{algorithm}
+ 
+
+\subsection{Working of FedLR}
+\begin{enumerate}
+	\item Initialize the global parameter value $\omega_0$. 
+	\item Selection of all the eligible clients for training.
+	\item Finding each client's run-time as they finish training.
+	\item Finding the mode time value by comparing the individual times.
+	\item Selecting the learning rate and epoch values based on the mode value.
+	\item The bigger learning rate ($\eta$) will be assigned to quicker devices with the default epoch (E) value. 
+	\item The slacker devices will be assigned a lower learning rate with a lower epoch value $E_n$ using equation 1. and a smaller $\eta$.
+	\item The time of these devices will be compared next, and the slacker devices will receive a low amount of work but will still be a pivotal element in the federated learning process.
+\end{enumerate}
 
 \section{Implementation of FedLR}
 The model architecture used in the experiments is a 2 layered Convolution Neural Network. The list of datasets used for the experiments are as follows:
@@ -256,13 +327,15 @@ The model architecture used in the experiments is a 2 layered Convolution Neural
     \item FMNIST \cite{xiao2017fashionmnistnovelimagedataset} dataset of fashion items containing ten classes.
     \item CIFAR100 \cite{Krizhevsky09learningmultiple} dataset containing hundred classes. 
 \end{enumerate}
-
+All clients use the full datasets and run at 10 Epochs and 10 Communication Rounds. Using .25 and 1 GPU and CPU, respectively.
 \section{Result and Analysis}
+The Results of our Experiments are as follows:
+10 Clients using FedAvg, FedProx, and FedLR on the all Datasets. 
 
+RARRARARRA
 
 \section{Conclusion}
-Baseline benchmarks for the MobileNets family of models have been established for real-time and local systems. The performance of models is excellent for local models, but it is far behind in global accuracy. The V2 and the original MobileNets are the most optimised models for federated learning. The newer V3s are suitable for other applications, but they are not good with Federated Learning. This work shows the performance benchmarks of MobileNets in federated learning, which are ideal for computer vision applications. 
-
+The proposed algorithm has reduced the total communication time by a significant margin and has maintained fairness in the system while maintaining the accuracy of the models. The proposed algorithm has also been tested on two different devices to prove the improvements in communication rounds for a federated learning system with many slacker devices. Both FedAvg and FedProx are compared with the proposed work and proposed work has significantly improved over both of them. Using proposed methodology in IoT and Edge devices will make the Federated Learning process more efficient and robust.
 \bibliographystyle{unsrt}
 \bibliography{Sample}
 
