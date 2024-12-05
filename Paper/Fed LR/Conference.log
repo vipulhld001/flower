@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  6 AUG 2024 10:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  5 DEC 2024 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -246,6 +246,9 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `alg:cap' multiply defined.
 
+
+LaTeX Warning: Label `alg:cap' multiply defined.
+
 )
 \openout1 = `Conference.aux'.
 
@@ -290,35 +293,42 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)) [1{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users
-/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+))
+<Images/FEDLEARN_NEW.png, id=1, 876.27374pt x 816.04875pt>
+File: Images/FEDLEARN_NEW.png Graphic file (type png)
+<use Images/FEDLEARN_NEW.png>
+Package pdftex.def Info: Images/FEDLEARN_NEW.png  used on input line 85.
+(pdftex.def)             Requested size: 175.25163pt x 163.20685pt.
+ [1{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/A
+dmin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
-]
-Underfull \hbox (badness 4634) in paragraph at lines 109--110
+ <./Images/FEDLEARN_NEW.png>]
+Underfull \hbox (badness 4634) in paragraph at lines 117--118
 []\OT1/ptm/m/n/10 The Fe-dAvg pro-posed by [[]] open the doors for
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 116.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 116.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-20.
-(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
 [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 200.
+(Font)              <7> on input line 124.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 200.
- [3] (Conference.bbl
+(Font)              <5> on input line 124.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+28.
+ (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+[3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 208.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 208.
+ [4] (Conference.bbl
 Underfull \hbox (badness 2269) in paragraph at lines 102--107
 []\OT1/ptm/m/n/8 Andrew Howard, Mark San-dler, Grace Chu, Liang-Chieh Chen,
  []
 
-[4]
+
 Underfull \hbox (badness 10000) in paragraph at lines 133--138
 []\OT1/ptm/m/n/8 Markets and Mar-kets.  Edge AI Hard-ware Mar-ket, 2023.
  []
@@ -329,7 +339,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--138
 e-
  []
 
-)
+[5])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -341,7 +351,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
+[6
 
 ] (Conference.aux)
  ***********
@@ -354,10 +364,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4071 strings out of 474486
- 72694 string characters out of 5743756
- 1966542 words of memory out of 5000000
- 26314 multiletter control sequences out of 15000+600000
+ 4093 strings out of 474486
+ 73166 string characters out of 5743756
+ 1970542 words of memory out of 5000000
+ 26336 multiletter control sequences out of 15000+600000
  597548 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,12n,65p,1480b,327s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -367,17 +377,19 @@ fonts/cm/cmmi10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmmi5.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Admin/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Admin/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Admin/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Admin/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/A
-dmin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users
-/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users
-/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/User
-s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/User
-s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Conference.pdf (5 pages, 188753 bytes).
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Admin/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Admin/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ad
+min/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/
+Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
+:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C
+:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><
+C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><
+C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+
+Output written on Conference.pdf (6 pages, 237334 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

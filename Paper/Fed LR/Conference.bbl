@@ -162,15 +162,4 @@ Alex Krizhevsky.
 \newblock Learning multiple layers of features from tiny images.
 \newblock Technical report, 2009.
 
-\bibitem{beutel2020flower}
-Daniel~J Beutel, Taner Topal, Akhil Mathur, Xinchi Qiu, Titouan Parcollet,
-  Pedro~PB de~Gusm{\~a}o, and Nicholas~D Lane.
-\newblock Flower: A friendly federated learning research framework.
-\newblock {\em arXiv preprint arXiv:2007.14390}, 2020.
-
-\bibitem{github}
-Vipul~Singh Negi.
-\newblock {Flower Codes for MobileNets model architecture}, 2023.
-\newblock https://github.com/vipulhld001/FLWR [Accessed 15-Sep-2023].
-
 \end{thebibliography}
