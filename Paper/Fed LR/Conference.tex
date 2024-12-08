@@ -83,7 +83,7 @@ Google introduced the term federated learning in 2016 (coined in 2017 by McMahan
 \begin{figure}[htp!]
 	\centering
 	\includegraphics[scale=.25]{Images/FEDLEARN_NEW}
-	\caption{Workings of Federated Learning}
+	\caption{Workings of Federated Learning.}
 	\label{fig1}
 \end{figure}
 
@@ -160,7 +160,7 @@ The algorithm \ref{alg:lr} below explains the learning rate (lr) selection by th
  
  \subsubsection{Case 1: FedLr (lr =0.01) with 10 Rounds and 5 Epochs}
  
- The best accuracy we achieved in this scenario is 56.6\%. This works similarly to the FedAvg Strategy and claims almost similar runtime the gap is 2s. The losses also perform similarly to the base FedAvg Strategy. Table \RNum{1} shows the result of the experiment.
+ The best accuracy we achieved in this scenario is 56.6\%. This works similarly to the FedAvg Strategy and claims almost similar runtime the gap is 2s. The losses also perform similarly to the base FedAvg Strategy. Table \ref{lrsmall} shows the result of the experiment.
  \begin{table}[ht]
  	\centering
  	\caption{FedLr (lr =0.01) with 10 Rounds and 5 Epochs}
@@ -175,7 +175,7 @@ The algorithm \ref{alg:lr} below explains the learning rate (lr) selection by th
  			\multicolumn{1}{|l|}{4}       & \multicolumn{1}{l|}{\textbf{56.6\%}} & \multicolumn{1}{l|}{0.068} & \multicolumn{1}{l|}{94.6\%}    & \multicolumn{1}{l|}{0.0056}     &                                 \\ \cline{1-5}
  			\multicolumn{1}{|l|}{5}       & \multicolumn{1}{l|}{52.4\%}          & \multicolumn{1}{l|}{0.061} & \multicolumn{1}{l|}{94.9\%}    & \multicolumn{1}{l|}{0.0054}     &                                 \\ \hline
  		\end{tabular}%
- 		}
+ 		}\label{lrsmall}
  \end{table}   
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -183,7 +183,7 @@ The algorithm \ref{alg:lr} below explains the learning rate (lr) selection by th
  % Please add the following required packages to your document preamble:
  % \usepackage{multirow}
  % \usepackage{graphicx}
- The best accuracy is 56.2\%. The runtime is reduced by 6 seconds, which makes it half a second per round. However, the losses are greater compared to Case 1. In Case 1, the lowest loss was 0.0047; in Case 2, it was 0.0066. Table \RNum{2} shows the result of this experiment.
+ The best accuracy is 56.2\%. The runtime is reduced by 6 seconds, which makes it half a second per round. However, the losses are greater compared to Case 1. In Case 1, the lowest loss was 0.0047; in Case 2, it was 0.0066. Table \ref{lrmid} shows the result of this experiment.
  \begin{table}[ht]
  	\centering
  	\caption{FedLr (lr =0.001) with 10 Rounds and 5 Epochs}
@@ -199,11 +199,12 @@ The algorithm \ref{alg:lr} below explains the learning rate (lr) selection by th
  			\multicolumn{1}{|l|}{5}       & \multicolumn{1}{l|}{\textbf{56.2\%}}   & \multicolumn{1}{l|}{0.059} & \multicolumn{1}{l|}{93.4\%}    & \multicolumn{1}{l|}{0.0066}     &                                 \\ \hline
  		\end{tabular}%
  		%}
+ 		\label{lrmid}
  \end{table}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \subsubsection{Case 3: FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}
-The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar losses as Case 1 and 2. The full results are in table \RNum{3} below.
+The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar losses as Case 1 and 2. The full results are in table \ref{lrlarge} below.
  \begin{table}[ht]
  	\centering
  	\caption{Case 3 : FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}
@@ -219,6 +220,7 @@ The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar 
  			\multicolumn{1}{|l|}{5}       & \multicolumn{1}{l|}{53.4\%}   & \multicolumn{1}{l|}{0.062} & \multicolumn{1}{l|}{94.6\%}    & \multicolumn{1}{l|}{0.0056}     &                                 \\ \hline
  		\end{tabular}%
  		%}
+ 		\label{lrlarge}
  \end{table}
 
 \subsection{Epoch Selection for Individual Clients}
@@ -279,18 +281,16 @@ The key values for the Algorithm \ref{alg:cap} are as follows:
  
 
 \subsection{Working of FedLR}
-\begin{enumerate}
-	\item Initialize the global parameter value $\omega_0$. 
-	\item Selection of all the eligible clients for training.
-	\item Finding each client's run-time as they finish training.
-	\item Finding the mode time value by comparing the individual times.
-	\item Selecting the learning rate and epoch values based on the mode value.
-	\item The bigger learning rate ($\eta$) will be assigned to quicker devices with the default epoch (E) value. 
-	\item The slacker devices will be assigned a lower learning rate with a lower epoch value $E_n$ using equation 1. and a smaller $\eta$.
-	\item The time of these devices will be compared next, and the slacker devices will receive a low amount of work but will still be a pivotal element in the federated learning process.
-\end{enumerate}
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.28]{Images/Result Images/Flow_FedLR }
+	\caption{Flow Chart describing the workings of FedFL.}
+	\label{FlowFedLR}
+\end{figure}
+Fig. \ref{FlowFedLR} shows the workings of FedLR. Initialize the global parameter value $w_0$.Selection of all the eligible clients for training.Finding each client’s run-time as they finish training. Finding the mode time value by comparing the individual times. Selecting the learning rate and epoch values based on the mode value. The bigger learning rate ($\eta$) will be assigned to quicker devices with the default epoch ($E$) value. The slacker devices will be assigned a lower learning rate with a lower epoch value En using equation \ref{eq1}. and a smaller $\eta$. The time of these devices will be compared next, and the
+slacker devices will receive a low amount of work but will still be a pivotal element in the federated learning process.
 
-\section{Implementation of FedLR}
+\section{Result and Analysis}
 The model architecture used in the experiments is a 2 layered Convolution Neural Network. The list of datasets used for the experiments are as follows:
 \begin{enumerate}
     \item CIFAR10 \cite{cifar10} dataset containing ten classes.
@@ -298,10 +298,113 @@ The model architecture used in the experiments is a 2 layered Convolution Neural
     \item FMNIST \cite{xiao2017fashionmnistnovelimagedataset} dataset of fashion items containing ten classes.
     \item CIFAR100 \cite{Krizhevsky09learningmultiple} dataset containing hundred classes. 
 \end{enumerate}
-All clients use the full datasets and run at 10 Epochs and 10 Communication Rounds. Using .25 and 1 GPU and CPU, respectively.
-\section{Result and Analysis}
-The Results of our Experiments are as follows:
-10 Clients using FedAvg, FedProx, and FedLR on the all Datasets. 
+\subsection{Machines Used}
+Two machines are used to test the proposed algorithm, and the specifications of the machines are given below:
+\begin{enumerate}
+	\item Google Collab (Free Tier with T4 GPU).
+	\item Workstation (128GB RAM, Intel Xeon Silver 4216 CPU, and NVIDIA RTX A4000 GPU)
+\end{enumerate}
+
+All clients use the full datasets and run at 10 Epochs and 10 Communication Rounds. Using .25 and 1 GPU and CPU, respectively in Flower. The Results of our Experiments are as follows:
+10 Clients using FedAvg, FedProx, and FedLR on the all Datasets. The blue dotted lines represents the local loss and accuracy while the orange ones represent the global loss and accuracy. The legends shows how many total epochs does one client take.
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc }
+	\caption{Accuracy and Loss of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
+	\label{FedAvgC10}
+\end{figure}
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65 }
+	\caption{Individual Time of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
+	\label{FedAvgTimeC10}
+\end{figure}
+
+Fig. \ref{FedAvgC10} and \ref{FedAvgTimeC10} represents the accuracy loss plot and Individual time taken by each client respectively for FedAvg.  These are workstation times and the accuracy and losses are similar to FedLR and FedProx. The blue dotted lines represents the local loss and accuracy while the orange ones represent the global loss and accuracy. The legend of the fig. \ref{FedAvgC10} shows how many total epochs does one client take.
+
+Fig. \ref{FedProxC10} and \ref{FedProxTimeC10}  represents the accuracy loss plot and Individual time taken by each client respectively for FedProx. FedProx perform a bit better in terms of total communication cost.
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc }
+	\caption{Accuracy and Loss of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
+	\label{FedProxC10}
+\end{figure}
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28 }
+	\caption{Individual Time of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
+	\label{FedProxTimeC10}
+\end{figure}
+
+
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc }
+	\caption{Accuracy and Loss of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
+	\label{FedLRC10}
+\end{figure}
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_total_time_589o74 }
+	\caption{Individual Time of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
+	\label{FedLRTimeC10}
+\end{figure}
+Fig. \ref{FedLRC10} and \ref{FedLRTimeC10} represents the accuracy loss plot and Individual time taken by each client respectively for FedLR. In fig. \ref{FedLRC10} each client runs a different number of epoch. The one with the lowest epochs are the Slacker devices hence they contributed less. It is to be noted that the resources of each clients are given at random to promote heterogeneity. Hence, none of the client completed 100 $E$ due to them being slacker in few rounds.
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.36]{Images/Result Images/FinalGraphwithFedprox }
+	\caption{Total Communication Time for Datasets.}
+	\label{Finalgraph}
+\end{figure}
+
+
+Fig \ref{FedAvgC10}, \ref{FedLRC10}, and \ref{FedProxC10} all show similar accuracy and loss. This same pattern is seen in other datasets as well \cite{lecun1998mnist}  \cite{xiao2017fashionmnistnovelimagedataset} \cite{Krizhevsky09learningmultiple}. The detailed results can be found in table \ref{totaltimetable} and the visual representation in fig. \ref{Finalgraph}. In all the workstation results FedLR has shown the best results and FedProx is the second best. But in collab results it was mixed bag. As collab gives you a random T4 GPU in each instance which means the heterogeneity is more severe. Which lead to FedAvg performing better than FedProx in some cases.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{graphicx}
+\begin{table}[ht]
+	\centering
+	\caption{Total Communication Time with Different Datasets }
+	\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			Datasets                  & System      & FedLR (sec) & FedAvg (sec) & FedProx (sec) \\ \hline
+			\multirow{2}{*}{CIFAR10}  & Workstation & 589.74      & 635.65       & 622.28        \\ \cline{2-5} 
+			& Collab      & 1528.82     & 1638.73      & 1662.25       \\ \hline
+			\multirow{2}{*}{MNIST}    & Workstation & 515.81      & 562.51       & 531.81        \\ \cline{2-5} 
+			& Collab      & 1438.09     & 1576.74      & 1553.16       \\ \hline
+			\multirow{2}{*}{CIFAR100} & Workstation & 611.08      & 641.14       & 628.44        \\ \cline{2-5} 
+			& Collab      & 1490.00     & 1617.62      & 1637.13       \\ \hline
+			\multirow{2}{*}{FMNIST}   & Workstation & 519.84      & 557.56       & 537.23        \\ \cline{2-5} 
+			& Collab      & 1374.31     & 1504.77      & 1516.53       \\ \hline
+		\end{tabular}%
+	}\label{totaltimetable}
+\end{table}
+To interpret the results more easily Percentage difference has been calculated. Compariosn between FedLR and FedAvg as well as FedLR and FedProx. Table \ref{percentage_table} shows the detailed results. In workstation setting the proposed methodology has peformed better than FedAvg and FedProx. But as we have explained earlier in the case of Google Collab the results were a bit different. All test have been run several times and the full results are available at ``https://github.com/vipulhld001/flower".
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[ht]
+	\centering
+	\caption{Percentage Difference of Communication Time with Different Datasets }
+	\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			Datasets & \begin{tabular}[c]{@{}l@{}}Workstation\\ FedAvg\end{tabular} & \begin{tabular}[c]{@{}l@{}}Collab\\ FedAvg\end{tabular} & \begin{tabular}[c]{@{}l@{}}Workstation\\ FedProx\end{tabular} & \begin{tabular}[c]{@{}l@{}}Collab\\ FedProx\end{tabular} \\ \hline
+			CIFAR10  & 7.5\%                                                         & 6.9\%                                                    & 5.3\%                                                          & 8.3\%                                                     \\ \hline
+			MNIST    & 8.7\%                                                         & 9.2\%                                                    & 3\%                                                            & 7.7\%                                                     \\ \hline
+			CIFAR100 & 4.8\%                                                         & 8.2\%                                                    & 2.8\%                                                          & 9.4\%                                                     \\ \hline
+			FMNIST   & 7.0\%                                                           & 9.0\%                                                    & 3.3\%                                                          & 9.8\%                                                     \\ \hline
+		\end{tabular}%
+	}\label{percentage_table}
+\end{table}
 
 
 
