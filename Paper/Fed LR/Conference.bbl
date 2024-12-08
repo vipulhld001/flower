@@ -129,6 +129,12 @@ Tongnian Wang, Yan Du, Yanmin Gong, Kim-Kwang~Raymond Choo, and Yuanxiong Guo.
 \newblock Applications of federated learning in mobile health: Scoping review.
 \newblock {\em Journal of Medical Internet Research}, 25:e43006, 2023.
 
+\bibitem{li2020federated}
+Tian Li, Anit~Kumar Sahu, Manzil Zaheer, Maziar Sanjabi, Ameet Talwalkar, and
+  Virginia Smith.
+\newblock Federated optimization in heterogeneous networks.
+\newblock {\em Proceedings of Machine learning and systems}, 2:429--450, 2020.
+
 \bibitem{market}
 Markets and Markets.
 \newblock {Edge AI Hardware Market}, 2023.
