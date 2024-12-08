@@ -30,28 +30,31 @@
 \citation{mcmahan2017communication}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Related Works}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {III}Problem Statement}{2}{}\protected@file@percent }
+\citation{li2020federated}
 \citation{market}
 \citation{ezzeldin2023fairfed}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Problem Setup}{3}{}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textbf  {FederatedAveraging.} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{3}{}\protected@file@percent }
-\newlabel{alg:cap}{{1}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Client Selection}{3}{}\protected@file@percent }
+\newlabel{eq1}{{1}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Heterogeneous Computational Resources}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Fairness}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}FedLR}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Proposed Algorithm: FedLR}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Learning Rate Selection}{3}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces  \textbf  {Learning Rate Selection} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{3}{}\protected@file@percent }
+\newlabel{alg:lr}{{1}{3}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}1}Case 1: FedLr (lr =0.01) with 10 Rounds and 5 Epochs}{3}{}\protected@file@percent }
 \citation{chen2023boosting}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Learning Rate Selection}{4}{}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces  \textbf  {Learning Rate Selection} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs, and $\eta $ is the learning rate}}{4}{}\protected@file@percent }
-\newlabel{alg:cap}{{2}{4}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}1}Case 1: FedLr (lr =0.01) with 10 Rounds and 5 Epochs}{4}{}\protected@file@percent }
+\citation{li2020federated}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces FedLr (lr =0.01) with 10 Rounds and 5 Epochs}}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}2}Case 2: FedLr (lr =0.001) with 10 Rounds and 5 Epochs}{4}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces FedLr (lr =0.001) with 10 Rounds and 5 Epochs}}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}3}Case 3: FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}{4}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Case 3 : FedLr (lr =0.0001) with 10 Rounds and 5 Epochs}}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Epoch Selection for Individual Clients}{4}{}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces  \textbf  {FedLR} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs and $E_n$ is the new epoch, $T_q$ is the time quantum, and $\eta $ is the learning rate}}{4}{}\protected@file@percent }
-\newlabel{alg:cap}{{3}{4}{}{}{}}
+\newlabel{epoch_equation}{{2}{4}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces  \textbf  {FedLR} The $K$ clients are indexed by $k$; $B$ is the local minibatch size, $E$ is the number of local epochs and $E_n$ is the new epoch, $T_q$ is the time quantum, and $\eta $ is the learning rate}}{4}{}\protected@file@percent }
+\newlabel{alg:cap}{{2}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Working of FedLR}{4}{}\protected@file@percent }
 \citation{cifar10}
 \citation{lecun1998mnist}
 \citation{xiao2017fashionmnistnovelimagedataset}
@@ -78,15 +81,15 @@
 \bibcite{yang2019federated}{18}
 \bibcite{li2023federated}{19}
 \bibcite{wang2023applications}{20}
-\bibcite{market}{21}
-\bibcite{ezzeldin2023fairfed}{22}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Working of FedLR}{5}{}\protected@file@percent }
+\bibcite{li2020federated}{21}
+\bibcite{market}{22}
+\bibcite{ezzeldin2023fairfed}{23}
+\bibcite{cifar10}{24}
+\bibcite{lecun1998mnist}{25}
+\bibcite{xiao2017fashionmnistnovelimagedataset}{26}
+\bibcite{Krizhevsky09learningmultiple}{27}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Implementation of FedLR}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Result and Analysis}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{References}{5}{}\protected@file@percent }
-\bibcite{cifar10}{23}
-\bibcite{lecun1998mnist}{24}
-\bibcite{xiao2017fashionmnistnovelimagedataset}{25}
-\bibcite{Krizhevsky09learningmultiple}{26}
-\gdef \@abspage@last{6}
+\gdef \@abspage@last{5}

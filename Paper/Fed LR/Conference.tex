@@ -116,44 +116,16 @@ Li et al. \cite{li2023federated} have proposed Federated Domain Generalization, 
 \section{Problem Statement}
 The FedAvg proposed by \cite{mcmahan2017communication} open the doors for communication-efficient deep learning networks as they proposed the Federated Averaging methods to train models collaboratively without sharing the underlying training data to preserve the privacy and ever since then it have become the state of the art method for Privacy preserving Deep Learning Models. 
 \subsection{Problem Setup} 
-The vanilla FedAvg algorithm (Algorithm 1) has some problems when it comes to client selection, heterogeneous computational resources, and fairness. As it focuses primarily on the privacy preserving aspect of the learning. The algorithm begins with initializing the global model at random or for pre-trained data. The beings the client selection process which selects clients at random. The global weights are distributed to the clients and the training begins and only stops when we get our desired outcome.
-
-\begin{algorithm}
-	\caption{\textbf{FederatedAveraging.} The $K$ clients are
-		indexed by $k$; $B$ is the local minibatch size, $E$ is the number
-		of local epochs, and $\eta$ is the learning rate}\label{alg:cap}
-	\begin{algorithmic}[1]
-		\State \textbf{Server Executes}
-		\State initialize $w_0$
-		\For{\texttt{each round $t$ = 1,2,..}}
-		\State \texttt{$m \gets max(C\cdot K,1)$}
-		\State \texttt{$S_t \gets $(random set of $m$ clients)}
-		\For{\texttt{each client $k \in S_t $ }\textbf{in parallel}}
-		\State $w_{t+1}^{k} \gets ClientUpdate(k,w_t)$
-		\EndFor
-		\State $w_{t+1} \gets \sum_{k=1}^{K} \frac{n_k}{n} w_{t+1}^{k}$
-		
-		\EndFor
-		\State
-		\State \textbf{ClientUpdate($k,W$):} \Comment{Run on client $k$}
-		\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
-		\For{\texttt{each local epoch $i$ from 1 to $E$ }}
-		\For{\texttt{batch $b \in \mathcal{B}$ }}
-		\State $w \gets w - \eta \nabla l(w;b)$
-		\EndFor
-		\EndFor
-		\State return $w$ to server
-		
-	\end{algorithmic}
-\end{algorithm}
+The vanilla FedAvg algorithm has some problems when it comes to client selection, heterogeneous computational resources, and fairness. As it focuses primarily on the privacy preserving aspect of the learning. The algorithm begins with initializing the global model at random or for pre-trained data. The beings the client selection process which selects clients at random. The global weights are distributed to the clients and the training begins and only stops when we get our desired outcome. To remedy the heterogeneity of FedAvg a new stategy FedProx \cite{li2020federated} was proposed which try to contain the dropping slacker devices due to the heterogeneous nature of the devices.
 
 \subsection{Client Selection}
 
 In the vanilla FedAvg the clients are selected at random using 
 \begin{equation}
  m \gets max(C\cdot K,1)
+ \label{eq1}
  \end{equation}
- where C is the fraction of selected clients and K being the actual clients which gives us the total number of m clients for the federated learning. This method of selection client is good but it can easily be improved upon by proposing a new strategy for client selection. The proposed strategy should improve over the existing one by making the process more robust and highly communication efficient. A new parameter is required which can perform better client selection the current eq 1 used by the vanilla FedAvg.   
+ where C is the fraction of selected clients and K being the actual clients which gives us the total number of m clients for the federated learning. This method of selection client is good but it can easily be improved upon by proposing a new strategy for client selection. The proposed strategy should improve over the existing one by making the process more robust and highly communication efficient. A new parameter is required which can perform better client selection the current Equation \ref{eq1} used by the vanilla FedAvg.   
 
 \subsection{Heterogeneous Computational Resources}
 The devices participating in the federated learning are not always homogeneous the chances of it being heterogeneous are more. A survey done by Markets and Markets \cite{market} states that 35 key players exist in the edge devices manufacturing phase with some providing devices while other provides the processors. This many key players means that major amount of devices are heterogeneous which makes client selection much more complicated because as the diversity increases the number of slacker devices also increases. Slacker devices are the devices which are slowest performer in the system. The motto of federated learning is the faster the slacker device the model will be equally efficient. So that means in order to propose a better strategy one must figure out a way to improve upon the slacker devices. 
@@ -161,17 +133,17 @@ The devices participating in the federated learning are not always homogeneous t
 \subsection{Fairness}
 Fairness is an unique thing which removes the discrimination between clients and making sure all the devices contribution are taken into consideration. The best way to understand this problem is to imagine two hospitals H1 and H2 with H1 being a bigger hospital with various specialization and H2 being a small clinic. Communicable Diseases are the most popular ones and easy to get and if H1 is getting patient for one such communicable disease that means is the same for H2 are well. But due to the size of H1 the data gathered from H2 will be minuscule but that doesn't mean that its irrelevant. So one must also consider fairness as one of the major components for creating a new strategy. Ezzeldin et al. \cite{ezzeldin2023fairfed} has proposed a Fairfed strategy to solve this problem using debiasing method across clients.
  
-\section{FedLR}
-The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch Selection for individual clients, and Client Selection based on the Client Runtime. The objective it to reduce the communication cost for efficient communication all the while preserving the accuracy of the model. A slacker device-centric algorithm has been proposed, focusing on the slowest devices and considering the fairness of client selection. A Federated Learning System is as fast as its slowest device. This is the basic principle of federated learning, so the proposed algorithm for client selection primarily focuses on optimizing the slowest devices in the federation. The algorithm is based on turning the learning rate and epochs of Individual clients. A time quantum has been proposed; the clients are classified as quicker or slacker based on the help of this time quantum. To validate if the learning rate based assumption (Section IV A) is correct (the bigger and smaller lr are assigned for quicker and slacker devices, respectively). However, this will only reduce the total communication time by a few seconds, so a new epoch for the slacker devices is proposed below in equation 2. to make it effective (Section IV B).
+\section{Proposed Algorithm: FedLR}
+The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch Selection for individual clients, and Client Selection based on the Client Runtime. The objective it to reduce the communication cost for efficient communication all the while preserving the accuracy of the model. A slacker device-centric algorithm has been proposed, focusing on the slowest devices and considering the fairness of client selection. A Federated Learning System is as fast as its slowest device. This is the basic principle of federated learning, so the proposed algorithm for client selection primarily focuses on optimizing the slowest devices in the federation. The algorithm is based on turning the learning rate and epochs of Individual clients. A time quantum has been proposed; the clients are classified as quicker or slacker based on the help of this time quantum. To validate if the learning rate based assumption (Section IV A) is correct (the bigger and smaller lr are assigned for quicker and slacker devices, respectively). However, this will only reduce the total communication time by a few seconds, so a new epoch for the slacker devices is proposed below in equation \ref{epoch_equation}. to make it effective (Section IV B).
  \subsection{Learning Rate Selection}
-The algorithm 2 below explains the learning rate (lr) selection by the clients. The learning rates are taken with an increment of ten. After running different lr it was observed that the accuracy were similar but the total communication times were being reduced with smaller lr values. All three lr cases were tested and they showed a good amount of change in communication cost. The dataset used for these experiments was the CIFAR10 dataset.
+The algorithm \ref{alg:lr} below explains the learning rate (lr) selection by the clients. The learning rates are taken with an increment of ten. After running different lr it was observed that the accuracy were similar but the total communication times were being reduced with smaller lr values. All three lr cases were tested and they showed a good amount of change in communication cost. The dataset used for these experiments was the CIFAR10 dataset.
 
  
  \begin{algorithm}
  	\scriptsize
  	\caption{ \textbf{Learning Rate Selection} The $K$ clients are
  		indexed by $k$; $B$ is the local minibatch size, $E$ is the number
- 		of local epochs, and $\eta$ is the learning rate}\label{alg:cap}
+ 		of local epochs, and $\eta$ is the learning rate}\label{alg:lr}
  	\begin{algorithmic}[1]
  		
  		
@@ -252,10 +224,11 @@ The best accuracy is 57.6\% with runtime reduced by 9 sec. While having similar 
  \end{table}
 
 \subsection{Epoch Selection for Individual Clients}
-The first step was to figure out suitable lr values which provides us with significant changes but just changing the lr values in not sufficient for us to make the strategy robust. The next step is to provide individual values for each client based on a balanced parameter. Chen et al. \cite{chen2023boosting} used CPU and RAM metric of clients in order to boost their strategy. This methodology is effective but is not fully privacy preserving. Device fingerprinting is a big risk to the Federated Learning scenario.
+The first step was to figure out suitable lr values which provides us with significant changes but just changing the lr values in not sufficient for us to make the strategy robust. The next step is to provide individual epoch values for each client based on a balanced parameter. Chen et al. \cite{chen2023boosting} used CPU and RAM metric of clients in order to boost their strategy. This methodology is effective but is not fully privacy preserving. Device fingerprinting is a big risk to the Federated Learning scenario.  Li et al. \cite{li2020federated} proposed a Proximal term to improve the slacker devices which were dropping because of delays in computing $E$. The proposed equation \ref{epoch_equation} calculate local epochs for individual clients.
 
 \begin{equation}
 	E_n = \left \lfloor\frac{mode[T_q] - count\_of\_value}{mode[T_q]}\right \rfloor * E 
+	\label{epoch_equation}
 \end{equation}
 In Equation 1.\textit{ $mode[T_q]$} is the mode value from the time quantum, and \textit{count\_of\_value} is the time the mode value is repeated.
 The key values for the Algorithm 2 are as follows:
@@ -332,7 +305,7 @@ All clients use the full datasets and run at 10 Epochs and 10 Communication Roun
 The Results of our Experiments are as follows:
 10 Clients using FedAvg, FedProx, and FedLR on the all Datasets. 
 
-RARRARARRA
+
 
 \section{Conclusion}
 The proposed algorithm has reduced the total communication time by a significant margin and has maintained fairness in the system while maintaining the accuracy of the models. The proposed algorithm has also been tested on two different devices to prove the improvements in communication rounds for a federated learning system with many slacker devices. Both FedAvg and FedProx are compared with the proposed work and proposed work has significantly improved over both of them. Using proposed methodology in IoT and Edge devices will make the Federated Learning process more efficient and robust.
