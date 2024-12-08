@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  8 DEC 2024 13:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  8 DEC 2024 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -291,30 +291,30 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 File: Images/FEDLEARN_NEW.png Graphic file (type png)
 <use Images/FEDLEARN_NEW.png>
 Package pdftex.def Info: Images/FEDLEARN_NEW.png  used on input line 85.
-(pdftex.def)             Requested size: 175.25163pt x 163.20685pt.
+(pdftex.def)             Requested size: 219.06789pt x 204.01169pt.
  [1{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/A
 dmin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
  <./Images/FEDLEARN_NEW.png>]
-Underfull \hbox (badness 4634) in paragraph at lines 117--118
+Underfull \hbox (badness 4634) in paragraph at lines 115--116
 []\OT1/ptm/m/n/10 The Fe-dAvg pro-posed by [[]] open the doors for
  []
 
 [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 124.
+(Font)              <7> on input line 122.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 124.
+(Font)              <5> on input line 122.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-52.
+50.
  (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 180.
+(Font)              <8> on input line 178.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 180.
+(Font)              <6> on input line 178.
 
 [3] [4] (Conference.bbl
 Underfull \hbox (badness 2269) in paragraph at lines 102--107
@@ -374,7 +374,7 @@ Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on Conference.pdf (5 pages, 230700 bytes).
+Output written on Conference.pdf (5 pages, 230645 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
