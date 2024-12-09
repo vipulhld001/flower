@@ -26,6 +26,12 @@ Brendan McMahan, Eider Moore, Daniel Ramage, Seth Hampson, and Blaise~Aguera
 \newblock In {\em Artificial intelligence and statistics}, pages 1273--1282.
   PMLR, 2017.
 
+\bibitem{li2020federated}
+Tian Li, Anit~Kumar Sahu, Manzil Zaheer, Maziar Sanjabi, Ameet Talwalkar, and
+  Virginia Smith.
+\newblock Federated optimization in heterogeneous networks.
+\newblock {\em Proceedings of Machine learning and systems}, 2:429--450, 2020.
+
 \bibitem{chen2023boosting}
 Shuaijun Chen, Omid Tavallaie, Michael~Henri Hambali, Seid~Miad Zandavi, Hamed
   Haddadi, Song Guo, and Albert~Y Zomaya.
@@ -46,64 +52,42 @@ Kartik Patwari, Syed~Mahbub Hafiz, Han Wang, Houman Homayoun, Zubair Shafiq,
 \newblock In {\em 2022 IEEE 7th European Symposium on Security and Privacy
   (EuroS\&P)}, pages 337--355. IEEE, 2022.
 
-\bibitem{khan2021federated}
-Latif~U Khan, Walid Saad, Zhu Han, Ekram Hossain, and Choong~Seon Hong.
-\newblock Federated learning for internet of things: Recent advances, taxonomy,
-  and open challenges.
-\newblock {\em IEEE Communications Surveys \& Tutorials}, 2021.
-
-\bibitem{nguyen2021federated}
-Dinh~C Nguyen, Ming Ding, Pubudu~N Pathirana, Aruna Seneviratne, Jun Li, and
-  H~Vincent Poor.
-\newblock Federated learning for internet of things: A comprehensive survey.
-\newblock {\em IEEE Communications Surveys \& Tutorials}, 23(3):1622--1658,
-  2021.
-
-\bibitem{nishio2019client}
-Takayuki Nishio and Ryo Yonetani.
-\newblock Client selection for federated learning with heterogeneous resources
-  in mobile edge.
-\newblock In {\em ICC 2019-2019 IEEE international conference on communications
-  (ICC)}, pages 1--7. IEEE, 2019.
-
-\bibitem{abdulrahman2020fedmccs}
-Sawsan AbdulRahman, Hanine Tout, Azzam Mourad, and Chamseddine Talhi.
-\newblock Fedmccs: Multicriteria client selection model for optimal iot
-  federated learning.
-\newblock {\em IEEE Internet of Things Journal}, 8(6):4723--4735, 2020.
-
-\bibitem{saha2020fogfl}
-Rituparna Saha, Sudip Misra, and Pallav~Kumar Deb.
-\newblock Fogfl: Fog-assisted federated learning for resource-constrained iot
-  devices.
-\newblock {\em IEEE Internet of Things Journal}, 8(10):8456--8463, 2020.
-
 \bibitem{shokri2015privacy}
 Reza Shokri and Vitaly Shmatikov.
 \newblock Privacy-preserving deep learning.
 \newblock In {\em Proceedings of the 22nd ACM SIGSAC conference on computer and
   communications security}, pages 1310--1321, 2015.
 
-\bibitem{howard2017mobilenets}
-Andrew~G Howard, Menglong Zhu, Bo~Chen, Dmitry Kalenichenko, Weijun Wang,
-  Tobias Weyand, Marco Andreetto, and Hartwig Adam.
-\newblock Mobilenets: Efficient convolutional neural networks for mobile vision
-  applications.
-\newblock {\em arXiv preprint arXiv:1704.04861}, 2017.
+\bibitem{zhang2024adaptfl}
+Yingqi Zhang, Hui Xia, Shuo Xu, Xiangxiang Wang, and Lijuan Xu.
+\newblock Adaptfl: Adaptive federated learning framework for heterogeneous
+  devices.
+\newblock {\em Future Generation Computer Systems}, page 107610, 2024.
 
-\bibitem{sandler2018mobilenetv2}
-Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
-  Chen.
-\newblock Mobilenetv2: Inverted residuals and linear bottlenecks.
-\newblock In {\em Proceedings of the IEEE conference on computer vision and
-  pattern recognition}, pages 4510--4520, 2018.
+\bibitem{zhang2024fedsl}
+Weishan Zhang, Tao Zhou, Qinghua Lu, Yong Yuan, Amr Tolba, and Wael Said.
+\newblock Fedsl: A communication efficient federated learning with split layer
+  aggregation.
+\newblock {\em IEEE Internet of Things Journal}, 2024.
 
-\bibitem{howard2019searching}
-Andrew Howard, Mark Sandler, Grace Chu, Liang-Chieh Chen, Bo~Chen, Mingxing
-  Tan, Weijun Wang, Yukun Zhu, Ruoming Pang, Vijay Vasudevan, et~al.
-\newblock Searching for mobilenetv3.
-\newblock In {\em Proceedings of the IEEE/CVF international conference on
-  computer vision}, pages 1314--1324, 2019.
+\bibitem{ma2021adaptive}
+Zhenguo Ma, Yang Xu, Hongli Xu, Zeyu Meng, Liusheng Huang, and Yinxing Xue.
+\newblock Adaptive batch size for federated learning in resource-constrained
+  edge computing.
+\newblock {\em IEEE Transactions on Mobile Computing}, 22(1):37--53, 2021.
+
+\bibitem{orlandi2023entropy}
+Fernanda~C Orlandi, Julio~CS Dos~Anjos, Valderi~RQ Leithardt, Juan Francisco
+  De~Paz Santana, and Claudio~FR Geyer.
+\newblock Entropy to mitigate non-iid data problem on federated learning for
+  the edge intelligence environment.
+\newblock {\em IEEE Access}, 11:78845--78857, 2023.
+
+\bibitem{mills2023faster}
+Jed Mills, Jia Hu, and Geyong Min.
+\newblock Faster federated learning with decaying number of local sgd steps.
+\newblock {\em IEEE Transactions on Parallel and Distributed Systems},
+  34(7):2198--2207, 2023.
 
 \bibitem{mathur2021device}
 Akhil Mathur, Daniel~J Beutel, Pedro Porto~Buarque de~Gusm{\~a}o, Javier
@@ -112,28 +96,25 @@ Akhil Mathur, Daniel~J Beutel, Pedro Porto~Buarque de~Gusm{\~a}o, Javier
 \newblock On-device federated learning with flower.
 \newblock {\em arXiv preprint arXiv:2104.03042}, 2021.
 
-\bibitem{yang2019federated}
-Qiang Yang, Yang Liu, Yong Cheng, Yan Kang, Tianjian Chen, and Han Yu.
-\newblock Federated learning.
-\newblock {\em Synthesis Lectures on Artificial Intelligence and Machine
-  Learning}, 13(3):1--207, 2019.
+\bibitem{sandler2018mobilenetv2}
+Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
+  Chen.
+\newblock Mobilenetv2: Inverted residuals and linear bottlenecks.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 4510--4520, 2018.
 
-\bibitem{li2023federated}
-Ying Li, Xingwei Wang, Rongfei Zeng, Praveen~Kumar Donta, Ilir Murturi, Min
-  Huang, and Schahram Dustdar.
-\newblock Federated domain generalization: A survey.
-\newblock {\em arXiv preprint arXiv:2306.01334}, 2023.
+\bibitem{hu2025federated}
+Lingxi Hu, Yuanyuan Hu, Linhua Jiang, and Wei Long.
+\newblock Federated learning client selection algorithm based on gradient
+  similarity.
+\newblock {\em Cluster Computing}, 28(2):134, 2025.
 
-\bibitem{wang2023applications}
-Tongnian Wang, Yan Du, Yanmin Gong, Kim-Kwang~Raymond Choo, and Yuanxiong Guo.
-\newblock Applications of federated learning in mobile health: Scoping review.
-\newblock {\em Journal of Medical Internet Research}, 25:e43006, 2023.
-
-\bibitem{li2020federated}
-Tian Li, Anit~Kumar Sahu, Manzil Zaheer, Maziar Sanjabi, Ameet Talwalkar, and
-  Virginia Smith.
-\newblock Federated optimization in heterogeneous networks.
-\newblock {\em Proceedings of Machine learning and systems}, 2:429--450, 2020.
+\bibitem{ye2022eco}
+Shengyuan Ye, Liekang Zeng, Qiong Wu, Ke~Luo, Qingze Fang, and Xu~Chen.
+\newblock Eco-fl: Adaptive federated learning with efficient edge collaborative
+  pipeline training.
+\newblock In {\em Proceedings of the 51st International Conference on Parallel
+  Processing}, pages 1--11, 2022.
 
 \bibitem{market}
 Markets and Markets.

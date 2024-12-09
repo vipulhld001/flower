@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  8 DEC 2024 19:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  9 DEC 2024 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -297,31 +297,31 @@ dmin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
  <./Images/FEDLEARN_NEW.png>]
-Underfull \hbox (badness 4634) in paragraph at lines 115--116
+Underfull \hbox (badness 4634) in paragraph at lines 114--115
 []\OT1/ptm/m/n/10 The Fe-dAvg pro-posed by [[]] open the doors for
  []
 
 [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 122.
+(Font)              <7> on input line 121.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 122.
+(Font)              <5> on input line 121.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-50.
+49.
  (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 178.
+(Font)              <8> on input line 177.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 178.
+(Font)              <6> on input line 177.
 
 [3]
 <Images/Result Images/Flow_FedLR.png, id=26, 485.815pt x 654.445pt>
 File: Images/Result Images/Flow_FedLR.png Graphic file (type png)
 <use Images/Result Images/Flow_FedLR.png>
 Package pdftex.def Info: Images/Result Images/Flow_FedLR.png  used on input lin
-e 286.
+e 285.
 (pdftex.def)             Requested size: 136.02727pt x 183.24335pt.
  [4 <./Images/Result Images/Flow_FedLR.png>]
 <Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png, id=33, 897.5934pt x 
@@ -330,7 +330,7 @@ File: Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png Graphic file (ty
 pe png)
 <use Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png>
 Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.p
-ng  used on input line 313.
+ng  used on input line 312.
 (pdftex.def)             Requested size: 251.32443pt x 95.10666pt.
 <Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png, id=34, 831
 .8277pt x 506.6127pt>
@@ -338,7 +338,7 @@ File: Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png Graphi
 c file (type png)
 <use Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png>
 Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedavg_total_tim
-e_635o65.png  used on input line 320.
+e_635o65.png  used on input line 319.
 (pdftex.def)             Requested size: 249.55023pt x 151.98497pt.
 <Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.png, id=35, 897.5934pt x
  339.669pt>
@@ -346,7 +346,7 @@ File: Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.png Graphic file (t
 ype png)
 <use Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.png>
 Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.
-png  used on input line 330.
+png  used on input line 329.
 (pdftex.def)             Requested size: 251.32443pt x 95.10666pt.
 <Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28.png, id=36, 83
 1.8277pt x 506.6127pt>
@@ -354,7 +354,7 @@ File: Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28.png Graph
 ic file (type png)
 <use Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28.png>
 Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedPROX_total_ti
-me_622o28.png  used on input line 337.
+me_622o28.png  used on input line 336.
 (pdftex.def)             Requested size: 249.55023pt x 151.98497pt.
 <Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.png, id=37, 897.5934pt x
  339.669pt>
@@ -362,7 +362,7 @@ File: Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.png Graphic file (t
 ype png)
 <use Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.png>
 Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.
-png  used on input line 346.
+png  used on input line 345.
 (pdftex.def)             Requested size: 251.32443pt x 95.10666pt.
 <Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png, id=38, 831.8277pt
  x 506.6127pt>
@@ -370,7 +370,7 @@ File: Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png Graphic file
 (type png)
 <use Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png>
 Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_total_time_589o7
-4.png  used on input line 353.
+4.png  used on input line 352.
 (pdftex.def)             Requested size: 249.55023pt x 151.98497pt.
  [5 <./Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png> <./Images/Resu
 lt Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png> <./Images/Result Image
@@ -381,22 +381,17 @@ s/CIFAR 10/cifar10_fedPROX_lossacc.png> <./Images/Result Images/CIFAR 10/cifar1
 File: Images/Result Images/FinalGraphwithFedprox.png Graphic file (type png)
 <use Images/Result Images/FinalGraphwithFedprox.png>
 Package pdftex.def Info: Images/Result Images/FinalGraphwithFedprox.png  used o
-n input line 361.
+n input line 360.
 (pdftex.def)             Requested size: 202.934pt x 261.47266pt.
  (Conference.bbl [6 <./Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.pn
 g> <./Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png> <./Images/Re
 sult Images/FinalGraphwithFedprox.png>]
-Underfull \hbox (badness 2269) in paragraph at lines 102--107
-[]\OT1/ptm/m/n/8 Andrew Howard, Mark San-dler, Grace Chu, Liang-Chieh Chen,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--144
+Underfull \hbox (badness 10000) in paragraph at lines 120--125
 []\OT1/ptm/m/n/8 Markets and Mar-kets.  Edge AI Hard-ware Mar-ket, 2023.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--144
+Underfull \hbox (badness 10000) in paragraph at lines 120--125
 \OT1/ptm/m/n/8 https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardwar
 e-
  []
@@ -420,10 +415,10 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4204 strings out of 474486
- 79252 string characters out of 5743756
+ 4201 strings out of 474486
+ 79169 string characters out of 5743756
  1967542 words of memory out of 5000000
- 26448 multiletter control sequences out of 15000+600000
+ 26445 multiletter control sequences out of 15000+600000
  597033 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,15n,65p,1480b,337s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -443,7 +438,7 @@ Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on Conference.pdf (7 pages, 805507 bytes).
+Output written on Conference.pdf (7 pages, 804776 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
