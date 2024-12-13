@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  13 DEC 2024 10:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  13 DEC 2024 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -324,53 +324,53 @@ Package pdftex.def Info: Images/Result Images/Flow_FedLR.png  used on input lin
 e 285.
 (pdftex.def)             Requested size: 136.02727pt x 183.24335pt.
  [4 <./Images/Result Images/Flow_FedLR.png>]
-<Images/NEWGRAPHS/1.png, id=33, 904.8204pt x 344.0052pt>
-File: Images/NEWGRAPHS/1.png Graphic file (type png)
-<use Images/NEWGRAPHS/1.png>
-Package pdftex.def Info: Images/NEWGRAPHS/1.png  used on input line 327.
+<Images/NEWGRAPHS/5.png, id=33, 904.8204pt x 344.0052pt>
+File: Images/NEWGRAPHS/5.png Graphic file (type png)
+<use Images/NEWGRAPHS/5.png>
+Package pdftex.def Info: Images/NEWGRAPHS/5.png  used on input line 327.
 (pdftex.def)             Requested size: 253.34799pt x 96.32079pt.
 
 Overfull \hbox (1.34799pt too wide) in paragraph at lines 327--328
  [][] 
  []
 
-<Images/NEWGRAPHS/2.png, id=34, 837.6093pt x 512.3943pt>
-File: Images/NEWGRAPHS/2.png Graphic file (type png)
-<use Images/NEWGRAPHS/2.png>
-Package pdftex.def Info: Images/NEWGRAPHS/2.png  used on input line 334.
+<Images/NEWGRAPHS/6.png, id=34, 837.6093pt x 512.3943pt>
+File: Images/NEWGRAPHS/6.png Graphic file (type png)
+<use Images/NEWGRAPHS/6.png>
+Package pdftex.def Info: Images/NEWGRAPHS/6.png  used on input line 334.
 (pdftex.def)             Requested size: 251.28473pt x 153.71947pt.
-<Images/NEWGRAPHS/5.png, id=35, 904.8204pt x 344.0052pt>
-File: Images/NEWGRAPHS/5.png Graphic file (type png)
-<use Images/NEWGRAPHS/5.png>
-Package pdftex.def Info: Images/NEWGRAPHS/5.png  used on input line 358.
+<Images/NEWGRAPHS/3.png, id=35, 904.8204pt x 344.0052pt>
+File: Images/NEWGRAPHS/3.png Graphic file (type png)
+<use Images/NEWGRAPHS/3.png>
+Package pdftex.def Info: Images/NEWGRAPHS/3.png  used on input line 358.
 (pdftex.def)             Requested size: 253.34799pt x 96.32079pt.
 
 Overfull \hbox (1.34799pt too wide) in paragraph at lines 358--359
  [][] 
  []
 
-<Images/NEWGRAPHS/6.png, id=36, 837.6093pt x 512.3943pt>
-File: Images/NEWGRAPHS/6.png Graphic file (type png)
-<use Images/NEWGRAPHS/6.png>
-Package pdftex.def Info: Images/NEWGRAPHS/6.png  used on input line 365.
+<Images/NEWGRAPHS/4.png, id=36, 837.6093pt x 512.3943pt>
+File: Images/NEWGRAPHS/4.png Graphic file (type png)
+<use Images/NEWGRAPHS/4.png>
+Package pdftex.def Info: Images/NEWGRAPHS/4.png  used on input line 365.
 (pdftex.def)             Requested size: 251.28473pt x 153.71947pt.
-<Images/NEWGRAPHS/3.png, id=37, 904.8204pt x 344.0052pt>
-File: Images/NEWGRAPHS/3.png Graphic file (type png)
-<use Images/NEWGRAPHS/3.png>
-Package pdftex.def Info: Images/NEWGRAPHS/3.png  used on input line 386.
+<Images/NEWGRAPHS/1.png, id=37, 904.8204pt x 344.0052pt>
+File: Images/NEWGRAPHS/1.png Graphic file (type png)
+<use Images/NEWGRAPHS/1.png>
+Package pdftex.def Info: Images/NEWGRAPHS/1.png  used on input line 386.
 (pdftex.def)             Requested size: 253.34799pt x 96.32079pt.
 
 Overfull \hbox (1.34799pt too wide) in paragraph at lines 386--387
  [][] 
  []
 
-<Images/NEWGRAPHS/4.png, id=38, 837.6093pt x 512.3943pt>
-File: Images/NEWGRAPHS/4.png Graphic file (type png)
-<use Images/NEWGRAPHS/4.png>
-Package pdftex.def Info: Images/NEWGRAPHS/4.png  used on input line 393.
+<Images/NEWGRAPHS/2.png, id=38, 837.6093pt x 512.3943pt>
+File: Images/NEWGRAPHS/2.png Graphic file (type png)
+<use Images/NEWGRAPHS/2.png>
+Package pdftex.def Info: Images/NEWGRAPHS/2.png  used on input line 393.
 (pdftex.def)             Requested size: 251.28473pt x 153.71947pt.
-[5 <./Images/NEWGRAPHS/1.png> <./Images/NEWGRAPHS/2.png> <./Images/NEWGRAPHS/5.
-png> <./Images/NEWGRAPHS/6.png>]
+[5 <./Images/NEWGRAPHS/5.png> <./Images/NEWGRAPHS/6.png> <./Images/NEWGRAPHS/3.
+png> <./Images/NEWGRAPHS/4.png>]
 <Images/Result Images/FinalGraphwithFedprox.png, id=46, 573.64313pt x 737.154pt
 >
 File: Images/Result Images/FinalGraphwithFedprox.png Graphic file (type png)
@@ -378,7 +378,7 @@ File: Images/Result Images/FinalGraphwithFedprox.png Graphic file (type png)
 Package pdftex.def Info: Images/Result Images/FinalGraphwithFedprox.png  used o
 n input line 403.
 (pdftex.def)             Requested size: 229.45319pt x 294.85637pt.
- (Conference.bbl [6 <./Images/NEWGRAPHS/3.png> <./Images/NEWGRAPHS/4.png> <./Im
+ (Conference.bbl [6 <./Images/NEWGRAPHS/1.png> <./Images/NEWGRAPHS/2.png> <./Im
 ages/Result Images/FinalGraphwithFedprox.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 120--125
 []\OT1/ptm/m/n/8 Markets and Mar-kets.  Edge AI Hard-ware Mar-ket, 2023.
