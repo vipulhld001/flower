@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  9 DEC 2024 12:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  13 DEC 2024 10:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -324,68 +324,62 @@ Package pdftex.def Info: Images/Result Images/Flow_FedLR.png  used on input lin
 e 285.
 (pdftex.def)             Requested size: 136.02727pt x 183.24335pt.
  [4 <./Images/Result Images/Flow_FedLR.png>]
-<Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png, id=33, 897.5934pt x 
-339.669pt>
-File: Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png Graphic file (ty
-pe png)
-<use Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png>
-Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.p
-ng  used on input line 312.
-(pdftex.def)             Requested size: 251.32443pt x 95.10666pt.
-<Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png, id=34, 831
-.8277pt x 506.6127pt>
-File: Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png Graphi
-c file (type png)
-<use Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png>
-Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedavg_total_tim
-e_635o65.png  used on input line 319.
-(pdftex.def)             Requested size: 249.55023pt x 151.98497pt.
-<Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.png, id=35, 897.5934pt x
- 339.669pt>
-File: Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.png Graphic file (t
-ype png)
-<use Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.png>
-Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc.
-png  used on input line 329.
-(pdftex.def)             Requested size: 251.32443pt x 95.10666pt.
-<Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28.png, id=36, 83
-1.8277pt x 506.6127pt>
-File: Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28.png Graph
-ic file (type png)
-<use Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28.png>
-Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_fedPROX_total_ti
-me_622o28.png  used on input line 336.
-(pdftex.def)             Requested size: 249.55023pt x 151.98497pt.
-<Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.png, id=37, 897.5934pt x
- 339.669pt>
-File: Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.png Graphic file (t
-ype png)
-<use Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.png>
-Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.
-png  used on input line 345.
-(pdftex.def)             Requested size: 251.32443pt x 95.10666pt.
-<Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png, id=38, 831.8277pt
- x 506.6127pt>
-File: Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png Graphic file 
-(type png)
-<use Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png>
-Package pdftex.def Info: Images/Result Images/CIFAR 10/cifar10_total_time_589o7
-4.png  used on input line 352.
-(pdftex.def)             Requested size: 249.55023pt x 151.98497pt.
- [5 <./Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc.png> <./Images/Resu
-lt Images/CIFAR 10/cifar10_fedavg_total_time_635o65.png> <./Images/Result Image
-s/CIFAR 10/cifar10_fedPROX_lossacc.png> <./Images/Result Images/CIFAR 10/cifar1
-0_fedPROX_total_time_622o28.png>]
-<Images/Result Images/FinalGraphwithFedprox.png, id=46, 563.706pt x 726.3135pt>
+<Images/NEWGRAPHS/1.png, id=33, 904.8204pt x 344.0052pt>
+File: Images/NEWGRAPHS/1.png Graphic file (type png)
+<use Images/NEWGRAPHS/1.png>
+Package pdftex.def Info: Images/NEWGRAPHS/1.png  used on input line 327.
+(pdftex.def)             Requested size: 253.34799pt x 96.32079pt.
 
+Overfull \hbox (1.34799pt too wide) in paragraph at lines 327--328
+ [][] 
+ []
+
+<Images/NEWGRAPHS/2.png, id=34, 837.6093pt x 512.3943pt>
+File: Images/NEWGRAPHS/2.png Graphic file (type png)
+<use Images/NEWGRAPHS/2.png>
+Package pdftex.def Info: Images/NEWGRAPHS/2.png  used on input line 334.
+(pdftex.def)             Requested size: 251.28473pt x 153.71947pt.
+<Images/NEWGRAPHS/5.png, id=35, 904.8204pt x 344.0052pt>
+File: Images/NEWGRAPHS/5.png Graphic file (type png)
+<use Images/NEWGRAPHS/5.png>
+Package pdftex.def Info: Images/NEWGRAPHS/5.png  used on input line 358.
+(pdftex.def)             Requested size: 253.34799pt x 96.32079pt.
+
+Overfull \hbox (1.34799pt too wide) in paragraph at lines 358--359
+ [][] 
+ []
+
+<Images/NEWGRAPHS/6.png, id=36, 837.6093pt x 512.3943pt>
+File: Images/NEWGRAPHS/6.png Graphic file (type png)
+<use Images/NEWGRAPHS/6.png>
+Package pdftex.def Info: Images/NEWGRAPHS/6.png  used on input line 365.
+(pdftex.def)             Requested size: 251.28473pt x 153.71947pt.
+<Images/NEWGRAPHS/3.png, id=37, 904.8204pt x 344.0052pt>
+File: Images/NEWGRAPHS/3.png Graphic file (type png)
+<use Images/NEWGRAPHS/3.png>
+Package pdftex.def Info: Images/NEWGRAPHS/3.png  used on input line 386.
+(pdftex.def)             Requested size: 253.34799pt x 96.32079pt.
+
+Overfull \hbox (1.34799pt too wide) in paragraph at lines 386--387
+ [][] 
+ []
+
+<Images/NEWGRAPHS/4.png, id=38, 837.6093pt x 512.3943pt>
+File: Images/NEWGRAPHS/4.png Graphic file (type png)
+<use Images/NEWGRAPHS/4.png>
+Package pdftex.def Info: Images/NEWGRAPHS/4.png  used on input line 393.
+(pdftex.def)             Requested size: 251.28473pt x 153.71947pt.
+[5 <./Images/NEWGRAPHS/1.png> <./Images/NEWGRAPHS/2.png> <./Images/NEWGRAPHS/5.
+png> <./Images/NEWGRAPHS/6.png>]
+<Images/Result Images/FinalGraphwithFedprox.png, id=46, 573.64313pt x 737.154pt
+>
 File: Images/Result Images/FinalGraphwithFedprox.png Graphic file (type png)
 <use Images/Result Images/FinalGraphwithFedprox.png>
 Package pdftex.def Info: Images/Result Images/FinalGraphwithFedprox.png  used o
-n input line 360.
-(pdftex.def)             Requested size: 202.934pt x 261.47266pt.
- (Conference.bbl [6 <./Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc.pn
-g> <./Images/Result Images/CIFAR 10/cifar10_total_time_589o74.png> <./Images/Re
-sult Images/FinalGraphwithFedprox.png>]
+n input line 403.
+(pdftex.def)             Requested size: 229.45319pt x 294.85637pt.
+ (Conference.bbl [6 <./Images/NEWGRAPHS/3.png> <./Images/NEWGRAPHS/4.png> <./Im
+ages/Result Images/FinalGraphwithFedprox.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 120--125
 []\OT1/ptm/m/n/8 Markets and Mar-kets.  Edge AI Hard-ware Mar-ket, 2023.
  []
@@ -415,10 +409,10 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4201 strings out of 474486
- 79169 string characters out of 5743756
+ 4175 strings out of 474486
+ 75739 string characters out of 5743756
  1967542 words of memory out of 5000000
- 26445 multiletter control sequences out of 15000+600000
+ 26419 multiletter control sequences out of 15000+600000
  597033 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,15n,65p,1480b,337s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -438,7 +432,7 @@ Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on Conference.pdf (7 pages, 804776 bytes).
+Output written on Conference.pdf (7 pages, 855542 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
