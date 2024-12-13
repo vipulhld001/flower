@@ -307,16 +307,50 @@ Two machines are used to test the proposed algorithm, and the specifications of 
 All clients use the full datasets and run at 10 Epochs and 10 Communication Rounds. Using .25 and 1 GPU and CPU, respectively in Flower. The Results of our Experiments are as follows:
 10 Clients using FedAvg, FedProx, and FedLR on the all Datasets. The blue dotted lines represents the local loss and accuracy while the orange ones represent the global loss and accuracy. The legends shows how many total epochs does one client take.
 
+%\begin{figure}[htp!]
+%	\centering
+%	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc }
+%	\caption{Accuracy and Loss of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
+%	\label{FedAvgC10}
+%\end{figure}
+%
+%\begin{figure}[htp!]
+%	\centering
+%	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65 }
+%	\caption{Individual Time of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
+%	\label{FedAvgTimeC10}
+%\end{figure}
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_fedavg_lossacc }
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/GraphhhhhExample.png }
+	\caption{Loss of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
+	\label{FedAvgC10}
+\end{figure}
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/acc.png }
+	\caption{Accuracy of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
+	\label{FedAvgC10}
+\end{figure}
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.4]{Images/NEWGRAPHS/timechart.png }
+	\caption{Individual Time of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
+	\label{FedAvgTimeC10}
+\end{figure}
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.28]{Images/NEWGRAPHS/5.png }
 	\caption{Accuracy and Loss of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
 	\label{FedAvgC10}
 \end{figure}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_fedavg_total_time_635o65 }
+	\includegraphics[scale=.3]{Images/NEWGRAPHS/6.png }
 	\caption{Individual Time of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
 	\label{FedAvgTimeC10}
 \end{figure}
@@ -324,40 +358,68 @@ All clients use the full datasets and run at 10 Epochs and 10 Communication Roun
 Fig. \ref{FedAvgC10} and \ref{FedAvgTimeC10} represents the accuracy loss plot and Individual time taken by each client respectively for FedAvg.  These are workstation times and the accuracy and losses are similar to FedLR and FedProx. The blue dotted lines represents the local loss and accuracy while the orange ones represent the global loss and accuracy. The legend of the fig. \ref{FedAvgC10} shows how many total epochs does one client take.
 
 Fig. \ref{FedProxC10} and \ref{FedProxTimeC10}  represents the accuracy loss plot and Individual time taken by each client respectively for FedProx. FedProx perform a bit better in terms of total communication cost.
+%\begin{figure}[htp!]
+%	\centering
+%	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc }
+%	\caption{Accuracy and Loss of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
+%	\label{FedProxC10}
+%\end{figure}
+%
+%\begin{figure}[htp!]
+%	\centering
+%	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28 }
+%	\caption{Individual Time of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
+%	\label{FedProxTimeC10}
+%\end{figure}
+
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc }
+	\includegraphics[scale=.28]{Images/NEWGRAPHS/3.png }
 	\caption{Accuracy and Loss of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
 	\label{FedProxC10}
 \end{figure}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_fedPROX_total_time_622o28 }
+	\includegraphics[scale=.3]{Images/NEWGRAPHS/4.png }
 	\caption{Individual Time of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
 	\label{FedProxTimeC10}
 \end{figure}
 
 
+%\begin{figure}[htp!]
+%	\centering
+%	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc }
+%	\caption{Accuracy and Loss of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
+%	\label{FedLRC10}
+%\end{figure}
+%
+%\begin{figure}[htp!]
+%	\centering
+%	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_total_time_589o74 }
+%	\caption{Individual Time of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
+%	\label{FedLRTimeC10}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_mystrat_lossacc }
+	\includegraphics[scale=.28]{Images/NEWGRAPHS/1.png}
 	\caption{Accuracy and Loss of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
 	\label{FedLRC10}
 \end{figure}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.3]{Images/Result Images/CIFAR 10/cifar10_total_time_589o74 }
+	\includegraphics[scale=.3]{Images/NEWGRAPHS/2.png}
 	\caption{Individual Time of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
 	\label{FedLRTimeC10}
+
+
 \end{figure}
 Fig. \ref{FedLRC10} and \ref{FedLRTimeC10} represents the accuracy loss plot and Individual time taken by each client respectively for FedLR. In fig. \ref{FedLRC10} each client runs a different number of epoch. The one with the lowest epochs are the Slacker devices hence they contributed less. It is to be noted that the resources of each clients are given at random to promote heterogeneity. Hence, none of the client completed 100 $E$ due to them being slacker in few rounds.
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.36]{Images/Result Images/FinalGraphwithFedprox }
+	\includegraphics[scale=.4]{Images/Result Images/FinalGraphwithFedprox }
 	\caption{Total Communication Time for Datasets.}
 	\label{Finalgraph}
 \end{figure}
