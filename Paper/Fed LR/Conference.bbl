@@ -9,7 +9,7 @@ Yang Liu, Tao Fan, Tianjian Chen, Qian Xu, and Qiang Yang.
 \bibitem{nvidia}
 Nvidia.
 \newblock {NVIDIA CLARA}, 2020.
-\newblock https://www.nvidia.com/en-in/clara/ [Accessed 15-Sep-2023].
+\newblock https://www.nvidia.com/en-in/clara/ [Accessed 15-Dec-2024].
 
 \bibitem{yang2018applied}
 Timothy Yang, Galen Andrew, Hubert Eichner, Haicheng Sun, Wei Li, Nicholas
@@ -17,6 +17,13 @@ Timothy Yang, Galen Andrew, Hubert Eichner, Haicheng Sun, Wei Li, Nicholas
 \newblock Applied federated learning: Improving google keyboard query
   suggestions.
 \newblock {\em arXiv preprint arXiv:1812.02903}, 2018.
+
+\bibitem{iotana}
+Iot-Analytics.
+\newblock {State of IoT 2024: Number of connected IoT devices growing 13% to
+  18.8 billion globally}, 2024.
+\newblock https://iot-analytics.com/number-connected-iot-devices/ [Accessed
+  15-Dec-2024].
 
 \bibitem{mcmahan2017communication}
 Brendan McMahan, Eider Moore, Daniel Ramage, Seth Hampson, and Blaise~Aguera
@@ -103,6 +110,14 @@ Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, and Liang-Chieh
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 4510--4520, 2018.
 
+\bibitem{negi2023study}
+Vipul~Singh Negi and Suchismita Chinara.
+\newblock Study of mobilenets model in federated learning.
+\newblock In {\em 2023 IEEE Intl Conf on Dependable, Autonomic and Secure
+  Computing, Intl Conf on Pervasive Intelligence and Computing, Intl Conf on
+  Cloud and Big Data Computing, Intl Conf on Cyber Science and Technology
+  Congress (DASC/PiCom/CBDCom/CyberSciTech)}, pages 1040--1044. IEEE, 2023.
+
 \bibitem{hu2025federated}
 Lingxi Hu, Yuanyuan Hu, Linhua Jiang, and Wei Long.
 \newblock Federated learning client selection algorithm based on gradient
@@ -115,6 +130,15 @@ Shengyuan Ye, Liekang Zeng, Qiong Wu, Ke~Luo, Qingze Fang, and Xu~Chen.
   pipeline training.
 \newblock In {\em Proceedings of the 51st International Conference on Parallel
   Processing}, pages 1--11, 2022.
+
+\bibitem{cifar10}
+Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton.
+\newblock Cifar-10 (canadian institute for advanced research).
+
+\bibitem{Krizhevsky09learningmultiple}
+Alex Krizhevsky.
+\newblock Learning multiple layers of features from tiny images.
+\newblock Technical report, 2009.
 
 \bibitem{market}
 Markets and Markets.
@@ -130,10 +154,6 @@ Yahya~H Ezzeldin, Shen Yan, Chaoyang He, Emilio Ferrara, and A~Salman
 \newblock In {\em Proceedings of the AAAI Conference on Artificial
   Intelligence}, volume~37, pages 7494--7502, 2023.
 
-\bibitem{cifar10}
-Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton.
-\newblock Cifar-10 (canadian institute for advanced research).
-
 \bibitem{lecun1998mnist}
 Yann LeCun.
 \newblock The mnist database of handwritten digits.
@@ -144,9 +164,9 @@ Han Xiao, Kashif Rasul, and Roland Vollgraf.
 \newblock Fashion-mnist: a novel image dataset for benchmarking machine
   learning algorithms, 2017.
 
-\bibitem{Krizhevsky09learningmultiple}
-Alex Krizhevsky.
-\newblock Learning multiple layers of features from tiny images.
-\newblock Technical report, 2009.
+\bibitem{gitflwr}
+Vipul~Singh Negi.
+\newblock {Github Code FedLR}, 2024.
+\newblock https://github.com/vipulhld001/flower [Accessed 15-Dec-2024].
 
 \end{thebibliography}
