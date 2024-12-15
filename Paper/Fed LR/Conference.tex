@@ -63,10 +63,10 @@ suchi.nitrkl@gmail.com}
 % \IEEEpubidadjcol
 
 \begin{abstract}
-The challenges of handling decentralised data lead to the demand for research on secure gathering, efficient processing, and analysing of the data. In decentralised systems, each node (device) can make independent decisions, reducing the complexity and challenges of dealing with extensive data. Privacy has become a significant concern for our society due to the rise in the number of Edge/IoT devices, the lack of presence of a centralised system, etc. To solve this conundrum, federated learning was proposed. Federated learning works on the sharing of parameter values rather than the data. Worldwide, 10.2 Billion non-IoT and 19.8 billion IoT devices will be active in 2023. These devices lack security when it comes to using traditional machine learning. However, federated learning models solve this problem using techniques such as Secure Aggregation and Differential Privacy, which provide security for the devices and efficient communication between them. The challenges arise from heterogeneous devices, leading to the client selection problem, unbalanced data, and many more problems. The Proposed work focuses on using the MobileNets series of model architecture for federated learning using the FedAvg Strategy. MobileNets architecture has always been robust and reliable when it come to devices with resource constraints. An older generation system is used to show that federated learning is a viable technique for decentralized machine learning.
+Data is key for the survival of any modern data scenario. With the rise of IoT and Edge Computing millions of data is shared in a second. The requirement of good distributed systems is high. One of the best systems is called Federated Learning which works under the umbrella of sharing training parameters rather than the training data. This makes is the perfect choices for distributive machine learning. FedAvg is the vanilla algorithm for Federated Learning but it has a glaring problem of not working properly for slacker devices. To remedy the problem of slacker devices a new approach FedLR is proposed in this manuscript. It provides all the benefits of FedAvg plus it reduces the communication costs as well as creates a fair scenario by also using the slacker devices. The propose work is compared with FedAvg and FedProx. FedProx is one of the federated learning which works for the heterogeneous clients while preserving slacker devices. The challenge was to make a fair and communication-efficient strategy for federated learning. It was achieved using FedLR which uses a time quantum to classify devices as slacker and tunes them to handle less data in order to make them contribute to the federation and keep it fair.
 \end{abstract}
 \begin{IEEEkeywords}
-Federated learning, IoT, Deep Learning, MobileNets
+Federated learning, IoT, Deep Learning, Edge Computing
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
@@ -74,11 +74,9 @@ Federated learning, IoT, Deep Learning, MobileNets
 
 
 \section{Introduction}
-Federated Learning is born at the intersection of Edge computing/IoT, on-device AI, and blockchain.  A Federation refers to a group of independent entities yet united under a central organization. In federated learning, multiple client or organisations share their training data (weights or compute) to remote servers, and all the clients participating in the process train a single neural network. This process is repeated by the clients, downloading the newer weights from the servers multiple times to provide better results. The training is done on the device's private data, then it is encrypted and communicated to the server, and on the server, they are decrypted, averaged, and integrated into
-the centralized model. The main objective of federated learning is to converge the client's weights so that it could yield meaningful results. For Example. WeBank (Banking), NVIDIA Clara
-(Healthcare), and Google Keyboard.\par
-WeBank is a private Chinese bank they have created its own federated learning framework, known as WeBankAI (based on FATE) \cite{liu2021fate}. Nvidia Clara \cite{nvidia} is a platform to improve healthcare that focuses on \cite{liu2021fate} Medical Imaging and Medical Devices (Nvidia Clara Holoscan), Healthcare IoT (Nvidia Clara Guardian Collection), Biopharma (BioNeMo), and Genomics (Nividia Clara Parabricks). Google Keyboard (Gboard) \cite{yang2018applied} has been using federated learning for creating word prediction models.\par
-Google introduced the term federated learning in 2016 (coined in 2017 by McMahan et al. \cite{mcmahan2017communication}), about the same time the Cambridge Analytica scandal awakened users of the dangers of sharing personal information online. It started a revolution in the technology world about the three rules of Cryptography confidentiality, integrity, and availability. After a deeper review of our current laws, it was clear that we had none. So laws like GDPR and CCPA came into regulation. Federated Learning (Fig \ref{fig1}.) is one such method which can satisfy the rules of cryptography and privacy laws around the globe.\par 
+Federated Learning is a new computing technology that promises to provide all the benefits of AI and ML while preserving users' privacy and security. Instead of training on individual users' data, it trains on the client's weight, which is stored locally with the clients'. This system preserves the user's privacy and provides meaningful AI benefits for many applications of distributive computing.Example: WeBankAI \cite{liu2021fate}, Nvidia Clara \cite{nvidia}, and Google Keyboard \cite{yang2018applied}. That does not mean that it does not have any flaws. It is prone to man-in-the-middle attacks and data poisoning, to name a few. Federated Learning is very suitable for IoT and Edge devices as these are well connected to the internet and send vast amounts of data. The Number of connected IoT devices has grown by 13\% in the year 2024, which leads to 18.8 billion global devices \cite{iotana}.\par
+Federated Learning provides privacy, scalability, cost-effectiveness, and efficiency. But each of these features comes at a cost specially efficiency. The Federated Learning process is as efficient as its slowest device (slacker) so if some one with an older hardware connects into the federation (Fig \ref{fig1}.) the whole system will be bogged down and the classic FedAvg \cite{mcmahan2017communication} will remove that device from training. So one of the biggest problem identified is the slacker devices. 
+
 
 \begin{figure}[htp!]
 	\centering
@@ -87,14 +85,14 @@ Google introduced the term federated learning in 2016 (coined in 2017 by McMahan
 	\label{fig1}
 \end{figure}
 
- In this paper we present a new strategy which significantly addresses the problem with the old one keeping the effectiveness of federated learning alive. The main problem with the vanilla FedAvg is the client selection methodology which is taken at random and the devices participation have no threshold value to meet in order to participate in the federated learning process. Another problem with FedAvg is to deal with device heterogeneity as each devices usually tend to have different CPU, RAM, and GPU which are the essential blocks of any neural network. FedProx \cite{li2020federated} remedies the heterogeneity of FedAvg to a certain point but doesn't account for the fairness. Fairness means all clients should be treated as fair and their contributions to the global model should carry equal weight. The proposed strategy has been named as FedLR which is a dynamic learning rate and epoch based client  selection strategy.
+ In this paper we present a new strategy which significantly addresses the problem with the old one \cite{mcmahan2017communication} keeping the effectiveness of federated learning alive. The problem with the vanilla FedAvg is the client selection methodology which is taken at random and the devices participation have no threshold value to meet in order to participate in the federated learning process. Another problem with FedAvg is to deal with device heterogeneity as each devices usually tend to have different CPU, RAM, and GPU which are the essential blocks of any neural network. FedProx \cite{li2020federated} remedies the heterogeneity of FedAvg to a certain point but doesn't account for the fairness. Fairness means all clients should be treated as fair and their contributions to the global model should carry equal weight. The proposed strategy has been named as FedLR which is a dynamic learning rate and epoch based client  selection strategy.
  
  The proposed work focuses on reducing the total communication time taken by federated learning. Chen et al. \cite{chen2023boosting} used RAM and CPU utilization data from clients in order to boost client selection. But getting such data from clients could lead to device fingerprinting \cite{radhakrishnan2014gtid} \cite{patwari2022dnn} which puts federated learning at risk.  In this paper, by considering heterogeneous clients, we are employing FedLR, a learning rate based towards efficient communication. In the proposed methodology a time variable has been calculated and according to that time variable qualitative decisions towards learning rate selection has been made.
 FedLR guarantee faster communication time with fair selection of clients as it always consider slacker devices which makes this methodology Fair. The main contribution of the proposed work are summarized as follows:
 \begin{enumerate}
-	\item By conducting extensive sets of experiments we came to a quantitative conclusion about the effects of learning rate (lr) in federated learning which is highly effective parameter in federated learning.
+	\item By conducting extensive sets of experiments we came to a quantitative conclusion about the effects of learning rate ($\eta$) in federated learning which is highly effective parameter in federated learning.
 	\item The next contribution is regarding individual clients epochs. The time variable which represents each clients runtime is used to find out the slacker devices and adjust the epoch values for reducing the number of slacker devices.
-	\item Pairing the time variable with lr and epoch values of client to perform better client selection which focused on fairness and heterogeneity. A client selection strategy FedLR has been proposed.
+	\item Pairing the time variable with $\eta$ and epoch values of client to perform better client selection which focused on fairness and heterogeneity. A client selection strategy FedLR has been proposed.
 \end{enumerate}
 
 The ultimate goal of this work is to present a federated learning approach which reduces the communication cost as well as preserves the Accuracies of the clients model. The remainder of the paper is organized as follows: Section \RNum{2} discusses Related Works. Section \RNum{3} explains the problem statement of the literature. Section \RNum{4} introduces FedLR and explains its key features and how does it perform them. Section \RNum{5} does result and analysis of the proposed algorithm and Section \RNum{6} finally conclude this paper.
@@ -103,12 +101,13 @@ The ultimate goal of this work is to present a federated learning approach which
 \section{Related Works}
 The idea of privacy-preserving deep learning was first presented by Shokri et al. \cite{shokri2015privacy} using distributed and selective SGD to make deep learning models privacy-preserving. After this the Federated learning terminology was coined by McMahan et al. \cite{mcmahan2017communication} in which they proposed the Federate Averaging algorithm and tested it using the MNIST Digit Dataset. The data was partitioned into IID and Non-IID. In Non-IID data, only two-digit data were given to the clients. They have also used CIFAR-10 in the balanced and IID settings. 
  \par 
-Li et al. \cite{li2020federated} proposed an update to the traditional FedAvg called FedProx by adding statistical heterogeneity (Proxmial Term) which handles clients heterogeneity better than the previously proposed method.\par Zhang et al. \cite{zhang2024adaptfl} has proposed AdaptFl which is an adaptive FL framework specific to heterogeneous devices. It works on taking GPU, CPU, Battery, and Network information of the clients. AdaptFl has proposed formulas for calculating energy, transmission, and utilization efficiency. But has the same problem as Chen et al. \cite{chen2023boosting} because taking this much client information will makes it vulnerable to device fingerprinting . \par
+Li et al. \cite{li2020federated} proposed an update to the traditional FedAvg called FedProx by adding statistical heterogeneity (Proxmial Term) which handles clients heterogeneity better than the previously proposed method.\par Zhang et al. \cite{zhang2024adaptfl} has proposed AdaptFl which is an adaptive FL framework specific to heterogeneous devices. It works on taking GPU, CPU, Battery, and Network information of the clients. AdaptFl has proposed formulas for calculating energy, transmission, and utilization efficiency. But has the same problem as Chen et al. \cite{chen2023boosting} because taking this much client information will makes it vulnerable to device fingerprinting. \par
 Zhang et al. \cite{zhang2024fedsl} has proposed FedSL which uses split layer aggregation and divides the global feature extractor into smaller groups. Then the clients are scored and concatenated back to the original state. \cite{zhang2024fedsl} have considered \cite{mcmahan2017communication} and \cite{li2020federated} as using 100\% of communication cost. \par
 Ma et al. \cite{ma2021adaptive} has proposed an adaptive batch sizes FL approach for resource constrained devices. The test bed uses one workstation as a server and 10 NVIDIA Jetson's as clients. Orlandi et al. \cite{orlandi2023entropy} has proposed an entropy based FL for Edge intelligence environments and focuses on Non-IID Data. 19 clients are created using VMs and have been each provided with 4GB of RAM. It calculates entropy and then compares the global mean entropy for each client. The data with lower entropy will be selected for training locally otherwise it is discarded. \par 
-Mills et al. \cite{mills2023faster} has proposed having decaying number of local SGD steps which makes the FL system more efficient. This is also one of the inspiration for the proposed FedLR approach. Mathur et al. \cite{mathur2021device} has implemented federated learning using the Flower framework. They have implemented federated learning in 5 mobile devices (three phones and two tablets). They have used the ever-popular MobileNetV2 \cite{sandler2018mobilenetv2} architecture. 
+Mills et al. \cite{mills2023faster} has proposed having decaying number of local SGD steps which makes the FL system more efficient. This is also one of the inspiration for the proposed FedLR approach. Mathur et al. \cite{mathur2021device} has implemented federated learning using the Flower framework. They have implemented federated learning in 5 mobile devices (three phones and two tablets). They have used the ever-popular MobileNetV2 \cite{sandler2018mobilenetv2} architecture. Negi et al. \cite{negi2023study} has also studied the same \cite{sandler2018mobilenetv2} architecture for federated learning for FedAvg benchmarking. 
 \par  
-Hu et al. \cite{hu2025federated} proposed a gradient similarity based client selection algorithm. It priorities clients with similar gradients by calculating cosine similarity. This method will lead to unfair selection of clients as it doesn't consider slacker devices. Ye et al. \cite{ye2022eco} has proposed Eco-FL which is much sustainable then \cite{mcmahan2017communication} and \cite{li2020federated} in terms of energy consumption. \cite{ye2022eco} has also used flower framework to implement the Eco-FL strategy. \cite{cifar10} \cite{Krizhevsky09learningmultiple} are used as datasets and they have tested Eco-Fl in both IID and Non-IID settings.
+Hu et al. \cite{hu2025federated} proposed a gradient similarity based client selection algorithm. It priorities clients with similar gradients by calculating cosine similarity. This method will lead to unfair selection of clients as it doesn't consider slacker devices. Ye et al. \cite{ye2022eco} has proposed Eco-FL which is much sustainable then \cite{mcmahan2017communication} and \cite{li2020federated} in terms of energy consumption. \cite{ye2022eco} has also used flower framework to implement the Eco-FL strategy. \cite{cifar10} \cite{Krizhevsky09learningmultiple} are used as datasets and they have tested Eco-Fl in both IID and Non-IID settings. 
+
 
 \section{Problem Statement}
 The FedAvg proposed by \cite{mcmahan2017communication} open the doors for communication-efficient deep learning networks as they proposed the Federated Averaging methods to train models collaboratively without sharing the underlying training data to preserve the privacy and ever since then it have become the state of the art method for Privacy preserving Deep Learning Models. 
@@ -131,9 +130,9 @@ The devices participating in the federated learning are not always homogeneous t
 Fairness is an unique thing which removes the discrimination between clients and making sure all the devices contribution are taken into consideration. The best way to understand this problem is to imagine two hospitals H1 and H2 with H1 being a bigger hospital with various specialization and H2 being a small clinic. Communicable Diseases are the most popular ones and easy to get and if H1 is getting patient for one such communicable disease that means is the same for H2 are well. But due to the size of H1 the data gathered from H2 will be minuscule but that doesn't mean that its irrelevant. So one must also consider fairness as one of the major components for creating a new strategy. Ezzeldin et al. \cite{ezzeldin2023fairfed} has proposed a Fairfed strategy to solve this problem using debiasing method across clients.
  
 \section{Proposed Algorithm: FedLR}
-The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch Selection for individual clients, and Client Selection based on the Client Runtime. The objective it to reduce the communication cost for efficient communication all the while preserving the accuracy of the model. A slacker device-centric algorithm has been proposed, focusing on the slowest devices and considering the fairness of client selection. A Federated Learning System is as fast as its slowest device. This is the basic principle of federated learning, so the proposed algorithm for client selection primarily focuses on optimizing the slowest devices in the federation. The algorithm is based on turning the learning rate and epochs of Individual clients. A time quantum has been proposed; the clients are classified as quicker or slacker based on the help of this time quantum. To validate if the learning rate based assumption (Section IV A) is correct (the bigger and smaller lr are assigned for quicker and slacker devices, respectively). However, this will only reduce the total communication time by a few seconds, so a new epoch for the slacker devices is proposed below in equation \ref{epoch_equation}. to make it effective (Section IV B).
+After discusing the problem with the existing systems. FedLR a learning rate and epoch based strategy targeting slacker devices is proposed. The proposed FedLR is broken into three segments: Learning Rate Selection, Epoch Selection for individual clients, and Client Selection based on the Client Runtime. The objective it to reduce the communication cost for efficient communication all the while preserving the accuracy of the model. A slacker device-centric algorithm has been proposed, focusing on the slowest devices and considering the fairness of client selection. A Federated Learning System is as fast as its slowest device. This is the basic principle of federated learning, so the proposed algorithm for client selection primarily focuses on optimizing the slowest devices in the federation. The algorithm is based on turning the learning rate and epochs of Individual clients. A time quantum has been proposed; the clients are classified as quicker or slacker based on the help of this time quantum. To validate if the learning rate based assumption (Section IV A) is correct (the bigger and smaller lr are assigned for quicker and slacker devices, respectively). However, this will only reduce the total communication time by a few seconds, so a new epoch for the slacker devices is proposed below in equation \ref{epoch_equation}. to make it effective (Section IV B).
  \subsection{Learning Rate Selection}
-The algorithm \ref{alg:lr} below explains the learning rate (lr) selection by the clients. The learning rates are taken with an increment of ten. After running different lr it was observed that the accuracy were similar but the total communication times were being reduced with smaller lr values. All three lr cases were tested and they showed a good amount of change in communication cost. The dataset used for these experiments was the CIFAR10 dataset.
+The algorithm \ref{alg:lr} below explains the learning rate (lr) selection by the clients. The learning rates are taken with an increment of ten. After running different lr it was observed that the accuracy were similar but the total communication times were being reduced with smaller lr values. All three lr cases were tested and they showed a good amount of change in communication cost. The dataset used for these experiments was the CIFAR10 dataset. The results are similar to the ones shown in \cite{negi2023study}.
 
  
  \begin{algorithm}
@@ -322,42 +321,29 @@ All clients use the full datasets and run at 10 Epochs and 10 Communication Roun
 %\end{figure}
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.51]{Images/NEWGRAPHS/GraphhhhhExample.png }
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/loss_fedavg.png }
 	\caption{Loss of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
-	\label{FedAvgC10}
+	\label{lossFedAvgC10}
 \end{figure}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.51]{Images/NEWGRAPHS/acc.png }
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/acc_fedavg.png }
 	\caption{Accuracy of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
-	\label{FedAvgC10}
+	\label{accFedAvgC10}
 \end{figure}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.4]{Images/NEWGRAPHS/timechart.png }
+	\includegraphics[scale=.4]{Images/NEWGRAPHS/time_fedavg_647o56.png }
 	\caption{Individual Time of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
 	\label{FedAvgTimeC10}
 \end{figure}
 
-\begin{figure}[htp!]
-	\centering
-	\includegraphics[scale=.28]{Images/NEWGRAPHS/5.png }
-	\caption{Accuracy and Loss of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
-	\label{FedAvgC10}
-\end{figure}
 
-\begin{figure}[htp!]
-	\centering
-	\includegraphics[scale=.3]{Images/NEWGRAPHS/6.png }
-	\caption{Individual Time of 10 Clients using FedAvg on the CIFAR10 Dataset (Workstation).}
-	\label{FedAvgTimeC10}
-\end{figure}
+Fig. \ref{lossFedAvgC10}, \ref{accFedAvgC10} and \ref{FedAvgTimeC10} represents the loss, accuracy, and Individual time taken by each client respectively for FedAvg.  These are workstation times and the accuracy and losses are similar to FedLR and FedProx. The blue dotted lines represents the local loss and accuracy while the orange ones represent the global loss and accuracy. The legend of the fig. \ref{lossFedAvgC10} shows how many total epochs does one client take.
 
-Fig. \ref{FedAvgC10} and \ref{FedAvgTimeC10} represents the accuracy loss plot and Individual time taken by each client respectively for FedAvg.  These are workstation times and the accuracy and losses are similar to FedLR and FedProx. The blue dotted lines represents the local loss and accuracy while the orange ones represent the global loss and accuracy. The legend of the fig. \ref{FedAvgC10} shows how many total epochs does one client take.
-
-Fig. \ref{FedProxC10} and \ref{FedProxTimeC10}  represents the accuracy loss plot and Individual time taken by each client respectively for FedProx. FedProx perform a bit better in terms of total communication cost.
+Fig. \ref{lossFedProxC10}, \ref{accFedProxC10} and \ref{FedProxTimeC10}  represents the loss, accuracy, and Individual time taken by each client respectively for FedProx. FedProx perform a bit better in terms of total communication cost than FedAvg in some scenarios.
 %\begin{figure}[htp!]
 %	\centering
 %	\includegraphics[scale=.28]{Images/Result Images/CIFAR 10/cifar10_fedPROX_lossacc }
@@ -374,14 +360,22 @@ Fig. \ref{FedProxC10} and \ref{FedProxTimeC10}  represents the accuracy loss plo
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.28]{Images/NEWGRAPHS/3.png }
-	\caption{Accuracy and Loss of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
-	\label{FedProxC10}
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/loss_fedprox.png }
+	\caption{Loss of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
+	\label{lossFedProxC10}
 \end{figure}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.3]{Images/NEWGRAPHS/4.png }
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/acc_fedprox.png }
+	\caption{Accuracy of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
+	\label{accFedProxC10}
+\end{figure}
+
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.4]{Images/NEWGRAPHS/time_fedprox_653o8.png }
 	\caption{Individual Time of 10 Clients using FedProx on the CIFAR10 Dataset (Workstation).}
 	\label{FedProxTimeC10}
 \end{figure}
@@ -402,20 +396,28 @@ Fig. \ref{FedProxC10} and \ref{FedProxTimeC10}  represents the accuracy loss plo
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.28]{Images/NEWGRAPHS/1.png}
-	\caption{Accuracy and Loss of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
-	\label{FedLRC10}
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/loss_fedlr.png}
+	\caption{Loss of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
+	\label{lossFedLRC10}
 \end{figure}
 
 \begin{figure}[htp!]
 	\centering
-	\includegraphics[scale=.3]{Images/NEWGRAPHS/2.png}
+	\includegraphics[scale=.51]{Images/NEWGRAPHS/acc_fedlr.png}
+	\caption{Accuracy of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
+	\label{accFedLRC10}
+\end{figure}
+
+\begin{figure}[htp!]
+	\centering
+	\includegraphics[scale=.4]{Images/NEWGRAPHS/time_fedlr_612o83.png}
 	\caption{Individual Time of 10 Clients using FedLR on the CIFAR10 Dataset (Workstation).}
 	\label{FedLRTimeC10}
 
 
 \end{figure}
-Fig. \ref{FedLRC10} and \ref{FedLRTimeC10} represents the accuracy loss plot and Individual time taken by each client respectively for FedLR. In fig. \ref{FedLRC10} each client runs a different number of epoch. The one with the lowest epochs are the Slacker devices hence they contributed less. It is to be noted that the resources of each clients are given at random to promote heterogeneity. Hence, none of the client completed 100 $E$ due to them being slacker in few rounds.
+Fig. \ref{lossFedLRC10},\ref{accFedLRC10} and \ref{FedLRTimeC10} represents the loss, accuracy,
+ and Individual time taken by each client respectively for FedLR. In fig. \ref{lossFedLRC10} each client runs a different number of epoch. The one with the lowest epochs are the Slacker devices hence they contributed less. It is to be noted that the resources of each clients are given at random to promote heterogeneity. Hence, none of the client completed 100 $E$ due to them being slacker in few rounds.
 
 \begin{figure}[htp!]
 	\centering
@@ -425,7 +427,7 @@ Fig. \ref{FedLRC10} and \ref{FedLRTimeC10} represents the accuracy loss plot and
 \end{figure}
 
 
-Fig \ref{FedAvgC10}, \ref{FedLRC10}, and \ref{FedProxC10} all show similar accuracy and loss. This same pattern is seen in other datasets as well \cite{lecun1998mnist}  \cite{xiao2017fashionmnistnovelimagedataset} \cite{Krizhevsky09learningmultiple}. The detailed results can be found in table \ref{totaltimetable} and the visual representation in fig. \ref{Finalgraph}. In all the workstation results FedLR has shown the best results and FedProx is the second best. But in collab results it was mixed bag. As collab gives you a random T4 GPU in each instance which means the heterogeneity is more severe. Which lead to FedAvg performing better than FedProx in some cases.
+Fig \ref{accFedAvgC10}, \ref{accFedLRC10}, and \ref{accFedProxC10} all show similar accuracy. This same pattern is seen in other datasets as well \cite{lecun1998mnist}  \cite{xiao2017fashionmnistnovelimagedataset} \cite{Krizhevsky09learningmultiple}. But fig \ref{FedAvgTimeC10}, \ref{FedProxTimeC10}, and \ref{FedLRTimeC10} shows the total individual times of each clients which is smallest in the case of FedLR. The detailed results can be found in table \ref{totaltimetable} and the visual representation in fig. \ref{Finalgraph}. In all the workstation results FedLR has shown the best results and FedProx is the second best. But in collab results it was mixed bag. As collab gives you a random T4 GPU in each instance which means the heterogeneity is more severe. Which lead to FedAvg performing better than FedProx in some cases.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -437,7 +439,7 @@ Fig \ref{FedAvgC10}, \ref{FedLRC10}, and \ref{FedProxC10} all show similar accur
 		\begin{tabular}{|l|l|l|l|l|}
 			\hline
 			Datasets                  & System      & FedLR (sec) & FedAvg (sec) & FedProx (sec) \\ \hline
-			\multirow{2}{*}{CIFAR10}  & Workstation & 589.74      & 635.65       & 622.28        \\ \cline{2-5} 
+			\multirow{2}{*}{CIFAR10}  & Workstation & 612.83      & 647.56       & 653.80        \\ \cline{2-5} 
 			& Collab      & 1528.82     & 1638.73      & 1662.25       \\ \hline
 			\multirow{2}{*}{MNIST}    & Workstation & 515.81      & 562.51       & 531.81        \\ \cline{2-5} 
 			& Collab      & 1438.09     & 1576.74      & 1553.16       \\ \hline
@@ -448,8 +450,7 @@ Fig \ref{FedAvgC10}, \ref{FedLRC10}, and \ref{FedProxC10} all show similar accur
 		\end{tabular}%
 	}\label{totaltimetable}
 \end{table}
-To interpret the results more easily Percentage difference has been calculated. Compariosn between FedLR and FedAvg as well as FedLR and FedProx. Table \ref{percentage_table} shows the detailed results. In workstation setting the proposed methodology has peformed better than FedAvg and FedProx. But as we have explained earlier in the case of Google Collab the results were a bit different. All test have been run several times and the full results are available at ``https://github.com/vipulhld001/flower".
-
+To interpret the results more easily Percentage difference has been calculated. Compariosn between FedLR and FedAvg as well as FedLR and FedProx. Table \ref{percentage_table} shows the detailed results. In workstation setting the proposed methodology has peformed better than FedAvg and FedProx. But as we have explained earlier in the case of Google Collab the results were a bit different. All test have been run several times and the full results are available at Github \cite{gitflwr}.
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[ht]
@@ -459,7 +460,7 @@ To interpret the results more easily Percentage difference has been calculated. 
 		\begin{tabular}{|l|l|l|l|l|}
 			\hline
 			Datasets & \begin{tabular}[c]{@{}l@{}}Workstation\\ FedAvg\end{tabular} & \begin{tabular}[c]{@{}l@{}}Collab\\ FedAvg\end{tabular} & \begin{tabular}[c]{@{}l@{}}Workstation\\ FedProx\end{tabular} & \begin{tabular}[c]{@{}l@{}}Collab\\ FedProx\end{tabular} \\ \hline
-			CIFAR10  & 7.5\%                                                         & 6.9\%                                                    & 5.3\%                                                          & 8.3\%                                                     \\ \hline
+			CIFAR10  & 5.5\%                                                         & 6.9\%                                                    & 6.4\%                                                          & 8.3\%                                                     \\ \hline
 			MNIST    & 8.7\%                                                         & 9.2\%                                                    & 3\%                                                            & 7.7\%                                                     \\ \hline
 			CIFAR100 & 4.8\%                                                         & 8.2\%                                                    & 2.8\%                                                          & 9.4\%                                                     \\ \hline
 			FMNIST   & 7.0\%                                                           & 9.0\%                                                    & 3.3\%                                                          & 9.8\%                                                     \\ \hline
@@ -470,7 +471,7 @@ To interpret the results more easily Percentage difference has been calculated. 
 
 
 \section{Conclusion}
-The proposed algorithm has reduced the total communication time by a significant margin and has maintained fairness in the system while maintaining the accuracy of the models. The proposed algorithm has also been tested on two different devices to prove the improvements in communication rounds for a federated learning system with many slacker devices. Both FedAvg and FedProx are compared with the proposed work and proposed work has significantly improved over both of them. Using proposed methodology in IoT and Edge devices will make the Federated Learning process more efficient and robust.
+The proposed algorithm has reduced the total communication time by a significant margin and has maintained fairness in the system while maintaining the accuracy of the models. The proposed algorithm has also been tested on two different devices to prove the improvements in communication rounds for a federated learning system with many slacker devices. The two devices prove the heterogeneity aspect of the proposed system. Both FedAvg and FedProx are compared with the proposed work and proposed work has significantly improved over both of them. Using proposed methodology in real world IoT and Edge devices will make the Federated Learning process more efficient and robust.
 \bibliographystyle{unsrt}
 \bibliography{Sample}
 
