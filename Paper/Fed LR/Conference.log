@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  15 DEC 2024 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.9)  16 DEC 2024 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,89 +307,89 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 93.
 
-Underfull \hbox (badness 4634) in paragraph at lines 113--114
-[]\OT1/ptm/m/n/10 The Fe-dAvg pro-posed by [[]] open the doors for
+Underfull \hbox (badness 2205) in paragraph at lines 112--113
+[]\OT1/ptm/m/n/10 The Fe-dAvg pro-posed by [[]] opened the doors for
  []
 
 [2]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-48.
+46.
  (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 176.
+(Font)              <8> on input line 174.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 176.
+(Font)              <6> on input line 174.
 
 [3]
 <Images/Result Images/Flow_FedLR.png, id=26, 485.815pt x 654.445pt>
 File: Images/Result Images/Flow_FedLR.png Graphic file (type png)
 <use Images/Result Images/Flow_FedLR.png>
 Package pdftex.def Info: Images/Result Images/Flow_FedLR.png  used on input lin
-e 284.
+e 281.
 (pdftex.def)             Requested size: 136.02727pt x 183.24335pt.
  [4 <./Images/Result Images/Flow_FedLR.png>]
 <Images/NEWGRAPHS/loss_fedavg.png, id=33, 422.7795pt x 333.1647pt>
 File: Images/NEWGRAPHS/loss_fedavg.png Graphic file (type png)
 <use Images/NEWGRAPHS/loss_fedavg.png>
 Package pdftex.def Info: Images/NEWGRAPHS/loss_fedavg.png  used on input line 3
-24.
+21.
 (pdftex.def)             Requested size: 215.61469pt x 169.91174pt.
 <Images/NEWGRAPHS/acc_fedavg.png, id=34, 415.5525pt x 333.1647pt>
 File: Images/NEWGRAPHS/acc_fedavg.png Graphic file (type png)
 <use Images/NEWGRAPHS/acc_fedavg.png>
-Package pdftex.def Info: Images/NEWGRAPHS/acc_fedavg.png  used on input line 33
-1.
+Package pdftex.def Info: Images/NEWGRAPHS/acc_fedavg.png  used on input line 32
+8.
 (pdftex.def)             Requested size: 211.92897pt x 169.91174pt.
 <Images/NEWGRAPHS/time_fedavg_647o56.png, id=35, 613.5723pt x 512.3943pt>
 File: Images/NEWGRAPHS/time_fedavg_647o56.png Graphic file (type png)
 <use Images/NEWGRAPHS/time_fedavg_647o56.png>
 Package pdftex.def Info: Images/NEWGRAPHS/time_fedavg_647o56.png  used on input
- line 338.
+ line 335.
 (pdftex.def)             Requested size: 245.42456pt x 204.95409pt.
 <Images/NEWGRAPHS/loss_fedprox.png, id=36, 422.7795pt x 333.1647pt>
 File: Images/NEWGRAPHS/loss_fedprox.png Graphic file (type png)
 <use Images/NEWGRAPHS/loss_fedprox.png>
 Package pdftex.def Info: Images/NEWGRAPHS/loss_fedprox.png  used on input line 
-363.
+360.
 (pdftex.def)             Requested size: 215.61469pt x 169.91174pt.
 <Images/NEWGRAPHS/acc_fedprox.png, id=37, 415.5525pt x 333.1647pt>
 File: Images/NEWGRAPHS/acc_fedprox.png Graphic file (type png)
 <use Images/NEWGRAPHS/acc_fedprox.png>
 Package pdftex.def Info: Images/NEWGRAPHS/acc_fedprox.png  used on input line 3
-70.
+67.
 (pdftex.def)             Requested size: 211.92897pt x 169.91174pt.
 <Images/NEWGRAPHS/time_fedprox_653o8.png, id=38, 613.5723pt x 512.3943pt>
 File: Images/NEWGRAPHS/time_fedprox_653o8.png Graphic file (type png)
 <use Images/NEWGRAPHS/time_fedprox_653o8.png>
 Package pdftex.def Info: Images/NEWGRAPHS/time_fedprox_653o8.png  used on input
- line 378.
+ line 375.
 (pdftex.def)             Requested size: 245.42456pt x 204.95409pt.
 <Images/NEWGRAPHS/loss_fedlr.png, id=39, 422.7795pt x 333.1647pt>
 File: Images/NEWGRAPHS/loss_fedlr.png Graphic file (type png)
 <use Images/NEWGRAPHS/loss_fedlr.png>
 Package pdftex.def Info: Images/NEWGRAPHS/loss_fedlr.png  used on input line 39
-9.
+6.
 (pdftex.def)             Requested size: 215.61469pt x 169.91174pt.
 <Images/NEWGRAPHS/acc_fedlr.png, id=40, 415.5525pt x 333.1647pt>
 File: Images/NEWGRAPHS/acc_fedlr.png Graphic file (type png)
 <use Images/NEWGRAPHS/acc_fedlr.png>
-Package pdftex.def Info: Images/NEWGRAPHS/acc_fedlr.png  used on input line 406
+Package pdftex.def Info: Images/NEWGRAPHS/acc_fedlr.png  used on input line 403
 .
 (pdftex.def)             Requested size: 211.92897pt x 169.91174pt.
 <Images/NEWGRAPHS/time_fedlr_612o83.png, id=41, 613.5723pt x 512.3943pt>
 File: Images/NEWGRAPHS/time_fedlr_612o83.png Graphic file (type png)
 <use Images/NEWGRAPHS/time_fedlr_612o83.png>
 Package pdftex.def Info: Images/NEWGRAPHS/time_fedlr_612o83.png  used on input 
-line 413.
+line 410.
 (pdftex.def)             Requested size: 245.42456pt x 204.95409pt.
 <Images/Result Images/FinalGraphwithFedprox.png, id=42, 573.64313pt x 737.154pt
 >
 File: Images/Result Images/FinalGraphwithFedprox.png Graphic file (type png)
 <use Images/Result Images/FinalGraphwithFedprox.png>
 Package pdftex.def Info: Images/Result Images/FinalGraphwithFedprox.png  used o
-n input line 424.
+n input line 421.
 (pdftex.def)             Requested size: 229.45319pt x 294.85637pt.
  [5 <./Images/NEWGRAPHS/loss_fedavg.png> <./Images/NEWGRAPHS/acc_fedavg.png> <.
 /Images/NEWGRAPHS/time_fedavg_647o56.png>] [6 <./Images/NEWGRAPHS/loss_fedprox.
@@ -435,11 +435,11 @@ L3 programming layer <2024-01-04>
 Here is how much of TeX's memory you used:
  4204 strings out of 474486
  77324 string characters out of 5743756
- 1960542 words of memory out of 5000000
+ 1967542 words of memory out of 5000000
  26448 multiletter control sequences out of 15000+600000
  597033 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,16n,65p,1419b,337s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 58i,16n,65p,1399b,337s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -456,7 +456,7 @@ Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><
 C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on Conference.pdf (8 pages, 795778 bytes).
+Output written on Conference.pdf (8 pages, 796017 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
