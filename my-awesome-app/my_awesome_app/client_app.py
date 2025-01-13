@@ -3,8 +3,10 @@
 import torch
 
 from flwr.client import ClientApp, NumPyClient
-from flwr.common import Context
+from flwr.common import Context, ndarrays_to_parameters, Metrics
 from my_awesome_app.task import Net, get_weights, load_data, set_weights, test, train
+
+
 
 
 # Define Flower Client and client_fn
@@ -19,10 +21,13 @@ class FlowerClient(NumPyClient):
 
     def fit(self, parameters, config):
         set_weights(self.net, parameters)
+        print(config) 
+        #Pass the new Lr here
         train_loss = train(
             self.net,
             self.trainloader,
             self.local_epochs,
+            config['lr'], #Passing the learning rate from the config file
             self.device,
         )
         return (

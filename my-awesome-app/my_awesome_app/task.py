@@ -32,6 +32,17 @@ class Net(nn.Module):
         x = F.relu(self.fc2(x))
         return self.fc3(x)
 
+def get_transformss():
+    pytorch_transforms = Compose(
+        [ToTensor(), Normalize((0.5,), (0.5,))]
+    )
+
+    def apply_transforms(batch):
+        """Apply transforms to the partition from FederatedDataset."""
+        batch["image"] = [pytorch_transforms(img) for img in batch["image"]]
+        return batch
+    return apply_transforms
+
 
 fds = None  # Cache FederatedDataset
 
@@ -50,26 +61,19 @@ def load_data(partition_id: int, num_partitions: int):
     partition = fds.load_partition(partition_id)
     # Divide data on each node: 80% train, 20% test
     partition_train_test = partition.train_test_split(test_size=0.2, seed=42)
-    pytorch_transforms = Compose(
-        [ToTensor(), Normalize((0.5,), (0.5,))]
-    )
+    
 
-    def apply_transforms(batch):
-        """Apply transforms to the partition from FederatedDataset."""
-        batch["image"] = [pytorch_transforms(img) for img in batch["image"]]
-        return batch
-
-    partition_train_test = partition_train_test.with_transform(apply_transforms)
+    partition_train_test = partition_train_test.with_transform(get_transformss())
     trainloader = DataLoader(partition_train_test["train"], batch_size=32, shuffle=True)
     testloader = DataLoader(partition_train_test["test"], batch_size=32)
     return trainloader, testloader
 
 
-def train(net, trainloader, epochs, device):
+def train(net, trainloader, epochs, lr, device):
     """Train the model on the training set."""
     net.to(device)  # move model to GPU if available
     criterion = torch.nn.CrossEntropyLoss().to(device)
-    optimizer = torch.optim.Adam(net.parameters(), lr=0.01)
+    optimizer = torch.optim.Adam(net.parameters(), lr=lr) #Config lr given here
     net.train()
     running_loss = 0.0
     for _ in range(epochs):
