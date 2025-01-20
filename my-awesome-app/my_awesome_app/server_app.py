@@ -8,7 +8,7 @@ from my_awesome_app.task import Net, get_weights, set_weights, test, get_transfo
 from datasets import load_dataset
 
 from torch.utils.data import DataLoader
-
+import json
 
 
 #Evaluation the global model (Centralised model) on the test data
@@ -46,6 +46,18 @@ def on_fit_config(server_round: int) -> Metrics:
         lr = 0.001
     return {"lr": lr}
 
+def handle_fit_metrics(metrics: List[Tuple[int, Metrics]]) -> Metrics:
+
+
+    b_vlaues = []
+    for _, m in metrics:
+        my_metrics = m["complex_metr"]    #Passing values for the client_app file
+        print(my_metrics)
+        my_metric = json.loads(my_metrics)
+        b_vlaues.append(my_metric["b"])                #Extract the  value b
+
+    return {"max_b": max(b_vlaues)} #Return the max value of b
+
 
 
 
@@ -72,8 +84,9 @@ def server_fn(context: Context):
         min_available_clients=2,
         initial_parameters=parameters,
         evaluate_metrics_aggregation_fn= weighted_average,
-        on_fit_config_fn=on_fit_config,
-        evaluate_fn=get_evaluate_fn(testloader, device="cuda:0"),
+        fit_metrics_aggregation_fn= handle_fit_metrics, #To Handle the metrics
+        on_fit_config_fn=on_fit_config,                                 #Learning rate
+        evaluate_fn=get_evaluate_fn(testloader, device="cuda:0"),   #Cenralized Evaluation
     )
     config = ServerConfig(num_rounds=num_rounds)
 

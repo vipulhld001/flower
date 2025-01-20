@@ -5,8 +5,8 @@ import torch
 from flwr.client import ClientApp, NumPyClient
 from flwr.common import Context, ndarrays_to_parameters, Metrics
 from my_awesome_app.task import Net, get_weights, load_data, set_weights, test, train
-
-
+from random import random
+import json
 
 
 # Define Flower Client and client_fn
@@ -30,10 +30,16 @@ class FlowerClient(NumPyClient):
             config['lr'], #Passing the learning rate from the config file
             self.device,
         )
+        complex_metric = {"a": 123, "b": random(), "mylist": [1,2,3,4,5]}  #Passing Random number with complex stuff
+        complex_metric_str = json.dumps(complex_metric)
+
+
+
+
         return (
             get_weights(self.net),
             len(self.trainloader.dataset),
-            {"train_loss": train_loss},
+            {"train_loss": train_loss, "complex_metr": complex_metric_str},  #Passing Random number
         )
 
     def evaluate(self, parameters, config):
