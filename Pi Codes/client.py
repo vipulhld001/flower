@@ -34,6 +34,6 @@ class CifarClient(fl.client.NumPyClient):
     return loss, len(x_test), {"accuracy": accuracy}
 
 # Start Flower client
-fl.client.start_numpy_client(server_address="127.0.0.1:8080", client=CifarClient())
+fl.client.start_numpy_client(server_address="192.168.10.103:8080", client=CifarClient())
 
 
