@@ -82,15 +82,15 @@ class CifarClient(fl.client.NumPyClient):
     #plt.show()
     
    
-    # # Calculate RMSE
-    # rmse = np.sqrt(np.mean((y_test - model.predict(x_test)) ** 2))
-    # print("RMSE: ", rmse)
-    # # Calculate MAE 
-    # mae = np.mean(np.abs(y_test - model.predict(x_test)))
-    # print("MAE: ", mae)
-    # # Calculate MAPE
-    # mape = np.mean(np.abs((y_test - model.predict(x_test)) / y_test)) * 100
-    # print("MAPE: ", mape)
+    # Calculate RMSE
+    rmse = np.sqrt(np.mean((y_test - model.predict(x_test)) ** 2))
+    print("RMSE: ", rmse)
+    # Calculate MAE 
+    mae = np.mean(np.abs(y_test - model.predict(x_test)))
+    print("MAE: ", mae)
+    # Calculate MAPE
+    mape = np.mean(np.abs((y_test - model.predict(x_test)) / y_test)) * 100
+    print("MAPE: ", mape)
 
     return loss, len(x_test), {"accuracy": accuracy} 
 
