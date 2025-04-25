@@ -14,7 +14,7 @@ from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.metrics import RootMeanSquaredError 
 from tensorflow.keras.models import load_model
 from tensorflow.keras.metrics import MeanAbsoluteError
-
+from server import NUM_ROUNDS
 
 # Load model and data (MobileNetV2, CIFAR-10)
 # model = tf.keras.applications.MobileNetV3Large((32, 32, 3), classes=10, weights=None)
@@ -58,7 +58,8 @@ model.add(Dense(1, activation='linear'))
 
 model.compile(optimizer=Adam(learning_rate=0.001), loss=MeanSquaredError(), metrics=["accuracy"])
 
-
+EPOCHS=2
+count= 0
 
 # Define Flower client
 class CifarClient(fl.client.NumPyClient):
@@ -67,7 +68,7 @@ class CifarClient(fl.client.NumPyClient):
 
   def fit(self, parameters, config):
     model.set_weights(parameters)
-    model.fit(x_train, y_train, epochs=10, batch_size=32)
+    model.fit(x_train, y_train, epochs=EPOCHS , batch_size=32)
 
 
     return model.get_weights(), len(x_train), {}
@@ -76,23 +77,34 @@ class CifarClient(fl.client.NumPyClient):
     model.set_weights(parameters)
     loss, accuracy = model.evaluate(x_test, y_test)
     print(loss, accuracy)
+    #count how many times the model has been evaluated
+    global count
+    count += 1
+    print("Model has been evaluated ", count, " times")
+    print("Round Number ", NUM_ROUNDS, " times")
+    
+
 
     print(type(loss), type(accuracy))
     #plt.plot(loss, accuracy)
     #plt.show()
-    
-   
-    # Calculate RMSE
-    rmse = np.sqrt(np.mean((y_test - model.predict(x_test)) ** 2))
-    print("RMSE: ", rmse)
-    # Calculate MAE 
-    mae = np.mean(np.abs(y_test - model.predict(x_test)))
-    print("MAE: ", mae)
-    # Calculate MAPE
-    mape = np.mean(np.abs((y_test - model.predict(x_test)) / y_test)) * 100
-    print("MAPE: ", mape)
+    if NUM_ROUNDS == 5:
+      # Calculate RMSE
+      rmse = np.sqrt(np.mean((y_test - model.predict(x_test)) ** 2))
+      print("RMSE: ", rmse)
+      # Calculate MAE 
+      mae = np.mean(np.abs(y_test - model.predict(x_test)))
+      print("MAE: ", mae)
+      # Calculate MAPE  
+      mape = np.mean(np.abs((y_test - model.predict(x_test)) / y_test)) * 100
+      print("MAPE: ", mape)
+  
+  
 
     return loss, len(x_test), {"accuracy": accuracy} 
+
+
+
 
 # Start Flower client
 fl.client.start_numpy_client(server_address="192.168.10.103:8080", client=CifarClient())
