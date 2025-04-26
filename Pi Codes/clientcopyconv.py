@@ -14,7 +14,7 @@ from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.metrics import RootMeanSquaredError 
 from tensorflow.keras.models import load_model
 from tensorflow.keras.metrics import MeanAbsoluteError
-from server import NUM_ROUNDS
+#from server import NUM_ROUNDS
 
 # Load model and data (MobileNetV2, CIFAR-10)
 # model = tf.keras.applications.MobileNetV3Large((32, 32, 3), classes=10, weights=None)
@@ -58,7 +58,8 @@ model.add(Dense(1, activation='linear'))
 
 model.compile(optimizer=Adam(learning_rate=0.001), loss=MeanSquaredError(), metrics=["accuracy"])
 
-EPOCHS=2
+NUM_ROUNDS = 20
+EPOCHS=10
 count= 0
 
 # Define Flower client
@@ -88,7 +89,7 @@ class CifarClient(fl.client.NumPyClient):
     print(type(loss), type(accuracy))
     #plt.plot(loss, accuracy)
     #plt.show()
-    if NUM_ROUNDS == 5:
+    if count == 19:
       # Calculate RMSE
       rmse = np.sqrt(np.mean((y_test - model.predict(x_test)) ** 2))
       print("RMSE: ", rmse)
