@@ -6,6 +6,8 @@ from flwr.client import ClientApp, NumPyClient
 from flwr.common import Context
 from awesome.task import Net, get_weights, load_data, set_weights, test, train
 
+from random import random
+import json
 
 # Define Flower Client and client_fn
 class FlowerClient(NumPyClient):
@@ -27,10 +29,15 @@ class FlowerClient(NumPyClient):
             config["lr"],
             self.device,
         )
+
+        complex_metrics = {"a": 123, "b": random, "mylist": [1, 2, 3]}
+        complex_metrics_str = json.dumps(complex_metrics)
+
+        #to get data for printing from server app (1)
         return (
             get_weights(self.net),
             len(self.trainloader.dataset),
-            {"train_loss": train_loss},
+            {"train_loss": train_loss, "my_metrics": complex_metrics_str},
         )
 
     def evaluate(self, parameters, config):
