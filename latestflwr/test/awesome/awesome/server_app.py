@@ -8,6 +8,7 @@ from awesome.task import Net, get_weights, set_weights, test, get_transforms
 from typing import List, Tuple
 from datasets import load_dataset
 from torch.utils.data import DataLoader
+import json
 
 def get_evaluate_fn(testloader, device):
     
@@ -31,7 +32,22 @@ def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
     total_examples = sum(num_examples for num_examples, _ in metrics)
     
     return {"accuracy" : sum(accuracies)/ total_examples}
+
+###to print from client app (1)
+def handle_fit_metrics(metrics: List[Tuple[int, Metrics]]) -> Metrics:
+
+    b_values = []
+    for _, m in metrics:
+        my_metrics = m.get("my_metrics", None)
+        print(my_metrics)
+        my_metrics_dict = json.loads(my_metrics)
+        b_values.append(my_metrics_dict.get("b", 0))
+
     
+    
+    return {"max_b": max(b_values)}
+
+
 #For Config and passing my own parameters
 
 def on_fit_config(server_round:int ) -> Metrics:
@@ -68,6 +84,7 @@ def server_fn(context: Context):
         min_available_clients=2,
         initial_parameters=parameters,
         evaluate_metrics_aggregation_fn = weighted_average,
+        fit_metrics_aggregation_fn=handle_fit_metrics,
         on_fit_config_fn = on_fit_config,
         evaluate_fn = get_evaluate_fn(testloader, device="cpu") ,
     )
