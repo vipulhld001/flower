@@ -321,6 +321,23 @@ Thanks for playing! 🎮
         self.root.quit()
 
 def main_gui():
+    """
+    Launches the graphical user interface (GUI) version of the Rock-Paper-Scissors game.
+
+    This function initializes the main application window using the Tkinter library,
+    creates an instance of the RockPaperScissorsGUI class, and starts the Tkinter event loop.
+
+    Dependencies:
+        - The `tk` module from the Tkinter library must be imported.
+        - The `RockPaperScissorsGUI` class must be defined elsewhere in the code.
+
+    Raises:
+        - Any exceptions raised by the Tkinter library or the RockPaperScissorsGUI class
+          during initialization or execution.
+
+    Usage:
+        Call this function to start the GUI version of the game.
+    """
     """Launch the GUI version of the game"""
     root = tk.Tk()
     game = RockPaperScissorsGUI(root)
